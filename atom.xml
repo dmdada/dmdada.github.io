@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>邓铭的博客</title>
+  
+  <subtitle>努力不一定成功，不努力一定不成功！</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-05-23T05:28:45.900Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>邓铭</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一篇博客</title>
+    <link href="http://yoursite.com/2018/05/23/hello-world/"/>
+    <id>http://yoursite.com/2018/05/23/hello-world/</id>
+    <published>2018-05-23T01:19:38.000Z</published>
+    <updated>2018-05-23T05:28:45.900Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客<br>dikfs<br>ad<br>adadada</p><p>sdadada</p><p>asdasda</p><p>asdada<br>da<br>sdadada</p><p>dadada<br>adaas</p><p>dadadadadd<br>ad<br>dadada</p><p>asdadada</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;测试博客&quot;&gt;&lt;a href=&quot;#测试博客&quot; class=&quot;headerlink&quot; title=&quot;测试博客&quot;&gt;&lt;/a&gt;测试博客&lt;/h2&gt;&lt;h3 id=&quot;这是一篇测试博客&quot;&gt;&lt;a href=&quot;#这是一篇测试博客&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数源码</title>
+    <link href="http://yoursite.com/2018/05/23/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md/"/>
+    <id>http://yoursite.com/2018/05/23/测试博客-md/</id>
+    <published>2018-05-23T01:19:38.000Z</published>
+    <updated>2018-05-23T06:26:38.136Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><pre><code>char *strcpy(char *strDes, const char *strSrc)   {       assert((strDes != NULL) &amp;&amp; (strSrc != NULL));       char *address = strDes;       while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)           NULL;       return address;   </code></pre><p>注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</p><h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><pre><code>int strcmp(const char *s, const char *t)   {       assert(s != NULL &amp;&amp; t != NULL);       while (*s &amp;&amp; *t &amp;&amp; *s == *t)       {           ++ s;           ++ t;       }       return (*s - *t);   }  </code></pre><h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><pre><code>char *strcat(char *strDes, const char *strSrc)   {    assert((strDes != NULL) &amp;&amp; (strSrc != NULL));       char *address = strDes;       while (*strDes != &apos;\0&apos;)           ++ strDes;       while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)           NULL;       return address;   }  </code></pre><p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改<br>            2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p><h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><pre><code>int strlen(const char *str)   {       assert(str != NULL);       int len = 0;       while (*str ++ != &apos;\0&apos;)           ++ len;       return len;   }  </code></pre><h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><pre><code>char *strstr(const char *strSrc, const char *str)   {       assert(strSrc != NULL &amp;&amp; str != NULL);       const char *s = strSrc;       const char *t = str;       for (; *t != &apos;\0&apos;; ++ strSrc)       {           for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t)               NULL;           if (*t == &apos;\0&apos;)               return (char *) strSrc;       }       return NULL;   }  </code></pre><h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><pre><code>char * __cdecl strchr (                      constchar * string,                      int ch                       ){   while (*string &amp;&amp; *string != (char)ch)        string++;   if (*string == (char)ch)       return((char *)string);    return(NULL);}</code></pre><p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;strcpy源码：&quot;&gt;&lt;a href=&quot;#strcpy源码：&quot; class=&quot;headerlink&quot; title=&quot;strcpy源码：&quot;&gt;&lt;/a&gt;strcpy源码：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;char *strcpy(cha
+      
+    
+    </summary>
+    
+    
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
+    
+      <category term="程序源码" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+</feed>
