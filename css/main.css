@@ -1090,7 +1090,7 @@ pre .javascript .function {
   bottom: 30px;
 }
 .header {
-  background: url("E:\blog\source\image\dm.jpg");
+  background: url("https://github.com/dmdada/dmdada.github.io/blob/master/image/dm.jpg");
 }
 .header-inner {
   position: relative;
@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #331faa;
+  background: #0e1d4b;
 }
 .links-of-blogroll {
   font-size: 13px;
