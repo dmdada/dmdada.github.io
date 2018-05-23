@@ -16,8 +16,15 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/%E7%AE%97%E6%B3%95/</loc>
+        <lastmod>2018-05-23T12:41:15.357Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/c-c/</loc>
-        <lastmod>2018-05-23T10:11:01.656Z</lastmod>
+        <lastmod>2018-05-23T12:45:39.414Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

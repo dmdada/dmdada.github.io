@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://yoursite.com/2018/05/23/hello-world/</loc>
-        <lastmod>2018-05-23T10:11:01.656Z</lastmod>
+        <lastmod>2018-05-23T12:45:39.414Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/05/23/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</loc>
+        <lastmod>2018-05-23T12:41:15.357Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
