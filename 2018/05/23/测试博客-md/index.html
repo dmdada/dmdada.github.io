@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="测试博客,第一篇博客," />
+  <meta name="keywords" content="c/c++,程序源码,数据结构," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;lt;! – more –&amp;gt; ##函数源码 ###strcpy源码：12345678char *strcpy(char *strDes, const char *strSrc)   &amp;#123;       assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));       char *address = strDes;       wh">
-<meta name="keywords" content="测试博客,第一篇博客">
+<meta name="description" content="strcpy源码：char *strcpy(char *strDes, const char *strSrc)    {        assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));        char *address = strDes;        while ((*strDes ++ = *strSrc ++) != &amp;ap">
+<meta name="keywords" content="c&#x2F;c++,程序源码,数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试博客.md">
+<meta property="og:title" content="函数源码">
 <meta property="og:url" content="http://yoursite.com/2018/05/23/测试博客-md/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="&amp;lt;! – more –&amp;gt; ##函数源码 ###strcpy源码：12345678char *strcpy(char *strDes, const char *strSrc)   &amp;#123;       assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));       char *address = strDes;       wh">
+<meta property="og:description" content="strcpy源码：char *strcpy(char *strDes, const char *strSrc)    {        assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));        char *address = strDes;        while ((*strDes ++ = *strSrc ++) != &amp;ap">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-23T02:13:01.768Z">
+<meta property="og:updated_time" content="2018-05-23T02:39:56.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试博客.md">
-<meta name="twitter:description" content="&amp;lt;! – more –&amp;gt; ##函数源码 ###strcpy源码：12345678char *strcpy(char *strDes, const char *strSrc)   &amp;#123;       assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));       char *address = strDes;       wh">
+<meta name="twitter:title" content="函数源码">
+<meta name="twitter:description" content="strcpy源码：char *strcpy(char *strDes, const char *strSrc)    {        assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));        char *address = strDes;        while ((*strDes ++ = *strSrc ++) != &amp;ap">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>测试博客.md | 邓铭的博客</title>
+  <title>函数源码 | 邓铭的博客</title>
   
 
 
@@ -191,12 +191,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-博主">
           <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于
+            博主
           </a>
         </li>
       
@@ -227,6 +227,16 @@
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
           </a>
         </li>
       
@@ -280,7 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">测试博客.md</h1>
+          <h1 class="post-title" itemprop="name headline">函数源码</h1>
         
 
         <div class="post-meta">
@@ -330,22 +340,73 @@
       
 
       
-        <p>&lt;! – more –&gt;</p>
-<p>##函数源码</p>
-<p>###strcpy源码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">char *strcpy(char *strDes, const char *strSrc)   </span><br><span class="line">&#123;   </span><br><span class="line">    assert((strDes != NULL) &amp;&amp; (strSrc != NULL));   </span><br><span class="line">    char *address = strDes;   </span><br><span class="line">    while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)   </span><br><span class="line">        NULL;   </span><br><span class="line">    return address;</span><br></pre></td></tr></table></figure></p>
-<p>注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</p>
-<p>###strcmp源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int strcmp(const char *s, const char *t)   </span><br><span class="line">&#123;   </span><br><span class="line">    assert(s != NULL &amp;&amp; t != NULL);   </span><br><span class="line">    while (*s &amp;&amp; *t &amp;&amp; *s == *t)   </span><br><span class="line">    &#123;   </span><br><span class="line">        ++ s;   </span><br><span class="line">        ++ t;   </span><br><span class="line">    &#125;   </span><br><span class="line">    return (*s - *t);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>###strcat源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">char *strcat(char *strDes, const char *strSrc)   </span><br><span class="line">&#123;   </span><br><span class="line"></span><br><span class="line"> assert((strDes != NULL) &amp;&amp; (strSrc != NULL));   </span><br><span class="line">    char *address = strDes;   </span><br><span class="line">    while (*strDes != &apos;\0&apos;)   </span><br><span class="line">        ++ strDes;   </span><br><span class="line">    while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)   </span><br><span class="line">        NULL;   </span><br><span class="line">    return address;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改<br>            2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p>
-<p>###strlen源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int strlen(const char *str)   </span><br><span class="line">&#123;   </span><br><span class="line">    assert(str != NULL);   </span><br><span class="line">    int len = 0;   </span><br><span class="line">    while (*str ++ != &apos;\0&apos;)   </span><br><span class="line">        ++ len;   </span><br><span class="line">    return len;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>###strstr源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">char *strstr(const char *strSrc, const char *str)   </span><br><span class="line">&#123;   </span><br><span class="line">    assert(strSrc != NULL &amp;&amp; str != NULL);   </span><br><span class="line">    const char *s = strSrc;   </span><br><span class="line">    const char *t = str;   </span><br><span class="line">    for (; *t != &apos;\0&apos;; ++ strSrc)   </span><br><span class="line">    &#123;   </span><br><span class="line">        for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t)   </span><br><span class="line">            NULL;   </span><br><span class="line"></span><br><span class="line">        if (*t == &apos;\0&apos;)   </span><br><span class="line">            return (char *) strSrc;   </span><br><span class="line">    &#125;   </span><br><span class="line">    return NULL;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>###strchr源码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">char * __cdecl strchr (</span><br><span class="line">                      constchar * string,</span><br><span class="line">                      int ch</span><br><span class="line">                       )</span><br><span class="line">&#123;</span><br><span class="line">   while (*string &amp;&amp; *string != (char)ch)</span><br><span class="line">        string++;</span><br><span class="line"></span><br><span class="line">   if (*string == (char)ch)</span><br><span class="line">       return((char *)string);</span><br><span class="line">    return(NULL);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>
+        <a id="more"></a>
+<h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><pre><code>char *strcpy(char *strDes, const char *strSrc)   
+{   
+    assert((strDes != NULL) &amp;&amp; (strSrc != NULL));   
+    char *address = strDes;   
+    while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)   
+        NULL;   
+    return address;   
+</code></pre><p>注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</p>
+<h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><pre><code>int strcmp(const char *s, const char *t)   
+{   
+    assert(s != NULL &amp;&amp; t != NULL);   
+    while (*s &amp;&amp; *t &amp;&amp; *s == *t)   
+    {   
+        ++ s;   
+        ++ t;   
+    }   
+    return (*s - *t);   
+}  
+</code></pre><h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><pre><code>char *strcat(char *strDes, const char *strSrc)   
+{   
+
+ assert((strDes != NULL) &amp;&amp; (strSrc != NULL));   
+    char *address = strDes;   
+    while (*strDes != &apos;\0&apos;)   
+        ++ strDes;   
+    while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)   
+        NULL;   
+    return address;   
+}  
+</code></pre><p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改<br>            2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p>
+<h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><pre><code>int strlen(const char *str)   
+{   
+    assert(str != NULL);   
+    int len = 0;   
+    while (*str ++ != &apos;\0&apos;)   
+        ++ len;   
+    return len;   
+}  
+</code></pre><h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><pre><code>char *strstr(const char *strSrc, const char *str)   
+{   
+    assert(strSrc != NULL &amp;&amp; str != NULL);   
+    const char *s = strSrc;   
+    const char *t = str;   
+    for (; *t != &apos;\0&apos;; ++ strSrc)   
+    {   
+        for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t)   
+            NULL;   
+
+        if (*t == &apos;\0&apos;)   
+            return (char *) strSrc;   
+    }   
+    return NULL;   
+}  
+</code></pre><h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><pre><code>char * __cdecl strchr (
+                      constchar * string,
+                      int ch
+                       )
+{
+   while (*string &amp;&amp; *string != (char)ch)
+        string++;
+
+   if (*string == (char)ch)
+       return((char *)string);
+    return(NULL);
+}
+</code></pre><p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>
 
       
     </div>
@@ -363,9 +424,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/测试博客/" rel="tag"># 测试博客</a>
+            <a href="/tags/c-c/" rel="tag"># c/c++</a>
           
-            <a href="/tags/第一篇博客/" rel="tag"># 第一篇博客</a>
+            <a href="/tags/程序源码/" rel="tag"># 程序源码</a>
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -378,15 +441,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/22/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/23/hello-world/" rel="prev" title="第一篇博客">
+                第一篇博客 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -438,8 +501,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -467,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -477,6 +549,34 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/dmdada" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:dmdada@foxmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/weibo_dm" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/6526868704/home" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -490,6 +590,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#strcpy源码："><span class="nav-number">1.</span> <span class="nav-text">strcpy源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcmp源码："><span class="nav-number">2.</span> <span class="nav-text">strcmp源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcat源码："><span class="nav-number">3.</span> <span class="nav-text">strcat源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strlen源码："><span class="nav-number">4.</span> <span class="nav-text">strlen源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strstr源码："><span class="nav-number">5.</span> <span class="nav-text">strstr源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strchr源码："><span class="nav-number">6.</span> <span class="nav-text">strchr源码：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
