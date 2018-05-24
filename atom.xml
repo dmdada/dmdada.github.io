@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-24T15:00:32.411Z</updated>
+  <updated>2018-05-24T15:10:56.026Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,19 +18,20 @@
   
   <entry>
     <title>指针常量和常量指针的区别</title>
-    <link href="http://yoursite.com/2018/05/23/%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-    <id>http://yoursite.com/2018/05/23/常量指针和指针常量的区别/</id>
-    <published>2018-05-23T01:19:38.000Z</published>
-    <updated>2018-05-24T15:00:32.411Z</updated>
+    <link href="http://yoursite.com/2018/05/24/%E5%B8%B8%E9%87%8F%E6%8C%87%E9%92%88%E5%92%8C%E6%8C%87%E9%92%88%E5%B8%B8%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>http://yoursite.com/2018/05/24/常量指针和指针常量的区别/</id>
+    <published>2018-05-24T15:09:09.000Z</published>
+    <updated>2018-05-24T15:10:56.026Z</updated>
     
-    <content type="html"><![CDATA[<p>在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。<br>下面开始正题。。。。</p><h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2><p>指针常量：顾名思义它就是一个常量，但是是指针修饰的。<br>格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int * const p //指针常量</span><br></pre></td></tr></table></figure></p><p>在这个例子下定义以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int a，b；</span><br><span class="line">int * const p=&amp;a //指针常量</span><br><span class="line">//那么分为一下两种操作</span><br><span class="line">*p=9;//操作成功</span><br><span class="line">p=&amp;b;//操作错误</span><br></pre></td></tr></table></figure></p><p>因为声明了指针常量，说明指针变量不允许修改。如同次指针指向一个地址该地址不能被修改，但是该地址里的内容可以被修改</p><h2 id="量指针"><a href="#量指针" class="headerlink" title="量指针"></a>量指针</h2><p>常量指针：如果在定义指针变量的时候，数据类型前用const修饰，被定义的指针变量就是指向常量的指针变量，指向常量的指针变量称为常量指针，格式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const int *p = &amp;a; //常量指针</span><br></pre></td></tr></table></figure></p><p>在这个例子下定义以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int a，b；</span><br><span class="line"> const int *p=&amp;a //常量指针</span><br><span class="line">//那么分为一下两种操作</span><br><span class="line">*p=9;//操作错误</span><br><span class="line">p=&amp;b;//操作成功</span><br></pre></td></tr></table></figure></p><p>因为常量指针本质是指针，并且这个指针是一个指向常量的指针，指针指向的变量的值不可通过该指针修改，但是指针指向的值可以改变。</p><h2 id="附加题"><a href="#附加题" class="headerlink" title="附加题"></a>附加题</h2><p>指向常量的指针常量该怎么写？<br>答案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const int * const b = &amp;a;//指向常量的指针常量</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><p>在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。<br>下面开始正题。。。。</p><h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2><p>指针常量：顾名思义它就是一个常量，但是是指针修饰的。<br>格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int * const p //指针常量</span><br></pre></td></tr></table></figure></p><p>在这个例子下定义以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int a，b；</span><br><span class="line">int * const p=&amp;a //指针常量</span><br><span class="line">//那么分为一下两种操作</span><br><span class="line">*p=9;//操作成功</span><br><span class="line">p=&amp;b;//操作错误</span><br></pre></td></tr></table></figure></p><p>因为声明了指针常量，说明指针变量不允许修改。如同次指针指向一个地址该地址不能被修改，但是该地址里的内容可以被修改</p><h2 id="量指针"><a href="#量指针" class="headerlink" title="量指针"></a>量指针</h2><p>常量指针：如果在定义指针变量的时候，数据类型前用const修饰，被定义的指针变量就是指向常量的指针变量，指向常量的指针变量称为常量指针，格式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const int *p = &amp;a; //常量指针</span><br></pre></td></tr></table></figure></p><p>在这个例子下定义以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int a，b；</span><br><span class="line"> const int *p=&amp;a //常量指针</span><br><span class="line">//那么分为一下两种操作</span><br><span class="line">*p=9;//操作错误</span><br><span class="line">p=&amp;b;//操作成功</span><br></pre></td></tr></table></figure></p><p>因为常量指针本质是指针，并且这个指针是一个指向常量的指针，指针指向的变量的值不可通过该指针修改，但是指针指向的值可以改变。</p><h2 id="附加题"><a href="#附加题" class="headerlink" title="附加题"></a>附加题</h2><p>指向常量的指针常量该怎么写？<br>答案：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const int * const b = &amp;a;//指向常量的指针常量</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。&lt;br&gt;下面开始正题。。。。&lt;/p&gt;
-&lt;h2 id=&quot;指针常量&quot;&gt;&lt;a href=&quot;#指针常量&quot; class=&quot;headerlink&quot; t
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。&lt;br&gt;下面开始正题。。。。&lt;/p&gt;
+&lt;h2 id=&quot;指针常量&quot;&gt;&lt;a href=&quot;#指针常量&quot; cl
       
     
     </summary>
