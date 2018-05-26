@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。 #include&amp;lt;stdio.h&amp;gt; void main()   {">
+<meta name="description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=! 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。 #include&amp;lt;stdio.h&amp;gt; void main()   {">
 <meta name="keywords" content="-面试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指针数组和数组指针.md">
+<meta property="og:title" content="指针数组和数组指针的区别">
 <meta property="og:url" content="http://yoursite.com/2018/05/26/指针数组和数组指针-md/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。 #include&amp;lt;stdio.h&amp;gt; void main()   {">
+<meta property="og:description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=! 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。 #include&amp;lt;stdio.h&amp;gt; void main()   {">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-26T15:45:48.848Z">
+<meta property="og:updated_time" content="2018-05-26T15:48:21.785Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="指针数组和数组指针.md">
-<meta name="twitter:description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。 #include&amp;lt;stdio.h&amp;gt; void main()   {">
+<meta name="twitter:title" content="指针数组和数组指针的区别">
+<meta name="twitter:description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=! 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。 #include&amp;lt;stdio.h&amp;gt; void main()   {">
 
 
 
@@ -128,7 +128,7 @@
 
 
 
-  <title>指针数组和数组指针.md | 邓铭的博客</title>
+  <title>指针数组和数组指针的区别 | 邓铭的博客</title>
   
 
 
@@ -307,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">指针数组和数组指针.md</h1>
+          <h1 class="post-title" itemprop="name headline">指针数组和数组指针的区别</h1>
         
 
         <div class="post-meta">
@@ -389,7 +389,7 @@
 
       
         <a id="more"></a>
-<p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针</p>
+<p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=!</p>
 <h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>含义：指向数组的的指针<br>(1)数组在内存中的表示<br>创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。</p>
 <pre><code>#include&lt;stdio.h&gt;
 void main()  
@@ -446,11 +446,11 @@ void main()
   <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
-  <p><span>本文标题:</span><a href="/2018/05/26/指针数组和数组指针-md/">指针数组和数组指针.md</a></p>
+  <p><span>本文标题:</span><a href="/2018/05/26/指针数组和数组指针-md/">指针数组和数组指针的区别</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 邓铭 的个人博客">邓铭</a></p>
   <p><span>发布时间:</span>2018年05月26日 - 23:05</p>
   <p><span>最后更新:</span>2018年05月26日 - 23:05</p>
-  <p><span>原始链接:</span><a href="/2018/05/26/指针数组和数组指针-md/" title="指针数组和数组指针.md">http://yoursite.com/2018/05/26/指针数组和数组指针-md/</a>
+  <p><span>原始链接:</span><a href="/2018/05/26/指针数组和数组指针-md/" title="指针数组和数组指针的区别">http://yoursite.com/2018/05/26/指针数组和数组指针-md/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/05/26/指针数组和数组指针-md/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  

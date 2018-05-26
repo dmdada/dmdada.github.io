@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-26T15:45:48.848Z</updated>
+  <updated>2018-05-26T15:48:21.785Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,21 +17,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>指针数组和数组指针.md</title>
+    <title>指针数组和数组指针的区别</title>
     <link href="http://yoursite.com/2018/05/26/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-md/"/>
     <id>http://yoursite.com/2018/05/26/指针数组和数组指针-md/</id>
     <published>2018-05-26T15:36:51.000Z</published>
-    <updated>2018-05-26T15:45:48.848Z</updated>
+    <updated>2018-05-26T15:48:21.785Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针</p><h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>含义：指向数组的的指针<br>(1)数组在内存中的表示<br>创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。</p><pre><code>#include&lt;stdio.h&gt;void main()  {    int a[2][2]={1,2,3,4};//这是一个2*2的二维数组      int (*p)[2];//数组指针      p=a;//令p指向数组a  }</code></pre><p>这里p是一个指向数组的指针。</p><h4 id="让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？"><a href="#让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？" class="headerlink" title="让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？"></a>让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？</h4><p>答案：<br>a是一个数组名，类型是指向一维数组的指针，不是变量，a的值是指针常量，即不能有a++或者a=p这些操作。a指向这块连续空间的首地址，值是&amp;a[0][0]。</p><p>a[0]是一维数组名，类型是指向整型的指针，值是&amp;a[0][0]，这个值是一个常量。</p><p>a[1]是一维数组名，类型是指向整型的指针，值是&amp;a[1][0]，这个值是一个常量。</p><p>p是一个数组指针变量，指向一维数组的指针变量，值是&amp;a[0][0]。可以执行p++;p=a等操作。<br>a+1表示指向下一行元素，也可以理解为指向下一个一维数组。</p><p>(a+1)是取出第一行的首地址。</p><p>a[0]+1是指向第0行第1个元素，也可以理解为指向一维数组a[0]的第一个元素。</p><p>p+1同a+1</p><p>(p+1)同_(a+1)</p><p>虽然a跟a[0]值是一样，但类型不一样，表示的意义不一样。通过分析就不难理解为什么_(*(a+i)+j)和a[i][j]等效了。</p><h4 id="数组名与数组指针变量的区别"><a href="#数组名与数组指针变量的区别" class="headerlink" title="数组名与数组指针变量的区别"></a>数组名与数组指针变量的区别</h4><p>区别：数组名是指针，类型是指向元素类型的指针，但值是指针常量，声明数组时编译器会为声明所指定的元素数量保留内存空间。数组指针是指向数组的指针，声明指针变量时编译器只为指针本身保留内存空间。</p><h3 id="指针数组（存放指针的数组）"><a href="#指针数组（存放指针的数组）" class="headerlink" title="指针数组（存放指针的数组）"></a>指针数组（存放指针的数组）</h3><p>指针数组：一个存放int类型的数组称为整型数组，那么存放指针的数组就叫指针数组。</p><pre><code>#include&lt;stdio.h&gt;  void main()  {      int i=1,j=2;//p先跟[]结合，然后再跟*结合      int *p[2];//指针数组,存放指针的数组      p[0]=&amp;i;      p[1]=&amp;j;      printf(&quot;%d&quot;,sizeof(p));      }</code></pre><p>此例数组p就两个元素，p[0]是指向i的指针，p[1]是指向j的指针。这两个指针都是int型指针，所以p是存放int型指针的数组。sizeof(p)返回数组占用的总空间，所以程序输出是8</p><h4 id="常用举例"><a href="#常用举例" class="headerlink" title="常用举例"></a>常用举例</h4><p>字符排序，可以用指针数组指向不字符串，排序时改变指针指向就避免了大量文本数据的移动。</p>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=!</p><h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>含义：指向数组的的指针<br>(1)数组在内存中的表示<br>创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。</p><pre><code>#include&lt;stdio.h&gt;void main()  {    int a[2][2]={1,2,3,4};//这是一个2*2的二维数组      int (*p)[2];//数组指针      p=a;//令p指向数组a  }</code></pre><p>这里p是一个指向数组的指针。</p><h4 id="让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？"><a href="#让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？" class="headerlink" title="让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？"></a>让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？</h4><p>答案：<br>a是一个数组名，类型是指向一维数组的指针，不是变量，a的值是指针常量，即不能有a++或者a=p这些操作。a指向这块连续空间的首地址，值是&amp;a[0][0]。</p><p>a[0]是一维数组名，类型是指向整型的指针，值是&amp;a[0][0]，这个值是一个常量。</p><p>a[1]是一维数组名，类型是指向整型的指针，值是&amp;a[1][0]，这个值是一个常量。</p><p>p是一个数组指针变量，指向一维数组的指针变量，值是&amp;a[0][0]。可以执行p++;p=a等操作。<br>a+1表示指向下一行元素，也可以理解为指向下一个一维数组。</p><p>(a+1)是取出第一行的首地址。</p><p>a[0]+1是指向第0行第1个元素，也可以理解为指向一维数组a[0]的第一个元素。</p><p>p+1同a+1</p><p>(p+1)同_(a+1)</p><p>虽然a跟a[0]值是一样，但类型不一样，表示的意义不一样。通过分析就不难理解为什么_(*(a+i)+j)和a[i][j]等效了。</p><h4 id="数组名与数组指针变量的区别"><a href="#数组名与数组指针变量的区别" class="headerlink" title="数组名与数组指针变量的区别"></a>数组名与数组指针变量的区别</h4><p>区别：数组名是指针，类型是指向元素类型的指针，但值是指针常量，声明数组时编译器会为声明所指定的元素数量保留内存空间。数组指针是指向数组的指针，声明指针变量时编译器只为指针本身保留内存空间。</p><h3 id="指针数组（存放指针的数组）"><a href="#指针数组（存放指针的数组）" class="headerlink" title="指针数组（存放指针的数组）"></a>指针数组（存放指针的数组）</h3><p>指针数组：一个存放int类型的数组称为整型数组，那么存放指针的数组就叫指针数组。</p><pre><code>#include&lt;stdio.h&gt;  void main()  {      int i=1,j=2;//p先跟[]结合，然后再跟*结合      int *p[2];//指针数组,存放指针的数组      p[0]=&amp;i;      p[1]=&amp;j;      printf(&quot;%d&quot;,sizeof(p));      }</code></pre><p>此例数组p就两个元素，p[0]是指向i的指针，p[1]是指向j的指针。这两个指针都是int型指针，所以p是存放int型指针的数组。sizeof(p)返回数组占用的总空间，所以程序输出是8</p><h4 id="常用举例"><a href="#常用举例" class="headerlink" title="常用举例"></a>常用举例</h4><p>字符排序，可以用指针数组指向不字符串，排序时改变指针指向就避免了大量文本数据的移动。</p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针&lt;/p&gt;
-&lt;h3 id=&quot;数组指针&quot;&gt;&lt;a href=&quot;#数组指针&quot; class=&quot;headerlink&quot; title=&quot;数组指针&quot;&gt;&lt;/a&gt;数组指针&lt;/
+&lt;p&gt;昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=!&lt;/p&gt;
+&lt;h3 id=&quot;数组指针&quot;&gt;&lt;a href=&quot;#数组指针&quot; class=&quot;headerlink&quot; title=&quot;数组指针&quot;&gt;&lt;/a&gt;数组
       
     
     </summary>
@@ -67,30 +67,6 @@
   </entry>
   
   <entry>
-    <title>第一篇博客</title>
-    <link href="http://yoursite.com/2018/05/23/hello-world/"/>
-    <id>http://yoursite.com/2018/05/23/hello-world/</id>
-    <published>2018-05-23T01:19:38.000Z</published>
-    <updated>2018-05-23T12:45:39.414Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客.<br>日经过不懈的努力终于搭建好了，我非常开心！！</p><pre><code>2018.5.23   邓铭</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;测试博客&quot;&gt;&lt;a href=&quot;#测试博客&quot; class=&quot;headerlink&quot; title=&quot;测试博客&quot;&gt;&lt;/a&gt;测试博客&lt;/h2&gt;&lt;h3 id=&quot;这是一篇测试博客&quot;&gt;&lt;a href=&quot;#这是一篇测试博客&quot; class=&quot;he
-      
-    
-    </summary>
-    
-    
-      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
-    
-  </entry>
-  
-  <entry>
     <title>快速排序</title>
     <link href="http://yoursite.com/2018/05/23/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
     <id>http://yoursite.com/2018/05/23/快速排序/</id>
@@ -111,6 +87,30 @@
     
     
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇博客</title>
+    <link href="http://yoursite.com/2018/05/23/hello-world/"/>
+    <id>http://yoursite.com/2018/05/23/hello-world/</id>
+    <published>2018-05-23T01:19:38.000Z</published>
+    <updated>2018-05-23T12:45:39.414Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客.<br>日经过不懈的努力终于搭建好了，我非常开心！！</p><pre><code>2018.5.23   邓铭</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;测试博客&quot;&gt;&lt;a href=&quot;#测试博客&quot; class=&quot;headerlink&quot; title=&quot;测试博客&quot;&gt;&lt;/a&gt;测试博客&lt;/h2&gt;&lt;h3 id=&quot;这是一篇测试博客&quot;&gt;&lt;a href=&quot;#这是一篇测试博客&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
     
   </entry>
   
