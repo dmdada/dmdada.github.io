@@ -84,7 +84,7 @@
 <meta name="description" content="奋斗的程序猿">
 <meta property="og:type" content="website">
 <meta property="og:title" content="邓铭的博客">
-<meta property="og:url" content="http://yoursite.com/tags/c-c/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/C-C/index.html">
 <meta property="og:site_name" content="邓铭的博客">
 <meta property="og:description" content="奋斗的程序猿">
 <meta property="og:locale" content="zh-Hans">
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/c-c/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/C-C/"/>
 
 
 
 
 
-  <title>标签: c/c++ | 邓铭的博客</title>
+  <title>标签: C/C++ | 邓铭的博客</title>
   
 
 
@@ -281,7 +281,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>c/c++<small>标签</small>
+        <h1>C/C++<small>标签</small>
         </h1>
       </div>
 
@@ -293,37 +293,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/05/23/hello-world/" itemprop="url">
+            <a class="post-title-link" href="/2018/05/28/C++输入流/" itemprop="url">
               
-                <span itemprop="name">第一篇博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-23T09:19:38+08:00"
-              content="2018-05-23" >
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/23/测试博客-md/" itemprop="url">
-              
-                <span itemprop="name">函数源码</span>
+                <span itemprop="name">C++输入流</span>
               
             </a>
         
@@ -331,9 +303,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-23T09:19:38+08:00"
-              content="2018-05-23" >
-          05-23
+              datetime="2018-05-28T22:45:10+08:00"
+              content="2018-05-28" >
+          05-28
         </time>
       </div>
 
@@ -984,6 +956,48 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
       e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>Propagation();
       if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
       } else {
