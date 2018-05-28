@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-28T14:49:44.705Z</updated>
+  <updated>2018-05-28T14:51:40.836Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>C++输入流.md</title>
+    <title>C++输入流</title>
     <link href="http://yoursite.com/2018/05/28/C++%E8%BE%93%E5%85%A5%E6%B5%81/"/>
     <id>http://yoursite.com/2018/05/28/C++输入流/</id>
     <published>2018-05-28T14:45:10.000Z</published>
-    <updated>2018-05-28T14:49:44.705Z</updated>
+    <updated>2018-05-28T14:51:40.836Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><h3 id="CIN"><a href="#CIN" class="headerlink" title="CIN"></a>CIN</h3><p>cin是C++编程语言中的标准输入流对象，即istream类的对象。cin主要用于从标准输入读取数据，这里的标准输入，指的是终端的键盘。此外，cout是流的对象，即ostream类的对象，cerr是标准错误输出流的对象，也是ostream 类的对象。这里的标准输出指的是终端键盘，标准错误输出指的是终端的屏幕。<br>在理解cin功能时，不得不提标准输入缓冲区。当我们从键盘输入字符串的时候需要敲一下回车键才能够将这个字符串送入到缓冲区中，那么敲入的这个回车键(\r)会被转换为一个换行符\n，这个换行符\n也会被存储在cin的缓冲区中并且被当成一个字符来计算！比如我们在键盘上敲下了123456这个字符串，然后敲一下回车键（\r）将这个字符串送入了缓冲区中，那么此时缓冲区中的字节个数是7 ，而不是6。<br>cin读取数据也是从缓冲区中获取数据，缓冲区为空时，cin的成员函数会阻塞等待数据的到来，一旦缓冲区中有数据，就触发cin的成员函数去读取数据。<br>使用cin从标准输入读取数据时，通常用到的方法有cin&gt;&gt;，cin.get，cin.getline</p><p>cin&gt;&gt;&lt;变量1&gt;[&gt;&gt;&lt;变量2&gt;&gt;&gt;…&gt;&gt;&lt;变量n&gt;];<br>1<br>其中“&gt;&gt;”称为提取运算符，用于读取用户输入的数据，赋给变量。在cin之后“&gt;&gt;&lt;变量&gt;”可重复多次。输入多个数据时数据之间要用空格、TAB、或者ENTER键隔开，系统会自动跳过空格和回车符，将输入的数据赋给各提取运算符的变量。回车符有两个作用一个是分隔符另一个是刷新缓冲区，并通知cin已经输入一行数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a;</span><br><span class="line">    int b;</span><br><span class="line">    float c;</span><br><span class="line">    string</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;b&lt;&lt;&quot; &quot;&lt;&lt;c&lt;&lt;&quot; &quot;&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>但如果提取运算符的&lt;&lt;后面的变量是字符型，则必须输入字符。单当要获取输入的空格或ENTER键，直接用”&lt;&lt;”不能实现<br>，必须借助于cin.get函数,其一般形式为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cin.get([&lt;字符型变量])</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a;</span><br><span class="line">    char b;</span><br><span class="line">    a=cin.get();</span><br><span class="line">    cin.get(b);</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>输入一个空格,一个Enter:<br>这里写图片描述<br>注意：<br>（1）从结果可以看出，cin.get()从输入缓冲区读取单个字符时不忽略分隔符，直接将其读取，就出现了如上情况，将换行符读入变量b，输出时换行两次，一次是变量b，一次是endl。<br>（2）cin.get()的返回值是int类型，成功：读取字符的ASCII码值，遇到文件结束符时，返回EOF，即-1，Windows下标准输入输入文件结束符为Ctrl+z，Linux为Ctrl+d。cin.get(char var)如果成功返回的是cin对象，因此可以支持链式操作，如cin.get(b).get(c)</p><p>gets读取一行<br>gets是C中的库函数，在&lt; stdio.h&gt;申明，从标准输入设备读字符串，可以无限读取，不会判断上限，以回车结束或者EOF时停止读取，所以程序员应该确保buffer的空间足够大，以便在执行读操作时不发生溢出。</p><p>函数原型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">char *gets( char *buffer );</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char array[20]=&#123;NULL&#125;;</span><br><span class="line">    gets(array);</span><br><span class="line">    cout&lt;&lt;array&lt;&lt;endl;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>由于此函数是C的库函数,所以不建议使用,在C++中使用会报警告.</p>]]></content>
     
@@ -115,34 +115,6 @@
   </entry>
   
   <entry>
-    <title>函数源码</title>
-    <link href="http://yoursite.com/2018/05/23/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md/"/>
-    <id>http://yoursite.com/2018/05/23/测试博客-md/</id>
-    <published>2018-05-23T01:19:38.000Z</published>
-    <updated>2018-05-23T06:26:38.136Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><pre><code>char *strcpy(char *strDes, const char *strSrc)   {       assert((strDes != NULL) &amp;&amp; (strSrc != NULL));       char *address = strDes;       while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)           NULL;       return address;   </code></pre><p>注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</p><h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><pre><code>int strcmp(const char *s, const char *t)   {       assert(s != NULL &amp;&amp; t != NULL);       while (*s &amp;&amp; *t &amp;&amp; *s == *t)       {           ++ s;           ++ t;       }       return (*s - *t);   }  </code></pre><h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><pre><code>char *strcat(char *strDes, const char *strSrc)   {    assert((strDes != NULL) &amp;&amp; (strSrc != NULL));       char *address = strDes;       while (*strDes != &apos;\0&apos;)           ++ strDes;       while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)           NULL;       return address;   }  </code></pre><p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改<br>            2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p><h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><pre><code>int strlen(const char *str)   {       assert(str != NULL);       int len = 0;       while (*str ++ != &apos;\0&apos;)           ++ len;       return len;   }  </code></pre><h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><pre><code>char *strstr(const char *strSrc, const char *str)   {       assert(strSrc != NULL &amp;&amp; str != NULL);       const char *s = strSrc;       const char *t = str;       for (; *t != &apos;\0&apos;; ++ strSrc)       {           for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t)               NULL;           if (*t == &apos;\0&apos;)               return (char *) strSrc;       }       return NULL;   }  </code></pre><h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><pre><code>char * __cdecl strchr (                      constchar * string,                      int ch                       ){   while (*string &amp;&amp; *string != (char)ch)        string++;   if (*string == (char)ch)       return((char *)string);    return(NULL);}</code></pre><p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;strcpy源码：&quot;&gt;&lt;a href=&quot;#strcpy源码：&quot; class=&quot;headerlink&quot; title=&quot;strcpy源码：&quot;&gt;&lt;/a&gt;strcpy源码：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;char *strcpy(cha
-      
-    
-    </summary>
-    
-    
-      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
-    
-      <category term="程序源码" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/"/>
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
     <title>第一篇博客</title>
     <link href="http://yoursite.com/2018/05/23/hello-world/"/>
     <id>http://yoursite.com/2018/05/23/hello-world/</id>
@@ -187,6 +159,34 @@
     
     
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>函数源码</title>
+    <link href="http://yoursite.com/2018/05/23/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md/"/>
+    <id>http://yoursite.com/2018/05/23/测试博客-md/</id>
+    <published>2018-05-23T01:19:38.000Z</published>
+    <updated>2018-05-23T06:26:38.136Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><pre><code>char *strcpy(char *strDes, const char *strSrc)   {       assert((strDes != NULL) &amp;&amp; (strSrc != NULL));       char *address = strDes;       while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)           NULL;       return address;   </code></pre><p>注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</p><h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><pre><code>int strcmp(const char *s, const char *t)   {       assert(s != NULL &amp;&amp; t != NULL);       while (*s &amp;&amp; *t &amp;&amp; *s == *t)       {           ++ s;           ++ t;       }       return (*s - *t);   }  </code></pre><h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><pre><code>char *strcat(char *strDes, const char *strSrc)   {    assert((strDes != NULL) &amp;&amp; (strSrc != NULL));       char *address = strDes;       while (*strDes != &apos;\0&apos;)           ++ strDes;       while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)           NULL;       return address;   }  </code></pre><p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改<br>            2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p><h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><pre><code>int strlen(const char *str)   {       assert(str != NULL);       int len = 0;       while (*str ++ != &apos;\0&apos;)           ++ len;       return len;   }  </code></pre><h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><pre><code>char *strstr(const char *strSrc, const char *str)   {       assert(strSrc != NULL &amp;&amp; str != NULL);       const char *s = strSrc;       const char *t = str;       for (; *t != &apos;\0&apos;; ++ strSrc)       {           for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t)               NULL;           if (*t == &apos;\0&apos;)               return (char *) strSrc;       }       return NULL;   }  </code></pre><h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><pre><code>char * __cdecl strchr (                      constchar * string,                      int ch                       ){   while (*string &amp;&amp; *string != (char)ch)        string++;   if (*string == (char)ch)       return((char *)string);    return(NULL);}</code></pre><p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h3 id=&quot;strcpy源码：&quot;&gt;&lt;a href=&quot;#strcpy源码：&quot; class=&quot;headerlink&quot; title=&quot;strcpy源码：&quot;&gt;&lt;/a&gt;strcpy源码：&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;char *strcpy(cha
+      
+    
+    </summary>
+    
+    
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
+    
+      <category term="程序源码" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/"/>
+    
+      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
