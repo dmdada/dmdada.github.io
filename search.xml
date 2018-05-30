@@ -5,7 +5,7 @@
     <url>%2F2018%2F05%2F30%2F%E7%BC%96%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE%2F</url>
     <content type="text"><![CDATA[第一题有一组数，对于其中任意两个数组，若前面一个大于后面一个数字，则这两个数字组成一个逆序对。请设计一个高效的算法，计算给定数组中的逆序对个数。 给定一个int数组A和它的大小n，请返回A中的逆序对个数。保证n小于等于5000。测试样例：[1,2,3,4,5,6,7,0],8返回：7 答案如下： 123456789101112131415161718192021/*冒泡排序时做了多少次交换就有多少个逆序*/class AntiOrder &#123;public: int count(vector&lt;int&gt; A, int n) &#123; // write code here int count = 0; int i,j; if(n &lt; 2) return n; for(i=0;i&lt;n;i++)&#123; for(j=0;j&lt;n-i-1;j++)&#123; if(A[j]&gt;A[j+1])&#123; swap(A[j],A[j+1]); count++; &#125; &#125; &#125; return count; &#125;&#125;; 第二题：写出一个程序，接受一个字符串，然后输出该字符串反转后的字符串。例如输入：1abcd 输出1dcba 答案如下： 12345678910//最简洁#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int main()&#123; string str; cin &gt;&gt; str; for(int i = str.size()-1; i &gt;=0;i--) cout &lt;&lt; str[i];&#125; 方法二：利用栈 12345678910111213141516171819//这样的输出可以利用栈后进先出的结构#include&lt;iostream&gt;#include&lt;stack&gt;using namespace std;int main(void)&#123; char ch; stack&lt;char&gt; ch_stack; while(cin&gt;&gt;ch) &#123; ch_stack.push(ch); &#125; while(!ch_stack.empty()) &#123; cout&lt;&lt;ch_stack.top(); ch_stack.pop(); &#125; return 0;&#125; 方法三： 12345678910111213#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;algorithm&gt;using namespace std;int main()&#123; string str; cin &gt;&gt; str; reverse(str.begin(), str.end()); cout &lt;&lt; str; return 0;&#125;]]></content>
       <tags>
-        <tag>-面试题</tag>
+        <tag>-面试题 -c/c++</tag>
       </tags>
   </entry>
   <entry>
