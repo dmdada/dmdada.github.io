@@ -23,36 +23,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
+        <lastmod>2018-05-31T04:35:23.501Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/c-c/</loc>
-        <lastmod>2018-05-23T12:45:39.414Z</lastmod>
+        <lastmod>2018-05-31T04:35:23.507Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/</loc>
-        <lastmod>2018-05-26T15:48:21.785Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/</loc>
-        <lastmod>2018-05-27T14:07:20.873Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/C-C/</loc>
-        <lastmod>2018-05-29T15:12:56.277Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98-c-c/</loc>
-        <lastmod>2018-05-30T15:02:52.480Z</lastmod>
+        <lastmod>2018-05-31T04:35:23.515Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

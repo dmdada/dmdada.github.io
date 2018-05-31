@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-05-30T15:02:52.480Z</updated>
+  <updated>2018-05-31T04:35:23.501Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/05/30/%E7%BC%96%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/"/>
     <id>http://yoursite.com/2018/05/30/编程第一课/</id>
     <published>2018-05-30T14:51:06.000Z</published>
-    <updated>2018-05-30T15:02:52.480Z</updated>
+    <updated>2018-05-31T04:35:23.501Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><h3 id="第一题"><a href="#第一题" class="headerlink" title="第一题"></a>第一题</h3><p>有一组数，对于其中任意两个数组，若前面一个大于后面一个数字，则这两个数字组成一个逆序对。请设计一个高效的算法，计算给定数组中的逆序对个数。</p><p>给定一个int数组A和它的大小n，请返回A中的逆序对个数。保证n小于等于5000。<br>测试样例：<br>[1,2,3,4,5,6,7,0],8<br>返回：7</p><p>答案如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">冒泡排序时做了多少次交换就有多少个逆序</span><br><span class="line">*/</span><br><span class="line">class AntiOrder &#123;</span><br><span class="line">public:</span><br><span class="line">    int count(vector&lt;int&gt; A, int n) &#123;</span><br><span class="line">        // write code here</span><br><span class="line">        int count = 0;</span><br><span class="line">        int i,j;</span><br><span class="line">        if(n &lt; 2) return n;</span><br><span class="line">        for(i=0;i&lt;n;i++)&#123;</span><br><span class="line">            for(j=0;j&lt;n-i-1;j++)&#123;</span><br><span class="line">                if(A[j]&gt;A[j+1])&#123;</span><br><span class="line">                    swap(A[j],A[j+1]);</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><h3 id="第二题："><a href="#第二题：" class="headerlink" title="第二题："></a>第二题：</h3><p>写出一个程序，接受一个字符串，然后输出该字符串反转后的字符串。<br>例如输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abcd</span><br></pre></td></tr></table></figure></p><p>输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dcba</span><br></pre></td></tr></table></figure></p><p>答案如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//最简洁</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">    string str;</span><br><span class="line">    cin &gt;&gt; str;</span><br><span class="line">    for(int i = str.size()-1; i &gt;=0;i--)</span><br><span class="line">        cout &lt;&lt; str[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>方法二：利用栈</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//这样的输出可以利用栈后进先出的结构</span><br><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stack&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    char ch;</span><br><span class="line">    stack&lt;char&gt; ch_stack;</span><br><span class="line">    while(cin&gt;&gt;ch)</span><br><span class="line">    &#123;</span><br><span class="line">      ch_stack.push(ch);</span><br><span class="line">    &#125;</span><br><span class="line">    while(!ch_stack.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        cout&lt;&lt;ch_stack.top();</span><br><span class="line">        ch_stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>方法三：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    string str;</span><br><span class="line">    cin &gt;&gt; str;</span><br><span class="line">    reverse(str.begin(), str.end());</span><br><span class="line">    cout &lt;&lt; str;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -36,7 +36,9 @@
     </summary>
     
     
-      <category term="-面试题 -c/c++" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98-c-c/"/>
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
+    
+      <category term="面试题" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
     
   </entry>
   
@@ -45,7 +47,7 @@
     <link href="http://yoursite.com/2018/05/29/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2018/05/29/文件操作/</id>
     <published>2018-05-29T14:57:38.000Z</published>
-    <updated>2018-05-29T15:12:56.277Z</updated>
+    <updated>2018-05-31T04:35:23.507Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><h3 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h3><p>C++ 通过以下几个类支持文件的输入输出：<br>ofstream: 写操作（输出）的文件类 (由ostream引申而来)<br>ifstream: 读操作（输入）的文件类(由istream引申而来)<br>fstream: 可同时读写操作的文件类 (由iostream引申而来)</p><h4 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h4><p>1.建立联系<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ofstream examplefile(&quot;example.txt&quot;);//声明类example并与创建的文件example.txt联系</span><br></pre></td></tr></table></figure></p><p>其中examplefile是ofstream的对象，对象（examplefile）第一个操作通常与一个真正的文件（example.txt）联系起来，改文件由一个流对象（该例子为examplefile）来表示（这些类的一个实例），对改对象进行的操作就是对该对象联系的文件操作。<br>2.判断文件是否打开</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">examplefile.is_open()//检查一个文件（examplefile对象所联系的文件）是否被顺利打开</span><br></pre></td></tr></table></figure><p>3.向文件中写入数据，并关闭文件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">examplefile &lt;&lt; &quot;This is a line.\n&quot;;</span><br><span class="line">examplefile &lt;&lt; &quot;This is another line.\n&quot;;</span><br><span class="line">examplefile.close();</span><br></pre></td></tr></table></figure><p>ps:为防止流对象被销毁时还联系着打开的文件，析构函数一般将会自动调用关闭函数close</p><p>代码示例</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//建立一个文件并写入内容  </span><br><span class="line">#include &lt;fstream&gt;  </span><br><span class="line">using namespace std;  </span><br><span class="line"></span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    ofstream examplefile(&quot;example.txt&quot;);  </span><br><span class="line">    if (examplefile.is_open())  </span><br><span class="line">    &#123;  </span><br><span class="line">        examplefile &lt;&lt; &quot;This is a line.\n&quot;;  </span><br><span class="line">        examplefile &lt;&lt; &quot;This is another line.\n&quot;;  </span><br><span class="line">        examplefile.close();  </span><br><span class="line">    &#125;  </span><br><span class="line">    return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>结果：</p><p><img src="https://img-blog.csdn.net/20180529223841401?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="https://img-blog.csdn.net/20180529223857452?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">examplefile.eof();//eof ，它是ifstream 从类 ios 中继承过来的，当到达文件末尾时返回true</span><br></pre></td></tr></table></figure><p>文件读取：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">examplefile.getline(buffer,100);</span><br><span class="line">//getline，读取一行字符，直到遇见换行符。getline具有返回值：成功：返回读取的字节数  失败：返回-1。</span><br></pre></td></tr></table></figure><p>代码示例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//对文件的读取示例  </span><br><span class="line">#include &lt;iostream&gt;  </span><br><span class="line">#include &lt;fstream&gt;  </span><br><span class="line">#include &lt;cstdlib&gt;  </span><br><span class="line">using namespace std;  </span><br><span class="line">int main ()  </span><br><span class="line">&#123;  </span><br><span class="line">char buffer[256];                       //定义一个数组，用来存放字符  </span><br><span class="line">ifstream examplefile(&quot;example.txt&quot;);    //声明一个对象与要读的文件联系  </span><br><span class="line">if (! examplefile.is_open())            //判断是否打开</span><br><span class="line">&#123;  </span><br><span class="line">cout &lt;&lt; &quot;Error opening file&quot;; exit (1);  </span><br><span class="line">&#125;  </span><br><span class="line">while (!examplefile.eof())  </span><br><span class="line">&#123;  </span><br><span class="line">examplefile.getline(buffer,100);  </span><br><span class="line">cout&lt;&lt;buffer&lt;&lt; endl;  </span><br><span class="line">&#125;  </span><br><span class="line">return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdn.net/20180529224253735?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p><h3 id="read和write函数"><a href="#read和write函数" class="headerlink" title="read和write函数"></a>read和write函数</h3><p>分别为istream和ostream的成员函数，前者被ifstream所继承，后者被ostream所继承。</p><p>代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;fstream&gt;  </span><br><span class="line">#include &lt;iostream&gt;  </span><br><span class="line">using namespace std;  </span><br><span class="line">int main ()  </span><br><span class="line">&#123;  </span><br><span class="line">    const char * filename = &quot;example.txt&quot;;  </span><br><span class="line">    char * buffer;//buffer是一块内存地址，用来存储或读取数据  </span><br><span class="line">    long size;//size 是一个整数值，表示要从缓存（buffer）中读出或写入的字符数  </span><br><span class="line">    ifstream file(filename, ios::in|ios::binary|ios::ate);  </span><br><span class="line">    size = file.tellg();  </span><br><span class="line">    file.seekg(0, ios::beg);  </span><br><span class="line">    buffer = new char [size];  </span><br><span class="line">    file.read(buffer, size);  </span><br><span class="line">    file.close();  </span><br><span class="line">    cout &lt;&lt;&quot;the complete file is in a buffer&quot;;  </span><br><span class="line">    delete[] buffer;  </span><br><span class="line">    return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>具体read，write可参照CSDN专门有一篇博客专门介绍。</p>]]></content>
     
@@ -60,7 +62,7 @@
     </summary>
     
     
-      <category term="C/C++" scheme="http://yoursite.com/tags/C-C/"/>
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
     
   </entry>
   
@@ -69,7 +71,7 @@
     <link href="http://yoursite.com/2018/05/28/C++%E8%BE%93%E5%85%A5%E6%B5%81/"/>
     <id>http://yoursite.com/2018/05/28/C++输入流/</id>
     <published>2018-05-28T14:45:10.000Z</published>
-    <updated>2018-05-28T14:59:11.352Z</updated>
+    <updated>2018-05-31T04:33:31.434Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><h3 id="CIN"><a href="#CIN" class="headerlink" title="CIN"></a>CIN</h3><p>cin是C++编程语言中的标准输入流对象，即istream类的对象。cin主要用于从标准输入读取数据，这里的标准输入，指的是终端的键盘。此外，cout是流的对象，即ostream类的对象，cerr是标准错误输出流的对象，也是ostream 类的对象。这里的标准输出指的是终端键盘，标准错误输出指的是终端的屏幕。<br>在理解cin功能时，不得不提标准输入缓冲区。当我们从键盘输入字符串的时候需要敲一下回车键才能够将这个字符串送入到缓冲区中，那么敲入的这个回车键(\r)会被转换为一个换行符\n，这个换行符\n也会被存储在cin的缓冲区中并且被当成一个字符来计算！比如我们在键盘上敲下了123456这个字符串，然后敲一下回车键（\r）将这个字符串送入了缓冲区中，那么此时缓冲区中的字节个数是7 ，而不是6。<br>cin读取数据也是从缓冲区中获取数据，缓冲区为空时，cin的成员函数会阻塞等待数据的到来，一旦缓冲区中有数据，就触发cin的成员函数去读取数据。</p><p>使用cin从标准输入读取数据时，通常用到的方法有cin&gt;&gt;，cin.get，cin.getline<br>cin&gt;&gt;&lt;变量1&gt;[&gt;&gt;&lt;变量2&gt;&gt;&gt;…&gt;&gt;&lt;变量n&gt;];</p><p>其中“&gt;&gt;”称为提取运算符，用于读取用户输入的数据，赋给变量。在cin之后“&gt;&gt;&lt;变量&gt;”可重复多次。输入多个数据时数据之间要用空格、TAB、或者ENTER键隔开，系统会自动跳过空格和回车符，将输入的数据赋给各提取运算符的变量。回车符有两个作用一个是分隔符另一个是刷新缓冲区，并通知cin已经输入一行数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a;</span><br><span class="line">    int b;</span><br><span class="line">    float c;</span><br><span class="line">    string</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;b&lt;&lt;&quot; &quot;&lt;&lt;c&lt;&lt;&quot; &quot;&lt;&lt;endl;</span><br><span class="line"></span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>但如果提取运算符的&lt;&lt;后面的变量是字符型，则必须输入字符。单当要获取输入的空格或ENTER键，直接用”&lt;&lt;”不能实现<br>，必须借助于cin.get函数,其一般形式为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">cin.get([&lt;字符型变量])</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a;</span><br><span class="line">    char b;</span><br><span class="line">    a=cin.get();</span><br><span class="line">    cin.get(b);</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;b&lt;&lt;endl;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>输入一个空格,一个Enter:<br><img src="https://img-blog.csdn.net/20180513224550670?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br>注意：<br>（1）从结果可以看出，cin.get()从输入缓冲区读取单个字符时不忽略分隔符，直接将其读取，就出现了如上情况，将换行符读入变量b，输出时换行两次，一次是变量b，一次是endl。<br>（2）cin.get()的返回值是int类型，成功：读取字符的ASCII码值，遇到文件结束符时，返回EOF，即-1，Windows下标准输入输入文件结束符为Ctrl+z，Linux为Ctrl+d。cin.get(char var)如果成功返回的是cin对象，因此可以支持链式操作，如cin.get(b).get(c)</p><p>gets读取一行<br>gets是C中的库函数，在&lt; stdio.h&gt;申明，从标准输入设备读字符串，可以无限读取，不会判断上限，以回车结束或者EOF时停止读取，所以程序员应该确保buffer的空间足够大，以便在执行读操作时不发生溢出。</p><p>函数原型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">char *gets( char *buffer );</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char array[20]=&#123;NULL&#125;;</span><br><span class="line">    gets(array);</span><br><span class="line">    cout&lt;&lt;array&lt;&lt;endl;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>由于此函数是C的库函数,所以不建议使用,在C++中使用会报警告.</p>]]></content>
     
@@ -84,7 +86,7 @@
     </summary>
     
     
-      <category term="C/C++" scheme="http://yoursite.com/tags/C-C/"/>
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
     
   </entry>
   
@@ -93,7 +95,7 @@
     <link href="http://yoursite.com/2018/05/27/atoi-md/"/>
     <id>http://yoursite.com/2018/05/27/atoi-md/</id>
     <published>2018-05-27T13:59:13.000Z</published>
-    <updated>2018-05-27T14:07:20.873Z</updated>
+    <updated>2018-05-31T04:35:23.515Z</updated>
     
     <content type="html"><![CDATA[ <a id="more"></a><h3 id="atoi函数"><a href="#atoi函数" class="headerlink" title="atoi函数"></a>atoi函数</h3><p> atoi函数是把字符串转换成整型数的一个函数，应用在计算机程序和办公软件中。int atoi(const char *nptr) 函数会扫描参数 nptr字符串，跳过前面的空白字符（例如空格，tab缩进）等，可以通过isspace( )函数来检测），直到遇上数字或正负符号才开始做转换，而在遇到非数字或字符串结束符(‘\0’)才结束转换，并将结果返回。如果 nptr不能转换成 int 或者 nptr为空字符串，那么将返回 0 。</p><pre><code>#include &lt;stdlib.h&gt;#include &lt;stdio.h&gt;int main(void){    int n;    char *str = &quot;12345&quot;;    n = atoi(str);    printf(&quot;n=%d\n&quot;,n);    return 0;}</code></pre><p> 输出n=123456</p><h3 id="模拟实现atoi"><a href="#模拟实现atoi" class="headerlink" title="模拟实现atoi"></a>模拟实现atoi</h3><p> 代码实现：</p><pre><code>#include&lt;stdio.h&gt;  int StrToInt(char *str)  {      long number = 0;      int flag = 1;  //判断符号位        if (NULL == str)      {          printf(&quot;str is NULL&quot;);          return 0;      }      while (*str == &apos; &apos;)  //空格        {          str++;      }      if (*str == &apos;-&apos;)    //符号位        {          flag = -1;          str++;    //后移3移位        }      while ((*str &gt;= &apos;0&apos;) &amp;&amp; (*str &lt;= &apos;9&apos;))//转化        {          number = number * 10 + *str - &apos;0&apos;;          str++;      }      return flag*number;  }  int main()  {      char* str = &quot;-123456&quot;;      int tmp = StrToInt(str);      cout &lt;&lt; tmp&lt;&lt;endl;  }</code></pre><p> <img src="https://img-blog.csdn.net/20180527215512598?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>]]></content>
     
@@ -117,7 +119,7 @@
     <link href="http://yoursite.com/2018/05/26/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-md/"/>
     <id>http://yoursite.com/2018/05/26/指针数组和数组指针-md/</id>
     <published>2018-05-26T15:36:51.000Z</published>
-    <updated>2018-05-26T15:48:21.785Z</updated>
+    <updated>2018-05-31T04:35:23.511Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=!</p><h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>含义：指向数组的的指针<br>(1)数组在内存中的表示<br>创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。</p><pre><code>#include&lt;stdio.h&gt;void main()  {    int a[2][2]={1,2,3,4};//这是一个2*2的二维数组      int (*p)[2];//数组指针      p=a;//令p指向数组a  }</code></pre><p>这里p是一个指向数组的指针。</p><h4 id="让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？"><a href="#让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？" class="headerlink" title="让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？"></a>让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？</h4><p>答案：<br>a是一个数组名，类型是指向一维数组的指针，不是变量，a的值是指针常量，即不能有a++或者a=p这些操作。a指向这块连续空间的首地址，值是&amp;a[0][0]。</p><p>a[0]是一维数组名，类型是指向整型的指针，值是&amp;a[0][0]，这个值是一个常量。</p><p>a[1]是一维数组名，类型是指向整型的指针，值是&amp;a[1][0]，这个值是一个常量。</p><p>p是一个数组指针变量，指向一维数组的指针变量，值是&amp;a[0][0]。可以执行p++;p=a等操作。<br>a+1表示指向下一行元素，也可以理解为指向下一个一维数组。</p><p>(a+1)是取出第一行的首地址。</p><p>a[0]+1是指向第0行第1个元素，也可以理解为指向一维数组a[0]的第一个元素。</p><p>p+1同a+1</p><p>(p+1)同_(a+1)</p><p>虽然a跟a[0]值是一样，但类型不一样，表示的意义不一样。通过分析就不难理解为什么_(*(a+i)+j)和a[i][j]等效了。</p><h4 id="数组名与数组指针变量的区别"><a href="#数组名与数组指针变量的区别" class="headerlink" title="数组名与数组指针变量的区别"></a>数组名与数组指针变量的区别</h4><p>区别：数组名是指针，类型是指向元素类型的指针，但值是指针常量，声明数组时编译器会为声明所指定的元素数量保留内存空间。数组指针是指向数组的指针，声明指针变量时编译器只为指针本身保留内存空间。</p><h3 id="指针数组（存放指针的数组）"><a href="#指针数组（存放指针的数组）" class="headerlink" title="指针数组（存放指针的数组）"></a>指针数组（存放指针的数组）</h3><p>指针数组：一个存放int类型的数组称为整型数组，那么存放指针的数组就叫指针数组。</p><pre><code>#include&lt;stdio.h&gt;  void main()  {      int i=1,j=2;//p先跟[]结合，然后再跟*结合      int *p[2];//指针数组,存放指针的数组      p[0]=&amp;i;      p[1]=&amp;j;      printf(&quot;%d&quot;,sizeof(p));      }</code></pre><p>此例数组p就两个元素，p[0]是指向i的指针，p[1]是指向j的指针。这两个指针都是int型指针，所以p是存放int型指针的数组。sizeof(p)返回数组占用的总空间，所以程序输出是8</p><h4 id="常用举例"><a href="#常用举例" class="headerlink" title="常用举例"></a>常用举例</h4><p>字符排序，可以用指针数组指向不字符串，排序时改变指针指向就避免了大量文本数据的移动。</p>]]></content>
     
@@ -133,7 +135,7 @@
     </summary>
     
     
-      <category term="-面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -163,6 +165,30 @@
   </entry>
   
   <entry>
+    <title>第一篇博客</title>
+    <link href="http://yoursite.com/2018/05/23/hello-world/"/>
+    <id>http://yoursite.com/2018/05/23/hello-world/</id>
+    <published>2018-05-23T01:19:38.000Z</published>
+    <updated>2018-05-31T04:33:13.165Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客.<br>日经过不懈的努力终于搭建好了，我非常开心！！</p><pre><code>2018.5.23   邓铭</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;测试博客&quot;&gt;&lt;a href=&quot;#测试博客&quot; class=&quot;headerlink&quot; title=&quot;测试博客&quot;&gt;&lt;/a&gt;测试博客&lt;/h2&gt;&lt;h3 id=&quot;这是一篇测试博客&quot;&gt;&lt;a href=&quot;#这是一篇测试博客&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
+    
+  </entry>
+  
+  <entry>
     <title>快速排序</title>
     <link href="http://yoursite.com/2018/05/23/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
     <id>http://yoursite.com/2018/05/23/快速排序/</id>
@@ -183,30 +209,6 @@
     
     
       <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一篇博客</title>
-    <link href="http://yoursite.com/2018/05/23/hello-world/"/>
-    <id>http://yoursite.com/2018/05/23/hello-world/</id>
-    <published>2018-05-23T01:19:38.000Z</published>
-    <updated>2018-05-23T12:45:39.414Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客.<br>日经过不懈的努力终于搭建好了，我非常开心！！</p><pre><code>2018.5.23   邓铭</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;测试博客&quot;&gt;&lt;a href=&quot;#测试博客&quot; class=&quot;headerlink&quot; title=&quot;测试博客&quot;&gt;&lt;/a&gt;测试博客&lt;/h2&gt;&lt;h3 id=&quot;这是一篇测试博客&quot;&gt;&lt;a href=&quot;#这是一篇测试博客&quot; class=&quot;he
-      
-    
-    </summary>
-    
-    
-      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
     
   </entry>
   
