@@ -5,7 +5,7 @@
     <url>%2F2018%2F06%2F01%2F%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%9F%A5%E6%89%BE%2F</url>
     <content type="text"><![CDATA[题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 题目分析矩阵是有序的，从左下角来看，向上数字递减，向右数字递增，因此从左下角开始查找，当要查找数字比左下角数字大时。右移要查找数字比左下角数字小时，上移。例矩阵： 1 2 3 4 5 6 7 8 9 具体算法如下： 1234567891011121314151617181920212223242526272829303132333435363738#include &lt;iostream&gt; using namespace std; int main() &#123; int i, j; int key = 0; int const row = 3; int const col = 3; int arr[row][col] = &#123; 1, 2, 3, 4, 5, 6, 7, 8, 9 &#125;; cout &lt;&lt; "输入要查找的值" &lt;&lt; endl; cin &gt;&gt; key; /* for (i = 0; i &lt; row; i++) &#123; for (j = 0; j &lt; col; j++) &#123; cin &gt;&gt; arr[row][col]; &#125; &#125;*/ for (i = row - 1, j = 0;(i &gt;= 0 )&amp;&amp; (j &lt; col);) &#123; if (arr[i][j] == key) &#123; cout &lt;&lt; "该数存在!" &lt;&lt; endl; return 0; &#125; if (arr[i][j]&gt;key) &#123; i--; continue; &#125; if (arr[i][j] &lt; key) &#123; j++; &#125; &#125; cout &lt;&lt; "该数不存在" &lt;&lt; endl; return 0; &#125; 运行结果：]]></content>
       <tags>
-        <tag>c/c++</tag>
+        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>
@@ -13,7 +13,7 @@
     <url>%2F2018%2F05%2F31%2F%E6%B1%82%E4%BA%8C%E8%BF%9B%E5%88%B61%E7%9A%84%E4%B8%AA%E6%95%B0%2F</url>
     <content type="text"><![CDATA[方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0. 按照此思路可以有以下代码： 12345678910111213141516171819202122#include &lt;iostream&gt; using namespace std; int main() &#123; int n = 0; cout &lt;&lt; "输入一个数"; cin &gt;&gt; n; int count = 0; while (n) &#123; if (n &amp; 1) &#123; count++; &#125; n &gt;&gt;= 1; &#125; cout &lt;&lt; "1的个数为"&lt;&lt;count&lt;&lt;endl; return 0; &#125; 但是此方法存在缺陷如果输入的数为负数则会无限死循环 方法二：首先把n与1做与运算，判断n的最低位是不是为1。接着把1左移一位得到2，再和n做与运算，就能判断n的次低位是不是1….这样反复左移，每次能判断n的其中一位是不是1.这个解法中循环的次数等于整数二进制的位数，32位的整数需要循环32次 1234567891011121314151617181920212223#include &lt;iostream&gt; using namespace std; int main() &#123; int n = 0; int key = 1; cout &lt;&lt; "输入一个数"; cin &gt;&gt; n; int count = 0; while (key) &#123; if (n &amp; key) &#123; count++; &#125; key &lt;&lt;= 1; &#125; cout &lt;&lt; "1的个数为"&lt;&lt;count&lt;&lt;endl; return 0; &#125; 结果如上图： 方法三思路：把一个整数减去1，再和原整数做与运算，会把该整数最右边一个1变成0，那么一个整数的二进制表示中有多少个1，就可以进行多少次这样的操作。 12345678910111213141516171819#include &lt;iostream&gt; using namespace std; int main() &#123; int n = 0; cout &lt;&lt; "输入一个数"; cin &gt;&gt; n; int count = 0; while (n) &#123; n = ((n - 1)&amp; n); count++; &#125; cout &lt;&lt; "1的个数为"&lt;&lt;count&lt;&lt;endl; return 0; &#125;]]></content>
       <tags>
-        <tag>c/c++</tag>
+        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>
@@ -21,7 +21,7 @@
     <url>%2F2018%2F05%2F30%2F%E7%BC%96%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE%2F</url>
     <content type="text"><![CDATA[第一题有一组数，对于其中任意两个数组，若前面一个大于后面一个数字，则这两个数字组成一个逆序对。请设计一个高效的算法，计算给定数组中的逆序对个数。 给定一个int数组A和它的大小n，请返回A中的逆序对个数。保证n小于等于5000。测试样例：[1,2,3,4,5,6,7,0],8返回：7 答案如下： 123456789101112131415161718192021/*冒泡排序时做了多少次交换就有多少个逆序*/class AntiOrder &#123;public: int count(vector&lt;int&gt; A, int n) &#123; // write code here int count = 0; int i,j; if(n &lt; 2) return n; for(i=0;i&lt;n;i++)&#123; for(j=0;j&lt;n-i-1;j++)&#123; if(A[j]&gt;A[j+1])&#123; swap(A[j],A[j+1]); count++; &#125; &#125; &#125; return count; &#125;&#125;; 第二题：写出一个程序，接受一个字符串，然后输出该字符串反转后的字符串。例如输入：1abcd 输出1dcba 答案如下： 12345678910//最简洁#include &lt;iostream&gt;#include &lt;string&gt;using namespace std;int main()&#123; string str; cin &gt;&gt; str; for(int i = str.size()-1; i &gt;=0;i--) cout &lt;&lt; str[i];&#125; 方法二：利用栈 12345678910111213141516171819//这样的输出可以利用栈后进先出的结构#include&lt;iostream&gt;#include&lt;stack&gt;using namespace std;int main(void)&#123; char ch; stack&lt;char&gt; ch_stack; while(cin&gt;&gt;ch) &#123; ch_stack.push(ch); &#125; while(!ch_stack.empty()) &#123; cout&lt;&lt;ch_stack.top(); ch_stack.pop(); &#125; return 0;&#125; 方法三： 12345678910111213#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;algorithm&gt;using namespace std;int main()&#123; string str; cin &gt;&gt; str; reverse(str.begin(), str.end()); cout &lt;&lt; str; return 0;&#125;]]></content>
       <tags>
-        <tag>c/c++</tag>
+        <tag>C/C++</tag>
         <tag>面试题</tag>
       </tags>
   </entry>
@@ -30,7 +30,7 @@
     <url>%2F2018%2F05%2F29%2F%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%2F</url>
     <content type="text"><![CDATA[文件操作C++ 通过以下几个类支持文件的输入输出：ofstream: 写操作（输出）的文件类 (由ostream引申而来)ifstream: 读操作（输入）的文件类(由istream引申而来)fstream: 可同时读写操作的文件类 (由iostream引申而来) 打开文件1.建立联系1ofstream examplefile(&quot;example.txt&quot;);//声明类example并与创建的文件example.txt联系 其中examplefile是ofstream的对象，对象（examplefile）第一个操作通常与一个真正的文件（example.txt）联系起来，改文件由一个流对象（该例子为examplefile）来表示（这些类的一个实例），对改对象进行的操作就是对该对象联系的文件操作。2.判断文件是否打开 1examplefile.is_open()//检查一个文件（examplefile对象所联系的文件）是否被顺利打开 3.向文件中写入数据，并关闭文件 123examplefile &lt;&lt; &quot;This is a line.\n&quot;;examplefile &lt;&lt; &quot;This is another line.\n&quot;;examplefile.close(); ps:为防止流对象被销毁时还联系着打开的文件，析构函数一般将会自动调用关闭函数close 代码示例 123456789101112131415//建立一个文件并写入内容 #include &lt;fstream&gt; using namespace std; int main() &#123; ofstream examplefile("example.txt"); if (examplefile.is_open()) &#123; examplefile &lt;&lt; "This is a line.\n"; examplefile &lt;&lt; "This is another line.\n"; examplefile.close(); &#125; return 0; &#125; 结果： 1examplefile.eof();//eof ，它是ifstream 从类 ios 中继承过来的，当到达文件末尾时返回true 文件读取： 12examplefile.getline(buffer,100);//getline，读取一行字符，直到遇见换行符。getline具有返回值：成功：返回读取的字节数 失败：返回-1。 代码示例： 1234567891011121314151617181920//对文件的读取示例 #include &lt;iostream&gt; #include &lt;fstream&gt; #include &lt;cstdlib&gt; using namespace std; int main () &#123; char buffer[256]; //定义一个数组，用来存放字符 ifstream examplefile("example.txt"); //声明一个对象与要读的文件联系 if (! examplefile.is_open()) //判断是否打开&#123; cout &lt;&lt; "Error opening file"; exit (1); &#125; while (!examplefile.eof()) &#123; examplefile.getline(buffer,100); cout&lt;&lt;buffer&lt;&lt; endl; &#125; return 0; &#125; read和write函数分别为istream和ostream的成员函数，前者被ifstream所继承，后者被ostream所继承。 代码示例：123456789101112131415161718#include &lt;fstream&gt; #include &lt;iostream&gt; using namespace std; int main () &#123; const char * filename = "example.txt"; char * buffer;//buffer是一块内存地址，用来存储或读取数据 long size;//size 是一个整数值，表示要从缓存（buffer）中读出或写入的字符数 ifstream file(filename, ios::in|ios::binary|ios::ate); size = file.tellg(); file.seekg(0, ios::beg); buffer = new char [size]; file.read(buffer, size); file.close(); cout &lt;&lt;"the complete file is in a buffer"; delete[] buffer; return 0; &#125; 具体read，write可参照CSDN专门有一篇博客专门介绍。]]></content>
       <tags>
-        <tag>c/c++</tag>
+        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>
@@ -38,7 +38,7 @@
     <url>%2F2018%2F05%2F28%2FC%2B%2B%E8%BE%93%E5%85%A5%E6%B5%81%2F</url>
     <content type="text"><![CDATA[CINcin是C++编程语言中的标准输入流对象，即istream类的对象。cin主要用于从标准输入读取数据，这里的标准输入，指的是终端的键盘。此外，cout是流的对象，即ostream类的对象，cerr是标准错误输出流的对象，也是ostream 类的对象。这里的标准输出指的是终端键盘，标准错误输出指的是终端的屏幕。在理解cin功能时，不得不提标准输入缓冲区。当我们从键盘输入字符串的时候需要敲一下回车键才能够将这个字符串送入到缓冲区中，那么敲入的这个回车键(\r)会被转换为一个换行符\n，这个换行符\n也会被存储在cin的缓冲区中并且被当成一个字符来计算！比如我们在键盘上敲下了123456这个字符串，然后敲一下回车键（\r）将这个字符串送入了缓冲区中，那么此时缓冲区中的字节个数是7 ，而不是6。cin读取数据也是从缓冲区中获取数据，缓冲区为空时，cin的成员函数会阻塞等待数据的到来，一旦缓冲区中有数据，就触发cin的成员函数去读取数据。 使用cin从标准输入读取数据时，通常用到的方法有cin&gt;&gt;，cin.get，cin.getlinecin&gt;&gt;&lt;变量1&gt;[&gt;&gt;&lt;变量2&gt;&gt;&gt;…&gt;&gt;&lt;变量n&gt;]; 其中“&gt;&gt;”称为提取运算符，用于读取用户输入的数据，赋给变量。在cin之后“&gt;&gt;&lt;变量&gt;”可重复多次。输入多个数据时数据之间要用空格、TAB、或者ENTER键隔开，系统会自动跳过空格和回车符，将输入的数据赋给各提取运算符的变量。回车符有两个作用一个是分隔符另一个是刷新缓冲区，并通知cin已经输入一行数据。123456789101112131415#include &lt;iostream&gt;using namespace std;int main()&#123; char a; int b; float c; string cin&gt;&gt;a&gt;&gt;b&gt;&gt;c; cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;b&lt;&lt;&quot; &quot;&lt;&lt;c&lt;&lt;&quot; &quot;&lt;&lt;endl; system(&quot;pause&quot;); return 0;&#125; 但如果提取运算符的&lt;&lt;后面的变量是字符型，则必须输入字符。单当要获取输入的空格或ENTER键，直接用”&lt;&lt;”不能实现，必须借助于cin.get函数,其一般形式为:123456789101112131415cin.get([&lt;字符型变量])#include &lt;iostream&gt;using namespace std;int main()&#123; char a; char b; a=cin.get(); cin.get(b); cout&lt;&lt;a&lt;&lt;b&lt;&lt;endl; system(&quot;pause&quot;); return 0;&#125; 输入一个空格,一个Enter:注意：（1）从结果可以看出，cin.get()从输入缓冲区读取单个字符时不忽略分隔符，直接将其读取，就出现了如上情况，将换行符读入变量b，输出时换行两次，一次是变量b，一次是endl。（2）cin.get()的返回值是int类型，成功：读取字符的ASCII码值，遇到文件结束符时，返回EOF，即-1，Windows下标准输入输入文件结束符为Ctrl+z，Linux为Ctrl+d。cin.get(char var)如果成功返回的是cin对象，因此可以支持链式操作，如cin.get(b).get(c) gets读取一行gets是C中的库函数，在&lt; stdio.h&gt;申明，从标准输入设备读字符串，可以无限读取，不会判断上限，以回车结束或者EOF时停止读取，所以程序员应该确保buffer的空间足够大，以便在执行读操作时不发生溢出。 函数原型：123456789101112char *gets( char *buffer );#include &lt;iostream&gt;using namespace std;int main()&#123; char array[20]=&#123;NULL&#125;; gets(array); cout&lt;&lt;array&lt;&lt;endl; system(&quot;pause&quot;); return 0;&#125; 由于此函数是C的库函数,所以不建议使用,在C++中使用会报警告.]]></content>
       <tags>
-        <tag>c/c++</tag>
+        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>
@@ -78,7 +78,7 @@
     <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
     <content type="text"><![CDATA[测试博客这是一篇测试博客第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
       <tags>
-        <tag>c/c++</tag>
+        <tag>C/C++</tag>
       </tags>
   </entry>
   <entry>
@@ -86,7 +86,7 @@
     <url>%2F2018%2F05%2F23%2F%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md%2F</url>
     <content type="text"><![CDATA[strcpy源码：char *strcpy(char *strDes, const char *strSrc) { assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;) NULL; return address; 注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存 strcmp源码：int strcmp(const char *s, const char *t) { assert(s != NULL &amp;&amp; t != NULL); while (*s &amp;&amp; *t &amp;&amp; *s == *t) { ++ s; ++ t; } return (*s - *t); } strcat源码：char *strcat(char *strDes, const char *strSrc) { assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while (*strDes != &apos;\0&apos;) ++ strDes; while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;) NULL; return address; } 注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改 2.传递的字符数组前一个实参的所分配的内存空间必须足够大 strlen源码：int strlen(const char *str) { assert(str != NULL); int len = 0; while (*str ++ != &apos;\0&apos;) ++ len; return len; } strstr源码：char *strstr(const char *strSrc, const char *str) { assert(strSrc != NULL &amp;&amp; str != NULL); const char *s = strSrc; const char *t = str; for (; *t != &apos;\0&apos;; ++ strSrc) { for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t) NULL; if (*t == &apos;\0&apos;) return (char *) strSrc; } return NULL; } strchr源码：char * __cdecl strchr ( constchar * string, int ch ) { while (*string &amp;&amp; *string != (char)ch) string++; if (*string == (char)ch) return((char *)string); return(NULL); } 断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。]]></content>
       <tags>
-        <tag>c/c++</tag>
+        <tag>C/C++</tag>
         <tag>程序源码</tag>
         <tag>数据结构</tag>
       </tags>
