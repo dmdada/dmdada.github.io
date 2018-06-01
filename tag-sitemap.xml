@@ -2,20 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/</loc>
-        <lastmod>2018-05-23T06:26:38.136Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-        <lastmod>2018-05-23T06:26:38.136Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
         <lastmod>2018-05-31T04:35:23.501Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -37,8 +23,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/</loc>
+        <lastmod>2018-06-01T02:28:24.563Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+        <lastmod>2018-06-01T02:28:24.563Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://yoursite.com/tags/c-c/</loc>
-        <lastmod>2018-06-01T01:35:54.028Z</lastmod>
+        <lastmod>2018-06-01T02:47:08.754Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
