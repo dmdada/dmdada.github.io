@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-01T14:31:32.528Z</updated>
+  <updated>2018-06-01T14:37:48.649Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/06/01/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E7%9A%84%E6%9F%A5%E6%89%BE/"/>
     <id>http://yoursite.com/2018/06/01/二维数组的查找/</id>
     <published>2018-06-01T14:09:28.000Z</published>
-    <updated>2018-06-01T14:31:32.528Z</updated>
+    <updated>2018-06-01T14:37:48.649Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p><h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>矩阵是有序的，从左下角来看，向上数字递减，向右数字递增，因此从左下角开始查找，当要查找数字比左下角数字大时。右移要查找数字比左下角数字小时，上移。<br>例矩阵：<br>              1   2   3<br>              4   5   6<br>              7   8   9</p><p>具体算法如下：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">  <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i, j;</span><br><span class="line">  <span class="keyword">int</span> key = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> <span class="keyword">const</span> row = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">int</span> <span class="keyword">const</span> col = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">int</span> arr[row][col] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125;;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入要查找的值"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; key;</span><br><span class="line"> <span class="comment">/* for (i = 0; i &lt; row; i++)</span></span><br><span class="line"><span class="comment">  &#123;</span></span><br><span class="line"><span class="comment">  for (j = 0; j &lt; col; j++)</span></span><br><span class="line"><span class="comment">  &#123;</span></span><br><span class="line"><span class="comment">  cin &gt;&gt; arr[row][col];</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  &#125;*/</span></span><br><span class="line">  <span class="keyword">for</span> (i = row - <span class="number">1</span>, j = <span class="number">0</span>;(i &gt;= <span class="number">0</span> )&amp;&amp; (j &lt; col);)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr[i][j] == key)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"该数存在!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (arr[i][j]&gt;key)</span><br><span class="line">  &#123;</span><br><span class="line">  i--;</span><br><span class="line">  <span class="keyword">continue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (arr[i][j] &lt; key)</span><br><span class="line">  &#123;</span><br><span class="line">  j++;</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"该数不存在"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure><h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><p><img src="https://img-blog.csdn.net/2018060122062050?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="404"><br><img src="https://img-blog.csdn.net/20180601220700185?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="404"></p>]]></content>
     
@@ -238,6 +238,30 @@
   </entry>
   
   <entry>
+    <title>第一篇博客</title>
+    <link href="http://yoursite.com/2018/05/23/hello-world/"/>
+    <id>http://yoursite.com/2018/05/23/hello-world/</id>
+    <published>2018-05-23T01:19:38.000Z</published>
+    <updated>2018-05-31T04:33:13.165Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客.<br>日经过不懈的努力终于搭建好了，我非常开心！！</p><pre><code>2018.5.23   邓铭</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;测试博客&quot;&gt;&lt;a href=&quot;#测试博客&quot; class=&quot;headerlink&quot; title=&quot;测试博客&quot;&gt;&lt;/a&gt;测试博客&lt;/h2&gt;&lt;h3 id=&quot;这是一篇测试博客&quot;&gt;&lt;a href=&quot;#这是一篇测试博客&quot; class=&quot;he
+      
+    
+    </summary>
+    
+    
+      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
+    
+  </entry>
+  
+  <entry>
     <title>函数源码</title>
     <link href="http://yoursite.com/2018/05/23/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md/"/>
     <id>http://yoursite.com/2018/05/23/测试博客-md/</id>
@@ -262,30 +286,6 @@
       <category term="程序源码" scheme="http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E6%BA%90%E7%A0%81/"/>
     
       <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第一篇博客</title>
-    <link href="http://yoursite.com/2018/05/23/hello-world/"/>
-    <id>http://yoursite.com/2018/05/23/hello-world/</id>
-    <published>2018-05-23T01:19:38.000Z</published>
-    <updated>2018-05-31T04:33:13.165Z</updated>
-    
-    <content type="html"><![CDATA[<a id="more"></a><h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客.<br>日经过不懈的努力终于搭建好了，我非常开心！！</p><pre><code>2018.5.23   邓铭</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;测试博客&quot;&gt;&lt;a href=&quot;#测试博客&quot; class=&quot;headerlink&quot; title=&quot;测试博客&quot;&gt;&lt;/a&gt;测试博客&lt;/h2&gt;&lt;h3 id=&quot;这是一篇测试博客&quot;&gt;&lt;a href=&quot;#这是一篇测试博客&quot; class=&quot;he
-      
-    
-    </summary>
-    
-    
-      <category term="c/c++" scheme="http://yoursite.com/tags/c-c/"/>
     
   </entry>
   
