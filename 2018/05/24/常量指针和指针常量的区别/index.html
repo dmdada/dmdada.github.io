@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为：1int * const p //指针常量 在这个例子下定义以下代码：12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两种操">
+<meta name="description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为： 1int * const p //指针常量 在这个例子下定义以下代码： 12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="指针常量和常量指针的区别">
 <meta property="og:url" content="http://yoursite.com/2018/05/24/常量指针和指针常量的区别/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为：1int * const p //指针常量 在这个例子下定义以下代码：12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两种操">
+<meta property="og:description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为： 1int * const p //指针常量 在这个例子下定义以下代码： 12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T03:00:09.903Z">
+<meta property="og:updated_time" content="2018-06-01T14:12:39.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指针常量和常量指针的区别">
-<meta name="twitter:description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为：1int * const p //指针常量 在这个例子下定义以下代码：12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两种操">
+<meta name="twitter:description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为： 1int * const p //指针常量 在这个例子下定义以下代码： 12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两">
 
 
 
@@ -390,13 +390,18 @@
       
         <a id="more"></a>
 <p>在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。<br>下面开始正题。。。。</p>
-<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2><p>指针常量：顾名思义它就是一个常量，但是是指针修饰的。<br>格式为：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p <span class="comment">//指针常量</span></span><br></pre></td></tr></table></figure></p>
-<p>在这个例子下定义以下代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a，b；</span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p=&amp;a <span class="comment">//指针常量</span></span><br><span class="line"><span class="comment">//那么分为一下两种操作</span></span><br><span class="line">*p=<span class="number">9</span>;<span class="comment">//操作成功</span></span><br><span class="line">p=&amp;b;<span class="comment">//操作错误</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2><p>指针常量：顾名思义它就是一个常量，但是是指针修饰的。<br>格式为：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p <span class="comment">//指针常量</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子下定义以下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a，b；</span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p=&amp;a <span class="comment">//指针常量</span></span><br><span class="line"><span class="comment">//那么分为一下两种操作</span></span><br><span class="line">*p=<span class="number">9</span>;<span class="comment">//操作成功</span></span><br><span class="line">p=&amp;b;<span class="comment">//操作错误</span></span><br></pre></td></tr></table></figure>
 <p>因为声明了指针常量，说明指针变量不允许修改。如同次指针指向一个地址该地址不能被修改，但是该地址里的内容可以被修改</p>
-<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><p>常量指针：如果在定义指针变量的时候，数据类型前用const修饰，被定义的指针变量就是指向常量的指针变量，指向常量的指针变量称为常量指针，格式如下<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a; <span class="comment">//常量指针</span></span><br></pre></td></tr></table></figure></p>
-<p>在这个例子下定义以下代码：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a，b；</span><br><span class="line"> <span class="keyword">const</span> <span class="keyword">int</span> *p=&amp;a <span class="comment">//常量指针</span></span><br><span class="line"><span class="comment">//那么分为一下两种操作</span></span><br><span class="line">*p=<span class="number">9</span>;<span class="comment">//操作错误</span></span><br><span class="line">p=&amp;b;<span class="comment">//操作成功</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><p>常量指针：如果在定义指针变量的时候，数据类型前用const修饰，被定义的指针变量就是指向常量的指针变量，指向常量的指针变量称为常量指针，格式如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a; <span class="comment">//常量指针</span></span><br></pre></td></tr></table></figure>
+<p>在这个例子下定义以下代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a，b；</span><br><span class="line"> <span class="keyword">const</span> <span class="keyword">int</span> *p=&amp;a <span class="comment">//常量指针</span></span><br><span class="line"><span class="comment">//那么分为一下两种操作</span></span><br><span class="line">*p=<span class="number">9</span>;<span class="comment">//操作错误</span></span><br><span class="line">p=&amp;b;<span class="comment">//操作成功</span></span><br></pre></td></tr></table></figure>
 <p>因为常量指针本质是指针，并且这个指针是一个指向常量的指针，指针指向的变量的值不可通过该指针修改，但是指针指向的值可以改变。</p>
-<h2 id="附加题"><a href="#附加题" class="headerlink" title="附加题"></a>附加题</h2><p>指向常量的指针常量该怎么写？<br>答案：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> b = &amp;a;<span class="comment">//指向常量的指针常量</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="附加题"><a href="#附加题" class="headerlink" title="附加题"></a>附加题</h2><p>指向常量的指针常量该怎么写？<br>答案：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> b = &amp;a;<span class="comment">//指向常量的指针常量</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -425,7 +430,7 @@
   <p><span>本文标题:</span><a href="/2018/05/24/常量指针和指针常量的区别/">指针常量和常量指针的区别</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 邓铭 的个人博客">邓铭</a></p>
   <p><span>发布时间:</span>2018年05月24日 - 23:05</p>
-  <p><span>最后更新:</span>2018年06月01日 - 11:06</p>
+  <p><span>最后更新:</span>2018年06月01日 - 22:06</p>
   <p><span>原始链接:</span><a href="/2018/05/24/常量指针和指针常量的区别/" title="指针常量和常量指针的区别">http://yoursite.com/2018/05/24/常量指针和指针常量的区别/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/05/24/常量指针和指针常量的区别/"  aria-label="复制成功！"></i></span>
   </p>
@@ -624,7 +629,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -757,7 +762,7 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共5.7k字</span>
+  <span class="post-count">博客全站共6.0k字</span>
 </div>
 
         
