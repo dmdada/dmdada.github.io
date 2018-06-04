@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[C语言注释转C++]]></title>
+    <url>%2F2018%2F06%2F04%2FC%E8%AF%AD%E8%A8%80%E6%B3%A8%E9%87%8A%E8%BD%ACC%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[“链表倒数第K个节点”]]></title>
     <url>%2F2018%2F06%2F03%2F%E2%80%9C%E9%93%BE%E8%A1%A8%E5%80%92%E6%95%B0%E7%AC%ACK%E4%B8%AA%E8%8A%82%E7%82%B9%E2%80%9D%2F</url>
     <content type="text"><![CDATA[题目描述输入一个链表，输出该链表中倒数第k个结点。思路：设置两个指针指向头节点分别为p，和ptr；让p指针先走k-1次，然后让ptr跟着p指针一直遍历下去直到遍历完整个链表，这时ptr指针就指向倒数第k个节点了。有些兴趣的同学可以仔细琢磨。很有意思。附上我的代码： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273#include&lt;iostream&gt;using namespace std;typedef struct Node//链表结构&#123; int data; Node* next; &#125;Node;Node* init_list( int n)&#123; Node* head = NULL; if (n &lt; 0) &#123; cout &lt;&lt; "链表数目个数有问题" &lt;&lt; endl; &#125; else if(n == 0) &#123; head = NULL; return head; &#125; else &#123; cout&lt;&lt; "请输入 " &lt;&lt; n &lt;&lt; "个数据"&lt;&lt;endl; while (n-- &gt; 0) &#123; Node* ptr = new Node; cin &gt;&gt; ptr-&gt;data; ptr-&gt;next = head; head= ptr; &#125; &#125; return head;&#125;void show(Node *head)//打印链表 &#123; if (head == NULL) &#123; cout &lt;&lt; "这是一个空链表" &lt;&lt; endl; &#125; while (head!=NULL) &#123; cout &lt;&lt; head-&gt;data &lt;&lt; "-&gt;"; head = head-&gt;next; &#125; cout &lt;&lt; "NULL"&lt;&lt;endl; &#125;int main()//主函数 &#123; // Node*ptr3= create_list(); // show(ptr3); int n; cout &lt;&lt; "请输入你想要创建的链表节点个数" &lt;&lt; endl; cin &gt;&gt; n; Node* ptr=init_list(n); show(ptr); //insert(ptr,4,5); // show(ptr); //Node* ptr2=resevertlist(ptr); //show(ptr2); // minus_point(ptr2, 2); // show(ptr2); // Node*ptr3= minus_point(ptr2, 1); // show(ptr3); //int count= sort_list(ptr3); //cout &lt;&lt; count &lt;&lt; endl; Node*ptr4 = FindKthToTail(ptr, 3); cout &lt;&lt; ptr4-&gt;data; return 0; &#125; 运行结果：]]></content>
@@ -21,8 +26,8 @@
     <url>%2F2018%2F05%2F31%2F%E6%B1%82%E4%BA%8C%E8%BF%9B%E5%88%B61%E7%9A%84%E4%B8%AA%E6%95%B0%2F</url>
     <content type="text"><![CDATA[方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0. 按照此思路可以有以下代码： 12345678910111213141516171819202122#include &lt;iostream&gt; using namespace std; int main() &#123; int n = 0; cout &lt;&lt; "输入一个数"; cin &gt;&gt; n; int count = 0; while (n) &#123; if (n &amp; 1) &#123; count++; &#125; n &gt;&gt;= 1; &#125; cout &lt;&lt; "1的个数为"&lt;&lt;count&lt;&lt;endl; return 0; &#125; 但是此方法存在缺陷如果输入的数为负数则会无限死循环 方法二：首先把n与1做与运算，判断n的最低位是不是为1。接着把1左移一位得到2，再和n做与运算，就能判断n的次低位是不是1….这样反复左移，每次能判断n的其中一位是不是1.这个解法中循环的次数等于整数二进制的位数，32位的整数需要循环32次 1234567891011121314151617181920212223#include &lt;iostream&gt; using namespace std; int main() &#123; int n = 0; int key = 1; cout &lt;&lt; "输入一个数"; cin &gt;&gt; n; int count = 0; while (key) &#123; if (n &amp; key) &#123; count++; &#125; key &lt;&lt;= 1; &#125; cout &lt;&lt; "1的个数为"&lt;&lt;count&lt;&lt;endl; return 0; &#125; 结果如上图： 方法三思路：把一个整数减去1，再和原整数做与运算，会把该整数最右边一个1变成0，那么一个整数的二进制表示中有多少个1，就可以进行多少次这样的操作。 12345678910111213141516171819#include &lt;iostream&gt; using namespace std; int main() &#123; int n = 0; cout &lt;&lt; "输入一个数"; cin &gt;&gt; n; int count = 0; while (n) &#123; n = ((n - 1)&amp; n); count++; &#125; cout &lt;&lt; "1的个数为"&lt;&lt;count&lt;&lt;endl; return 0; &#125;]]></content>
       <tags>
-        <tag>面试</tag>
         <tag>C/C++</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>

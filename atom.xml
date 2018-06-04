@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-03T14:51:02.397Z</updated>
+  <updated>2018-06-04T14:06:28.193Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C语言注释转C++</title>
+    <link href="http://yoursite.com/2018/06/04/C%E8%AF%AD%E8%A8%80%E6%B3%A8%E9%87%8A%E8%BD%ACC/"/>
+    <id>http://yoursite.com/2018/06/04/C语言注释转C/</id>
+    <published>2018-06-04T14:06:28.000Z</published>
+    <updated>2018-06-04T14:06:28.193Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>“链表倒数第K个节点”</title>
@@ -85,9 +99,9 @@
     </summary>
     
     
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="C/C++" scheme="http://yoursite.com/tags/C-C/"/>
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
