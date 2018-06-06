@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-04T14:17:47.961Z</updated>
+  <updated>2018-06-06T14:52:07.306Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>“测试”</title>
+    <link href="http://yoursite.com/2018/06/06/%E2%80%9C%E6%B5%8B%E8%AF%95%E2%80%9D/"/>
+    <id>http://yoursite.com/2018/06/06/“测试”/</id>
+    <published>2018-06-06T14:52:07.000Z</published>
+    <updated>2018-06-06T14:52:07.306Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>C语言注释转C++注释</title>
