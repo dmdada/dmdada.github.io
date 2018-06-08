@@ -81,20 +81,20 @@
 
 
 
-<meta name="description" content="方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0. 按照此思路可以有以下代码： 12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;  using namespace std;  int main()  &amp;#123;	  int n = 0;	  cout &amp;lt;&amp;lt; &quot;输入一个数&quot;;	  cin">
+<meta name="description" content="方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0.按照此思路可以有以下代码： 12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;  using namespace std;  int main()  &amp;#123;	  int n = 0;	  cout &amp;lt;&amp;lt; &quot;输入一个数&quot;;	  cin">
 <meta name="keywords" content="C&#x2F;C++,面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="求二进制中1的个数">
 <meta property="og:url" content="http://yoursite.com/2018/05/31/求二进制1的个数/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0. 按照此思路可以有以下代码： 12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;  using namespace std;  int main()  &amp;#123;	  int n = 0;	  cout &amp;lt;&amp;lt; &quot;输入一个数&quot;;	  cin">
+<meta property="og:description" content="方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0.按照此思路可以有以下代码： 12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;  using namespace std;  int main()  &amp;#123;	  int n = 0;	  cout &amp;lt;&amp;lt; &quot;输入一个数&quot;;	  cin">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/2018053122422894?/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/5a6L5L2T//I0JBQkFCMA==/">
 <meta property="og:image" content="https://img-blog.csdn.net/20180531225415780?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-06-03T14:50:02.035Z">
+<meta property="og:updated_time" content="2018-06-08T15:04:20.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="求二进制中1的个数">
-<meta name="twitter:description" content="方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0. 按照此思路可以有以下代码： 12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;  using namespace std;  int main()  &amp;#123;	  int n = 0;	  cout &amp;lt;&amp;lt; &quot;输入一个数&quot;;	  cin">
+<meta name="twitter:description" content="方法一：思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0.按照此思路可以有以下代码： 12345678910111213141516171819202122#include &amp;lt;iostream&amp;gt;  using namespace std;  int main()  &amp;#123;	  int n = 0;	  cout &amp;lt;&amp;lt; &quot;输入一个数&quot;;	  cin">
 <meta name="twitter:image" content="https://img-blog.csdn.net/2018053122422894?/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/5a6L5L2T//I0JBQkFCMA==/">
 
 
@@ -392,8 +392,7 @@
 
       
         <a id="more"></a>
-<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0.</p>
-<p>按照此思路可以有以下代码：</p>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><p>思路：如果一个数与1作与运算则可以发现该数最后一位数为1，否则为0.<br>按照此思路可以有以下代码：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">  <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line"></span><br><span class="line">	  <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">	  <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入一个数"</span>;</span><br><span class="line">	  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	  <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	  <span class="keyword">while</span> (n)</span><br><span class="line"> &#123;</span><br><span class="line"></span><br><span class="line">	  <span class="keyword">if</span> (n &amp; <span class="number">1</span>)</span><br><span class="line">	  &#123;</span><br><span class="line">		  count++;</span><br><span class="line">	  &#125;</span><br><span class="line">	  n &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">	  <span class="built_in">cout</span> &lt;&lt; <span class="string">"1的个数为"</span>&lt;&lt;count&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <p><img src="https://img-blog.csdn.net/2018053122422894?/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/5a6L5L2T//I0JBQkFCMA==/" alt="404"><br>但是此方法存在缺陷如果输入的数为负数则会无限死循环</p>
 <h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><p>首先把n与1做与运算，判断n的最低位是不是为1。接着把1左移一位得到2，再和n做与运算，就能判断n的次低位是不是1….这样反复左移，每次能判断n的其中一位是不是1.这个解法中循环的次数等于整数二进制的位数，32位的整数需要循环32次</p>
@@ -430,7 +429,7 @@
   <p><span>本文标题:</span><a href="/2018/05/31/求二进制1的个数/">求二进制中1的个数</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 邓铭 的个人博客">邓铭</a></p>
   <p><span>发布时间:</span>2018年05月31日 - 22:05</p>
-  <p><span>最后更新:</span>2018年06月03日 - 22:06</p>
+  <p><span>最后更新:</span>2018年06月08日 - 23:06</p>
   <p><span>原始链接:</span><a href="/2018/05/31/求二进制1的个数/" title="求二进制中1的个数">http://yoursite.com/2018/05/31/求二进制1的个数/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/05/31/求二进制1的个数/"  aria-label="复制成功！"></i></span>
   </p>
