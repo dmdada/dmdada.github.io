@@ -12,7 +12,7 @@
   </entry>
   <entry>
     <title><![CDATA[C语言注释转C++注释]]></title>
-    <url>%2F2018%2F06%2F04%2FC%E8%AF%AD%E8%A8%80%E6%B3%A8%E9%87%8A%E8%BD%ACC%2F</url>
+    <url>%2F2018%2F06%2F04%2FC%E8%AF%AD%E8%A8%80%E6%B3%A8%E9%87%8A%E8%BD%ACC%2B%2B%E6%B3%A8%E9%87%8A%2F</url>
     <content type="text"><![CDATA[题目要求int a = 10;// 1.一般情况int num = 0;/_ int i = 0; _/ // 2.换行问题/_ int i = 0; /int j = 0;/ int i = 0; _/int j = 0; // 3.匹配问题/_int i = 0;/_xxxxx*/ // 4.多行注释问题/_int i=0;int j = 0;int k = 0;_/int k = 0; // 5.连续注释问题/int a=0;//int b=0;/ // 6.连续的/问题/*/ // 7.C++注释问题// /xxxxxxxxxxxx/ 问题分析 代码片头文件12345678910111213141516171819202122#ifndef __COMMENTCONVERT_HEADFILE__ #define __COMMENTCONVERT_HEADFILE__#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt; enum STATE &#123;NUL,C,CPP,END&#125;;void CommentConvert(FILE *pfin, FILE * pfout);void DoNULConvert(FILE *pfin, FILE * pfout, enum STATE * state); void DoCConvert(FILE *pfin, FILE * pfout, enum STATE * state);void DoCPPConvert(FILE *pfin, FILE * pfout, enum STATE * state);#endif 源文件123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156#include"标头.h"#define _CRT_SECURE_NO_WARNINGS 1#include &lt;stdio.h&gt;#include &lt;string.h&gt;#include &lt;stdlib.h&gt;void CommentConvert(FILE *pfin, FILE * pfout)&#123; enum STATE state = NUL;//初始化状态 为 无注释状态 while (state != END) &#123; switch (state) &#123; case NUL: &#123; DoNULConvert(pfin, pfout, &amp;state); &#125; break; case C: &#123; DoCConvert(pfin, pfout, &amp;state); &#125; break; case CPP: &#123; DoCPPConvert(pfin, pfout, &amp;state); &#125; break; default: break; &#125; &#125;&#125;void DoNULConvert(FILE *pfin, FILE * pfout, enum STATE * state)&#123; int start = 0; int next = 0; start = fgetc(pfin); switch (start) &#123; case '/': &#123; next = fgetc(pfin); switch (next) &#123; case '*':// 表示进入C语言注释状态 &#123; fputc('/', pfout); fputc('/', pfout); *state = C;//状态转换为 C注释状态 &#125; break; case '/':// 表示进入C++注释状态 &#123; fputc(start, pfout); fputc(next, pfout); *state = CPP; //状态转换为 C++注释状态 &#125; break; default: &#123; fputc(start, pfout); fputc(next, pfout); &#125; break; &#125; &#125; break; case EOF: &#123; fputc(start, pfout); *state = END; &#125; break; default://表示遇到的不是注释 ，状态不变 &#123; fputc(start, pfout); //将读取的字符输出到文件 &#125; break; &#125;&#125;//c状态转换 void DoCConvert(FILE *pfin, FILE * pfout, enum STATE * state)&#123; int start = 0; int next = 0; int then = 0; start = fgetc(pfin); switch (start) &#123; case '*'://遇到'*'表示C语言注释状态 &#123; next = fgetc(pfin); switch (next) &#123; case '/': &#123; then = fgetc(pfin); if (then == '\n') &#123; fputc(then, pfout); &#125; else &#123; fputc('\n', pfout); ungetc(then, pfin); &#125; *state = NUL; &#125; break; default: &#123; fputc(start, pfout); ungetc(next, pfin); &#125; break; &#125; &#125; break; case '\n': &#123; fputc(start, pfout); fputc('/', pfout); fputc('/', pfout); &#125; break; default: fputc(start, pfout); break; &#125;&#125;//c++状态转换void DoCPPConvert(FILE *pfin, FILE * pfout, enum STATE * state)&#123; int start = 0; int next = 0; int then = 0; start = fgetc(pfin); switch (start) &#123; case '\n': &#123; fputc(start, pfout); *state = NUL; &#125; break; default: fputc(start, pfout); break; &#125;&#125; 测试文件123456789101112131415161718192021222324252627#include "标头.h"int main()&#123; FILE *pfin = NULL; FILE *pfout = NULL; pfin = fopen("input.c", "r"); if (pfin == NULL) &#123; perror("input file open:"); exit(EXIT_FAILURE); &#125; pfout = fopen("output.c", "w"); if (pfout == NULL) &#123; perror("output file open:"); fclose(pfin); exit(EXIT_FAILURE); &#125; CommentConvert(pfin, pfout); printf("注释转换成功\n"); fclose(pfin); fclose(pfout); system("pause"); return 0;&#125;]]></content>
       <tags>
         <tag>C/C++</tag>
@@ -102,14 +102,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[第一篇博客]]></title>
-    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[测试博客这是一篇测试博客第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
-      <tags>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[函数源码]]></title>
     <url>%2F2018%2F05%2F23%2F%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md%2F</url>
     <content type="text"><![CDATA[strcpy源码：char *strcpy(char *strDes, const char *strSrc) { assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;) NULL; return address; 注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存 strcmp源码：int strcmp(const char *s, const char *t) { assert(s != NULL &amp;&amp; t != NULL); while (*s &amp;&amp; *t &amp;&amp; *s == *t) { ++ s; ++ t; } return (*s - *t); } strcat源码：char *strcat(char *strDes, const char *strSrc) { assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while (*strDes != &apos;\0&apos;) ++ strDes; while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;) NULL; return address; } 注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改 2.传递的字符数组前一个实参的所分配的内存空间必须足够大 strlen源码：int strlen(const char *str) { assert(str != NULL); int len = 0; while (*str ++ != &apos;\0&apos;) ++ len; return len; } strstr源码：char *strstr(const char *strSrc, const char *str) { assert(strSrc != NULL &amp;&amp; str != NULL); const char *s = strSrc; const char *t = str; for (; *t != &apos;\0&apos;; ++ strSrc) { for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t) NULL; if (*t == &apos;\0&apos;) return (char *) strSrc; } return NULL; } strchr源码：char * __cdecl strchr ( constchar * string, int ch ) { while (*string &amp;&amp; *string != (char)ch) string++; if (*string == (char)ch) return((char *)string); return(NULL); } 断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。]]></content>
@@ -117,6 +109,14 @@
         <tag>C/C++</tag>
         <tag>程序源码</tag>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[测试博客这是一篇测试博客第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
+      <tags>
+        <tag>C/C++</tag>
       </tags>
   </entry>
 </search>
