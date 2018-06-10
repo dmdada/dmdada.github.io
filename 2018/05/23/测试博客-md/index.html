@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="strcpy源码：char *strcpy(char *strDes, const char *strSrc)    {        assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));        char *address = strDes;        while ((*strDes ++ = *strSrc ++) != &amp;ap">
+<meta name="description" content="strcpy源码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283    char *strcpy(char *strDes, co">
 <meta name="keywords" content="C&#x2F;C++,程序源码,数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数源码">
 <meta property="og:url" content="http://yoursite.com/2018/05/23/测试博客-md/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="strcpy源码：char *strcpy(char *strDes, const char *strSrc)    {        assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));        char *address = strDes;        while ((*strDes ++ = *strSrc ++) != &amp;ap">
+<meta property="og:description" content="strcpy源码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283    char *strcpy(char *strDes, co">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T14:46:22.871Z">
+<meta property="og:updated_time" content="2018-06-10T14:42:01.288Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数源码">
-<meta name="twitter:description" content="strcpy源码：char *strcpy(char *strDes, const char *strSrc)    {        assert((strDes != NULL) &amp;amp;&amp;amp; (strSrc != NULL));        char *address = strDes;        while ((*strDes ++ = *strSrc ++) != &amp;ap">
+<meta name="twitter:description" content="strcpy源码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283    char *strcpy(char *strDes, co">
 
 
 
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  483
+                  566
                 </span>
               
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -389,72 +389,8 @@
 
       
         <a id="more"></a>
-<h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><pre><code>char *strcpy(char *strDes, const char *strSrc)   
-{   
-    assert((strDes != NULL) &amp;&amp; (strSrc != NULL));   
-    char *address = strDes;   
-    while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)   
-        NULL;   
-    return address;   
-</code></pre><p>注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</p>
-<h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><pre><code>int strcmp(const char *s, const char *t)   
-{   
-    assert(s != NULL &amp;&amp; t != NULL);   
-    while (*s &amp;&amp; *t &amp;&amp; *s == *t)   
-    {   
-        ++ s;   
-        ++ t;   
-    }   
-    return (*s - *t);   
-}  
-</code></pre><h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><pre><code>char *strcat(char *strDes, const char *strSrc)   
-{   
-
- assert((strDes != NULL) &amp;&amp; (strSrc != NULL));   
-    char *address = strDes;   
-    while (*strDes != &apos;\0&apos;)   
-        ++ strDes;   
-    while ((*strDes ++ = *strSrc ++) != &apos;\0&apos;)   
-        NULL;   
-    return address;   
-}  
-</code></pre><p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改<br>            2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p>
-<h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><pre><code>int strlen(const char *str)   
-{   
-    assert(str != NULL);   
-    int len = 0;   
-    while (*str ++ != &apos;\0&apos;)   
-        ++ len;   
-    return len;   
-}  
-</code></pre><h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><pre><code>char *strstr(const char *strSrc, const char *str)   
-{   
-    assert(strSrc != NULL &amp;&amp; str != NULL);   
-    const char *s = strSrc;   
-    const char *t = str;   
-    for (; *t != &apos;\0&apos;; ++ strSrc)   
-    {   
-        for (s = strSrc, t = str; *t != &apos;\0&apos; &amp;&amp; *s == *t; ++s, ++t)   
-            NULL;   
-
-        if (*t == &apos;\0&apos;)   
-            return (char *) strSrc;   
-    }   
-    return NULL;   
-}  
-</code></pre><h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><pre><code>char * __cdecl strchr (
-                      constchar * string,
-                      int ch
-                       )
-{
-   while (*string &amp;&amp; *string != (char)ch)
-        string++;
-
-   if (*string == (char)ch)
-       return((char *)string);
-    return(NULL);
-}
-</code></pre><p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>
+<h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">char</span> *<span class="title">strcpy</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line">        assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">        <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">        <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line">        <span class="keyword">return</span> address;   </span><br><span class="line"></span><br><span class="line">注意：<span class="built_in">strcpy</span>只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</span><br><span class="line"></span><br><span class="line">##<span class="meta"># strcmp源码：</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">const</span> <span class="keyword">char</span> *t)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line">        assert(s != <span class="literal">NULL</span> &amp;&amp; t != <span class="literal">NULL</span>);   </span><br><span class="line">        <span class="keyword">while</span> (*s &amp;&amp; *t &amp;&amp; *s == *t)   </span><br><span class="line">        &#123;   </span><br><span class="line">            ++ s;   </span><br><span class="line">            ++ t;   </span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">return</span> (*s - *t);   </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">##<span class="meta"># strcat源码：</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">char</span> *<span class="title">strcat</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line"></span><br><span class="line">     assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">        <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">        <span class="keyword">while</span> (*strDes != <span class="string">'\0'</span>)   </span><br><span class="line">            ++ strDes;   </span><br><span class="line">        <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line">        <span class="keyword">return</span> address;   </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">注意：<span class="number">1.</span>不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改  </span><br><span class="line">            <span class="number">2.</span>传递的字符数组前一个实参的所分配的内存空间必须足够大</span><br><span class="line"></span><br><span class="line">##<span class="meta"># strlen源码：</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">strlen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line">        assert(str != <span class="literal">NULL</span>);   </span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;   </span><br><span class="line">        <span class="keyword">while</span> (*str ++ != <span class="string">'\0'</span>)   </span><br><span class="line">            ++ len;   </span><br><span class="line">        <span class="keyword">return</span> len;   </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">##<span class="meta"># strstr源码：</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">char</span> *<span class="title">strstr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *strSrc, <span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line">        assert(strSrc != <span class="literal">NULL</span> &amp;&amp; str != <span class="literal">NULL</span>);   </span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span> *s = strSrc;   </span><br><span class="line">        <span class="keyword">const</span> <span class="keyword">char</span> *t = str;   </span><br><span class="line">        <span class="keyword">for</span> (; *t != <span class="string">'\0'</span>; ++ strSrc)   </span><br><span class="line">        &#123;   </span><br><span class="line">            <span class="keyword">for</span> (s = strSrc, t = str; *t != <span class="string">'\0'</span> &amp;&amp; *s == *t; ++s, ++t)   </span><br><span class="line">                <span class="literal">NULL</span>;   </span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (*t == <span class="string">'\0'</span>)   </span><br><span class="line">                <span class="keyword">return</span> (<span class="keyword">char</span> *) strSrc;   </span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;   </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">##<span class="meta"># strchr源码：</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> * __<span class="function">cdecl <span class="title">strchr</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">                          constchar * <span class="built_in">string</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                          <span class="keyword">int</span> ch</span></span></span><br><span class="line"><span class="function"><span class="params">                           )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">       <span class="keyword">while</span> (*<span class="built_in">string</span> &amp;&amp; *<span class="built_in">string</span> != (<span class="keyword">char</span>)ch)</span><br><span class="line">            <span class="built_in">string</span>++;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (*<span class="built_in">string</span> == (<span class="keyword">char</span>)ch)</span><br><span class="line">           <span class="keyword">return</span>((<span class="keyword">char</span> *)<span class="built_in">string</span>);</span><br><span class="line">        <span class="keyword">return</span>(<span class="literal">NULL</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>
 
       
     </div>
@@ -483,7 +419,7 @@
   <p><span>本文标题:</span><a href="/2018/05/23/测试博客-md/">函数源码</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 邓铭 的个人博客">邓铭</a></p>
   <p><span>发布时间:</span>2018年05月23日 - 09:05</p>
-  <p><span>最后更新:</span>2018年06月01日 - 22:06</p>
+  <p><span>最后更新:</span>2018年06月10日 - 22:06</p>
   <p><span>原始链接:</span><a href="/2018/05/23/测试博客-md/" title="函数源码">http://yoursite.com/2018/05/23/测试博客-md/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/05/23/测试博客-md/"  aria-label="复制成功！"></i></span>
   </p>
@@ -769,7 +705,7 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#strcpy源码："><span class="nav-number">1.</span> <span class="nav-text">strcpy源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcmp源码："><span class="nav-number">2.</span> <span class="nav-text">strcmp源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strcat源码："><span class="nav-number">3.</span> <span class="nav-text">strcat源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strlen源码："><span class="nav-number">4.</span> <span class="nav-text">strlen源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strstr源码："><span class="nav-number">5.</span> <span class="nav-text">strstr源码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strchr源码："><span class="nav-number">6.</span> <span class="nav-text">strchr源码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#strcpy源码："><span class="nav-number">1.</span> <span class="nav-text">strcpy源码：</span></a></li></ol></div>
             
 
           </div>
@@ -819,7 +755,7 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.6k字</span>
+  <span class="post-count">博客全站共8.7k字</span>
 </div>
 
         
