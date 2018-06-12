@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="C/C++,面试," />
 
 
 
@@ -81,16 +81,20 @@
 
 
 
-<meta name="description" content="奋斗的程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="邓铭的博客">
-<meta property="og:url" content="http://yoursite.com/tags/C-C/index.html">
+<meta name="description" content="题目输入：i am a student.输出：student. a am i 分析先总体反转，然后逐个单词反转，首先，将字符串完全翻转一次，得到.tneduts a ma i。然后设置两个指针，对单词进行翻转，也就是局部翻转. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546">
+<meta name="keywords" content="C&#x2F;C++,面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="翻转字符串">
+<meta property="og:url" content="http://yoursite.com/2018/06/11/翻转字符串/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="奋斗的程序猿">
+<meta property="og:description" content="题目输入：i am a student.输出：student. a am i 分析先总体反转，然后逐个单词反转，首先，将字符串完全翻转一次，得到.tneduts a ma i。然后设置两个指针，对单词进行翻转，也就是局部翻转. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20180611233045464?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-06-12T09:04:52.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="邓铭的博客">
-<meta name="twitter:description" content="奋斗的程序猿">
+<meta name="twitter:title" content="翻转字符串">
+<meta name="twitter:description" content="题目输入：i am a student.输出：student. a am i 分析先总体反转，然后逐个单词反转，首先，将字符串完全翻转一次，得到.tneduts a ma i。然后设置两个指针，对单词进行翻转，也就是局部翻转. 代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180611233045464?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/C-C/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/11/翻转字符串/"/>
 
 
 
 
 
-  <title>标签: C/C++ | 邓铭的博客</title>
+  <title>翻转字符串 | 邓铭的博客</title>
   
 
 
@@ -145,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 <a href="https://github.com/dmdada"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>	
 	
@@ -274,306 +278,283 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>C/C++<small>标签</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/翻转字符串/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="邓铭">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/dm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="邓铭的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/06/11/翻转字符串/" itemprop="url">
-              
-                <span itemprop="name">翻转字符串</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">翻转字符串</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-11T22:44:47+08:00"
-              content="2018-06-11" >
-          06-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T22:44:47+08:00">
+                2018-06-11
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  244
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/06/寻找两个链表公共节点/" itemprop="url">
-              
-                <span itemprop="name">寻找两个链表公共节点</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-06T22:52:07+08:00"
-              content="2018-06-06" >
-          06-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/04/C语言注释转C++注释/" itemprop="url">
-              
-                <span itemprop="name">C语言注释转C++注释</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-04T22:06:28+08:00"
-              content="2018-06-04" >
-          06-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/03/链表倒数第K个节点/" itemprop="url">
-              
-                <span itemprop="name">“链表倒数第K个节点”</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-03T22:44:49+08:00"
-              content="2018-06-03" >
-          06-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/31/求二进制1的个数/" itemprop="url">
-              
-                <span itemprop="name">求二进制中1的个数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-31T22:58:06+08:00"
-              content="2018-05-31" >
-          05-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/30/编程第一课/" itemprop="url">
-              
-                <span itemprop="name">编程第一课</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-30T22:51:06+08:00"
-              content="2018-05-30" >
-          05-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/29/文件操作/" itemprop="url">
-              
-                <span itemprop="name">文件操作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-29T22:57:38+08:00"
-              content="2018-05-29" >
-          05-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/28/C++输入流/" itemprop="url">
-              
-                <span itemprop="name">C++输入流</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-28T22:45:10+08:00"
-              content="2018-05-28" >
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/23/hello-world/" itemprop="url">
-              
-                <span itemprop="name">第一篇博客</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-23T09:19:38+08:00"
-              content="2018-05-23" >
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/23/测试博客-md/" itemprop="url">
-              
-                <span itemprop="name">函数源码</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-23T09:19:38+08:00"
-              content="2018-05-23" >
-          05-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <a id="more"></a>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>输入：i am a student.<br>输出：student. a am i</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>先总体反转，然后逐个单词反转，首先，将字符串完全翻转一次，得到.tneduts a ma i。然后设置两个指针，对单词进行翻转，也就是局部翻转.</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AllReverse</span><span class="params">(<span class="keyword">char</span> *pStart, <span class="keyword">char</span> *pEnd)</span><span class="comment">//全反转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> pTemp;</span><br><span class="line">	<span class="keyword">if</span> (pStart == <span class="literal">NULL</span> || pEnd == <span class="literal">NULL</span>)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (pStart &lt; pEnd)</span><br><span class="line">	&#123;</span><br><span class="line">		pTemp = *pStart;</span><br><span class="line">		*pStart = *pEnd;</span><br><span class="line">		*pEnd = pTemp;</span><br><span class="line"></span><br><span class="line">		pStart++;</span><br><span class="line">		pEnd--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">Reverse</span><span class="params">(<span class="keyword">char</span> *pData)</span><span class="comment">//单词反转</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (pData == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> *pStart = pData;</span><br><span class="line">	<span class="keyword">char</span> *pEnd = pData;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span> (*pEnd != <span class="string">'\0'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		pEnd++;</span><br><span class="line">	&#125;</span><br><span class="line">	pEnd--;</span><br><span class="line"></span><br><span class="line">	AllReverse(pStart, pEnd);<span class="comment">//全反转</span></span><br><span class="line"></span><br><span class="line">	pStart = pEnd = pData;</span><br><span class="line">	<span class="keyword">while</span> (*pStart != <span class="string">'\0'</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (*pStart == <span class="string">' '</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			pStart++;</span><br><span class="line">			pEnd++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (*pEnd == <span class="string">' '</span> || *pEnd == <span class="string">'\0'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			AllReverse(pStart, --pEnd);</span><br><span class="line">			pStart = ++pEnd;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			pEnd++;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> pData;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span><span class="comment">// 主函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a_arr[<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">char</span> * str = <span class="literal">NULL</span>;</span><br><span class="line">	gets_s(a_arr);</span><br><span class="line">	str = Reverse(a_arr);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; str;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p><img src="https://img-blog.csdn.net/20180611233045464?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
 
       
     </div>
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+<div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span>本文标题:</span><a href="/2018/06/11/翻转字符串/">翻转字符串</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 邓铭 的个人博客">邓铭</a></p>
+  <p><span>发布时间:</span>2018年06月11日 - 22:06</p>
+  <p><span>最后更新:</span>2018年06月12日 - 17:06</p>
+  <p><span>原始链接:</span><a href="/2018/06/11/翻转字符串/" title="翻转字符串">http://yoursite.com/2018/06/11/翻转字符串/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/06/11/翻转字符串/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    clipboard.on('success', $(function(){
+      $(".fa-clipboard").click(function(){
+        swal({   
+          title: "",   
+          text: '复制成功',   
+          html: false,
+          timer: 500,   
+          showConfirmButton: false
+        });
+      });
+    }));  
+</script>
+
+      
+</div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="邓铭 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="邓铭 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-C/" rel="tag"># C/C++</a>
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/06/找到数组第一个相同的数/" rel="next" title="找到数组第一个相同的数">
+                <i class="fa fa-chevron-left"></i> 找到数组第一个相同的数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -581,6 +562,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjcxNS8xMzI1MA"></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -601,8 +591,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -694,6 +693,22 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">2.</span> <span class="nav-text">分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行结果"><span class="nav-number">4.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -852,6 +867,10 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -880,6 +899,17 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
