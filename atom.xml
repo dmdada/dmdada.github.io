@@ -46,7 +46,7 @@
     <link href="http://yoursite.com/2018/06/15/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
     <id>http://yoursite.com/2018/06/15/时间复杂度/</id>
     <published>2018-06-15T15:19:39.000Z</published>
-    <updated>2018-06-15T15:32:25.478Z</updated>
+    <updated>2018-06-15T15:34:08.960Z</updated>
     
     <content type="html"><![CDATA[<a id="more"></a><p>###</p>]]></content>
     
@@ -60,6 +60,8 @@
       
     
     </summary>
+    
+      <category term="面试" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95/"/>
     
     
       <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
