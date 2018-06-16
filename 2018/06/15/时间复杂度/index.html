@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="###">
+<meta name="description" content="### 算法复杂度算法复杂度分为时间复杂度和空间复杂度。其作用： 时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。（算法的复杂性体现在运行该算法时的计算机所需资源的多少上，计算机资源最重要的是时间和空间（即寄存器）资源，因此复杂度分为时间和空间复杂度） 时间复杂度时间复杂度是同一问题可用不同算法解决，而一个算法的质量优劣将影响到算法乃至程序的效率。算法分析">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="时间复杂度">
 <meta property="og:url" content="http://yoursite.com/2018/06/15/时间复杂度/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="###">
+<meta property="og:description" content="### 算法复杂度算法复杂度分为时间复杂度和空间复杂度。其作用： 时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。（算法的复杂性体现在运行该算法时的计算机所需资源的多少上，计算机资源最重要的是时间和空间（即寄存器）资源，因此复杂度分为时间和空间复杂度） 时间复杂度时间复杂度是同一问题可用不同算法解决，而一个算法的质量优劣将影响到算法乃至程序的效率。算法分析">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-16T12:54:37.562Z">
+<meta property="og:updated_time" content="2018-06-16T12:58:29.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="时间复杂度">
-<meta name="twitter:description" content="###">
+<meta name="twitter:description" content="### 算法复杂度算法复杂度分为时间复杂度和空间复杂度。其作用： 时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。（算法的复杂性体现在运行该算法时的计算机所需资源的多少上，计算机资源最重要的是时间和空间（即寄存器）资源，因此复杂度分为时间和空间复杂度） 时间复杂度时间复杂度是同一问题可用不同算法解决，而一个算法的质量优劣将影响到算法乃至程序的效率。算法分析">
 
 
 
@@ -351,7 +351,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1,086
                 </span>
               
 
@@ -367,7 +367,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -390,6 +390,12 @@
       
         <a id="more"></a>
 <p>###</p>
+<h3 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h3><p>算法复杂度分为时间复杂度和空间复杂度。其作用： 时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。（算法的复杂性体现在运行该算法时的计算机所需资源的多少上，计算机资源最重要的是时间和空间（即寄存器）资源，因此复杂度分为时间和空间复杂度）</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>时间复杂度是同一问题可用不同算法解决，而一个算法的质量优劣将影响到算法乃至程序的效率。算法分析的目的在于选择合适算法和改进算法。计算机科学中，算法的时间复杂度是一个函数，它定性描述了该算法的运行时间。这是一个关于代表算法输入值的字符串的长度的函数。时间复杂度常用大O符号表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，它考察当输入值大小趋近无穷时的情况。<br>###时间复杂度计算方法<br>1.一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n),使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(n)),称O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。<br>分析：随着模块n的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，所以 f(n) 越小，算法的时间复杂度越低，算法的效率越高。<br>2. 在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出 T(n) 的同数量级（它的同数量级有以下：1，log2n，n，n log2n ，n的平方，n的三次方，2的n次方，n!），找出后，f(n) = 该数量级，若 T(n)/f(n) 求极限可得到一常数c，则时间复杂度T(n) = O(f(n))</p>
+<p>####举例<br>循环如下</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span>(j=<span class="number">1</span>; j&lt;=n; ++j)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i][j] = <span class="number">0</span>;<span class="comment">//该步骤属于基本操作执行次数：n的平方次</span></span><br><span class="line">        <span class="keyword">for</span>(k=<span class="number">1</span>; k&lt;=n; ++k)</span><br><span class="line">        c[i][j] += a[i][k] * b[k][j];<span class="comment">//该步骤属于基本操作执行次数：n的三次方次</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//则有   ，根据上面括号里的同数量级，我们可以确定 n的三次方 为T（n）的同数量级</span></span><br><span class="line"><span class="comment">//则有  ，然后根据 T(n)/f(n) 求极限可得到常数c</span></span><br><span class="line"><span class="comment">//则该算法的时间复杂度：T(n) = O(n^3) 注：n^3即是n的3次方。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">例<span class="number">2</span></span><br><span class="line"><span class="comment">//如果算法中包含嵌套的循环，则基本语句通常是最内层的循环体，如果算法中包含并列的循环，</span></span><br><span class="line"><span class="comment">//则将并列循环的时间复杂度相加。</span></span><br><span class="line"></span><br><span class="line">　　<span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">　　&#123;</span><br><span class="line">　　x++;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)</span><br><span class="line">　　&#123;</span><br><span class="line">　　<span class="keyword">for</span> (j=<span class="number">1</span>; j&lt;=n; j++)</span><br><span class="line">　　&#123;</span><br><span class="line">　　x++;</span><br><span class="line">　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　<span class="comment">//第一个for循环的时间复杂度为Ο(n)，第二个for循环的时间复杂度为Ο(n2)，</span></span><br><span class="line">　　<span class="comment">//则整个算法的时间复杂度为Ο(n+n2)=Ο(n2)。</span></span><br></pre></td></tr></table></figure>
+<p>常见的算法时间复杂度由小到大依次为：<br> 、、<br>Ο(1)＜Ο(log2n)＜Ο(n)＜Ο(nlog2n)＜Ο(n2)＜Ο(n3)＜…＜Ο(2n)＜Ο(n!)</p>
+<p>###注意<br>Ο(1)表示基本语句的执行次数是一个常数，一般来说，只要算法中不存在循环语句，其时间复杂度就是Ο(1)。Ο(log2n)、Ο(n)、Ο(nlog2n)、Ο(n2)和Ο(n3)称为多项式时间，而Ο(2n)和Ο(n!)称为指数时间。计算机科学家普遍认为前者是有效算法，把这类问题称为P类问题，而把后者称为NP问题。但这也只能计算基本的计算时间复杂度，具体的运行还会与硬件有关。</p>
 
       
     </div>
@@ -588,8 +594,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -691,6 +706,22 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法复杂度"><span class="nav-number">1.</span> <span class="nav-text">算法复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-number">2.</span> <span class="nav-text">时间复杂度</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -734,7 +765,7 @@ outchain/player?type=2&id=26544456&auto=1&height=66"></iframe>
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共9.5k字</span>
+  <span class="post-count">博客全站共10.6k字</span>
 </div>
 
         
