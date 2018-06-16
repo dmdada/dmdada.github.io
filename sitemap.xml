@@ -12,11 +12,6 @@
     </sitemap>
 
     <sitemap>
-        <loc>http://yoursite.com/category-sitemap.xml</loc>
-        
-    </sitemap>
-
-    <sitemap>
         <loc>http://yoursite.com/tag-sitemap.xml</loc>
         <lastmod>2018-06-01T03:00:09.903Z</lastmod>
     </sitemap>
