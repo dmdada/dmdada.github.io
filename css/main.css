@@ -2106,7 +2106,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #5b16ff;
+  background: #243d7d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3405,7 +3405,7 @@ img:hover {
   }
 }
 body {
-  background: url("/images/2.jpg");
+  background: url("http://pajznqooi.bkt.clouddn.com/2.jpg");
   background-attachment: fixed;
 }
 .post {
