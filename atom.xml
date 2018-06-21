@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-21T14:39:40.637Z</updated>
+  <updated>2018-06-21T14:53:26.408Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,16 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>算法复杂度</title>
+    <title>归并排序</title>
     <link href="http://yoursite.com/2018/06/21/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
     <id>http://yoursite.com/2018/06/21/归并排序/</id>
     <published>2018-06-21T14:39:40.000Z</published>
-    <updated>2018-06-21T14:39:40.637Z</updated>
+    <updated>2018-06-21T14:53:26.408Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
