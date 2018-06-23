@@ -3,7 +3,10 @@
   <entry>
     <title><![CDATA[基数排序]]></title>
     <url>%2F2018%2F06%2F23%2F%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[归并排序]]></title>
