@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-23T14:30:52.088Z</updated>
+  <updated>2018-06-24T14:48:23.691Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>选择排序</title>
+    <link href="http://yoursite.com/2018/06/24/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/2018/06/24/选择排序/</id>
+    <published>2018-06-24T14:48:23.000Z</published>
+    <updated>2018-06-24T14:48:23.691Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>基数排序</title>
@@ -478,30 +492,6 @@
     
     
       <category term="C/C++" scheme="http://yoursite.com/tags/C-C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模拟实现atoi函数</title>
-    <link href="http://yoursite.com/2018/05/27/atoi%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://yoursite.com/2018/05/27/atoi模拟实现/</id>
-    <published>2018-05-27T13:59:13.000Z</published>
-    <updated>2018-06-01T03:00:09.918Z</updated>
-    
-    <content type="html"><![CDATA[ <a id="more"></a><h3 id="atoi函数"><a href="#atoi函数" class="headerlink" title="atoi函数"></a>atoi函数</h3><p> atoi函数是把字符串转换成整型数的一个函数，应用在计算机程序和办公软件中。int atoi(const char *nptr) 函数会扫描参数 nptr字符串，跳过前面的空白字符（例如空格，tab缩进）等，可以通过isspace( )函数来检测），直到遇上数字或正负符号才开始做转换，而在遇到非数字或字符串结束符(‘\0’)才结束转换，并将结果返回。如果 nptr不能转换成 int 或者 nptr为空字符串，那么将返回 0 。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">char</span> *str = <span class="string">"12345"</span>;</span><br><span class="line">    n = atoi(str);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"n=%d\n"</span>,n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p> 输出n=123456</p><h3 id="模拟实现atoi"><a href="#模拟实现atoi" class="headerlink" title="模拟实现atoi"></a>模拟实现atoi</h3><p> 代码实现<br> <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">StrToInt</span><span class="params">(<span class="keyword">char</span> *str)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">  <span class="keyword">long</span> number = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> flag = <span class="number">1</span>;  <span class="comment">//判断符号位  </span></span><br><span class="line">  <span class="keyword">if</span> (<span class="literal">NULL</span> == str)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"str is NULL"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (*str == <span class="string">' '</span>)  <span class="comment">//空格  </span></span><br><span class="line">  &#123;</span><br><span class="line">  str++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (*str == <span class="string">'-'</span>)    <span class="comment">//符号位  </span></span><br><span class="line">  &#123;</span><br><span class="line">  flag = <span class="number">-1</span>;</span><br><span class="line">  str++;    <span class="comment">//后移3移位  </span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> ((*str &gt;= <span class="string">'0'</span>) &amp;&amp; (*str &lt;= <span class="string">'9'</span>))<span class="comment">//转化  </span></span><br><span class="line">  &#123;</span><br><span class="line">  number = number * <span class="number">10</span> + *str - <span class="string">'0'</span>;</span><br><span class="line">  str++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> flag*number;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">  <span class="keyword">char</span>* str = <span class="string">"-123456"</span>;</span><br><span class="line">  <span class="keyword">int</span> tmp = StrToInt(str);</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; tmp&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p><p> <img src="https://img-blog.csdn.net/20180527215512598?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-         &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;atoi函数&quot;&gt;&lt;a href=&quot;#atoi函数&quot; class=&quot;headerlink&quot; title=&quot;atoi函数&quot;&gt;&lt;/a&gt;atoi函数&lt;/h3&gt;&lt;p&gt; atoi函数是把字符串转换成整型数的一个函数，应用在计算机程序和办公
-      
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
