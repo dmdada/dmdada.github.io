@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[字符串中第一个只出现两次的字符]]></title>
+    <url>%2F2018%2F06%2F26%2F%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%A4%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[选择排序]]></title>
     <url>%2F2018%2F06%2F24%2F%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%2F</url>
     <content type="text"><![CDATA[选择排序名词解释：选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法（比如序列[5， 5， 3]第一次就将第一个[5]与[3]交换，导致第一个5挪动到第二个5后面）。 算法思想设置双重循环第一重循环从数组第一个元素开始，第二重循环从数组第二个元素开始，然后找出第二重循环中小于第一重循环的最小数，然后与第一重循环的首元素之交换。图解： 算法说明时间复杂度：O（n2)空间复杂度：O(1)算法稳定性：不稳定算法 算法实现12345678910111213141516171819202122232425262728293031323334353637383940void Selectionsort(int arr[], int size)&#123; if (size &lt;= 0) &#123; return; &#125; int max; int i, j; for (i = 0; i &lt; size - 1; i++) &#123; max = i; for (j = i + 1; j &lt; size; j++) &#123; if (arr[max]&gt;arr[j]) max = j; &#125; if (i != max) &#123; int tmp = arr[i]; arr[i] = arr[max]; arr[max] = tmp; &#125; &#125;&#125;int main()&#123; int array[] = &#123;1,3,6,2,5,8,7,9,4,6,12,30,300&#125;; const int num = sizeof(array) / sizeof(array[0]); Selectionsort(array,num); for (int i = 0; i &lt;sizeof(array) / sizeof(array[0]); i++) &#123; cout &lt;&lt; array[i] &lt;&lt; " "; &#125; delete[] p; return 0;&#125; 结果]]></content>
@@ -195,14 +200,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[第一篇博客]]></title>
-    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[测试博客这是一篇测试博客第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
-      <tags>
-        <tag>C/C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[函数源码]]></title>
     <url>%2F2018%2F05%2F23%2F%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md%2F</url>
     <content type="text"><![CDATA[strcpy源码：123456789 char *strcpy(char *strDes, const char *strSrc) &#123; assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while ((*strDes ++ = *strSrc ++) != '\0') NULL; return address; 注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存 strcmp源码：123456789101112int strcmp(const char *s, const char *t) &#123; assert(s != NULL &amp;&amp; t != NULL); while (*s &amp;&amp; *t &amp;&amp; *s == *t) &#123; ++ s; ++ t; &#125; return (*s - *t); &#125; strcat源码：12345678910111213char *strcat(char *strDes, const char *strSrc) &#123; assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while (*strDes != '\0') ++ strDes; while ((*strDes ++ = *strSrc ++) != '\0') NULL; return address; &#125; 注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改 2.传递的字符数组前一个实参的所分配的内存空间必须足够大 strlen源码：12345678910int strlen(const char *str) &#123; assert(str != NULL); int len = 0; while (*str ++ != '\0') ++ len; return len; &#125; strstr源码：1234567891011121314151617char *strstr(const char *strSrc, const char *str) &#123; assert(strSrc != NULL &amp;&amp; str != NULL); const char *s = strSrc; const char *t = str; for (; *t != '\0'; ++ strSrc) &#123; for (s = strSrc, t = str; *t != '\0' &amp;&amp; *s == *t; ++s, ++t) NULL; if (*t == '\0') return (char *) strSrc; &#125; return NULL; &#125; strchr源码：1234567891011121314char * __cdecl strchr ( constchar * string, int ch )&#123; while (*string &amp;&amp; *string != (char)ch) string++; if (*string == (char)ch) return((char *)string); return(NULL);&#125; 断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。]]></content>
@@ -210,6 +207,14 @@
         <tag>C/C++</tag>
         <tag>数据结构</tag>
         <tag>程序源码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[测试博客这是一篇测试博客第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
+      <tags>
+        <tag>C/C++</tag>
       </tags>
   </entry>
 </search>
