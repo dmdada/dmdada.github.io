@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/06/28/Markdown%E8%AF%AD%E6%B3%95-1/</loc>
+        <lastmod>2018-06-28T15:09:17.368Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/2018/06/28/Markdown%E8%AF%AD%E6%B3%95/</loc>
+        <lastmod>2018-06-28T15:09:13.148Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/06/27/%E6%B1%89%E8%AF%BA%E5%A1%94/</loc>
         <lastmod>2018-06-27T15:09:18.088Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -207,7 +223,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/27/atoi%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/</loc>
+        <loc>http://yoursite.com/2018/05/26/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-md/</loc>
         <lastmod>2018-06-01T03:00:09.918Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -215,7 +231,7 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/2018/05/26/%E6%8C%87%E9%92%88%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E6%8C%87%E9%92%88-md/</loc>
+        <loc>http://yoursite.com/2018/05/27/atoi%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0/</loc>
         <lastmod>2018-06-01T03:00:09.918Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
