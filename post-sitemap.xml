@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/06/29/VOCTOR/</loc>
+        <lastmod>2018-06-29T15:48:16.378Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/06/28/Markdown%E8%AF%AD%E6%B3%95/</loc>
         <lastmod>2018-06-28T15:09:13.148Z</lastmod>
         <changefreq>weekly</changefreq>
