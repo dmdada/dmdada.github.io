@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/06/23/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/</loc>
+        <lastmod>2018-06-30T13:29:52.916Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/05/23/hello-world/</loc>
         <lastmod>2018-06-30T13:16:44.338Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +57,6 @@
     <url>
         <loc>http://yoursite.com/2018/06/24/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</loc>
         <lastmod>2018-06-25T13:54:01.952Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/06/23/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F/</loc>
-        <lastmod>2018-06-23T14:30:52.088Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
