@@ -16,13 +16,6 @@
     </url>
 
     <url>
-        <loc>http://yoursite.com/tags/C-C/</loc>
-        <lastmod>2018-06-12T15:00:26.449Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
         <lastmod>2018-06-14T15:01:25.090Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -53,6 +46,13 @@
     <url>
         <loc>http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
         <lastmod>2018-06-30T13:11:16.208Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://yoursite.com/tags/C-C/</loc>
+        <lastmod>2018-06-30T13:16:44.338Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

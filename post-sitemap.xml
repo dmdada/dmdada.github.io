@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://yoursite.com/2018/05/23/hello-world/</loc>
+        <lastmod>2018-06-30T13:16:44.338Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://yoursite.com/2018/06/29/Voctor/</loc>
         <lastmod>2018-06-30T13:11:16.208Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -193,14 +201,6 @@
     <url>
         <loc>http://yoursite.com/2018/05/30/%E7%BC%96%E7%A8%8B%E7%AC%AC%E4%B8%80%E8%AF%BE/</loc>
         <lastmod>2018-06-01T14:46:22.869Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://yoursite.com/2018/05/23/hello-world/</loc>
-        <lastmod>2018-06-01T14:46:22.866Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
