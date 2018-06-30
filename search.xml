@@ -27,7 +27,7 @@
   <entry>
     <title><![CDATA[字符串中第一个只出现两次的字符]]></title>
     <url>%2F2018%2F06%2F26%2F%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%A4%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6%2F</url>
-    <content type="text"><![CDATA[题目找到字符串中第一个只出现两次次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历 实现123456789101112131415161718192021222324252627282930313233343536void findstr(char* str) &#123; char tmp = 'a'; char*src = str+1; int count = 0; while (*str != '\0') &#123; count = 0; src = str+1; while (*src != '\0') &#123; if (*str == *src) &#123; count++; tmp = *src; &#125; src++; &#125; if (count == 1) &#123; printf("找到字符是：%c\n",tmp); return; &#125; str++; &#125; printf("没找到"); &#125;int main()&#123; char* str = "abacdebaf"; findstr(str); return 0;&#125; 结果]]></content>
+    <content type="text"><![CDATA[题目找到字符串中第一个只出现两次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历 实现123456789101112131415161718192021222324252627282930313233343536void findstr(char* str) &#123; char tmp = 'a'; char*src = str+1; int count = 0; while (*str != '\0') &#123; count = 0; src = str+1; while (*src != '\0') &#123; if (*str == *src) &#123; count++; tmp = *src; &#125; src++; &#125; if (count == 1) &#123; printf("找到字符是：%c\n",tmp); return; &#125; str++; &#125; printf("没找到"); &#125;int main()&#123; char* str = "abacdebaf"; findstr(str); return 0;&#125; 结果]]></content>
       <tags>
         <tag>面试</tag>
       </tags>
