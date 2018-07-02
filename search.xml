@@ -21,7 +21,7 @@
       <title>Vector</title>
       <link href="/2018/06/29/Vector/"/>
       <url>/2018/06/29/Vector/</url>
-      <content type="html"><![CDATA[<a id="more"></a>]]></content>
+      <content type="html"><![CDATA[<a id="more"></a><p>vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 [1]  。<br>和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 [1]  。<br>vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数定义,而用于多个不同的数据类型。因此,我们可以定义保存 string 对象的 vector,或保存 int 值的 vector,又或是保存自定义的类类型对象(如Sales_items 对象)的 vector。vector 不是一种数据类型,而只是一个类模板,可用来定义任意多种数据类型。vector 类型的每一种都指定了其保存元素的类型</p>]]></content>
       
       
         <tags>
