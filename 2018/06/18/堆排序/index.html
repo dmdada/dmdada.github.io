@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%A0%86%E6%8E%92%E5%BA%8F.jpg">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%A0%86%E6%8E%92%E5%BA%8F2.jpg">
-<meta property="og:updated_time" content="2018-06-19T09:21:04.162Z">
+<meta property="og:updated_time" content="2018-07-05T14:38:35.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆排序">
 <meta name="twitter:description" content="堆排序（ Heap Sort )堆排序要用到堆，那什么是堆呢？可以参考我的一博客什么是堆？  名词解释：堆排序(Heapsort)是指利用堆积树（堆）这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父节点的值，即A[PARENT[i]] &amp;gt;= A[i]。在数组的非降序排序中">
@@ -174,7 +174,7 @@
       
         <h3 id="堆排序（-Heap-Sort"><a href="#堆排序（-Heap-Sort" class="headerlink" title="堆排序（ Heap Sort )"></a>堆排序（ Heap Sort )</h3><p>堆排序要用到堆，那什么是堆呢？可以参考我的一博客<a href="https://blog.csdn.net/weibo_dm/article/details/80718839" target="_blank" rel="noopener">什么是堆？
 </a></p>
-<p>名词解释：堆排序(Heapsort)是指利用堆积树（堆）这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父节点的值，即A[PARENT[i]] &gt;= A[i]。在数组的非降序排序中，需要使用的就是大根堆，因为根据大根堆的要求可知，最大的值一定在堆顶。1991年的计算机先驱奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德(Robert W．Floyd）和威廉姆斯(J．Williams）在1964年共同发明了著名的堆排序算法。</p>
+<p>名词解释：堆排序(Heapsort)是指利用堆积树（堆）这种数据结构所设计的一种排序算法，它是选择排序的一种。可以利用数组的特点快速定位指定索引的元素。堆分为大根堆和小根堆，是完全二叉树。大根堆的要求是每个节点的值都不大于其父节点的值，即A[PARENT[i]] &gt;= A[i]。在数组的非降序排序中，需要使用的就是大根堆，因为根据大根堆的要求可知，最大的值一定在堆顶。1991年的计算机先驱奖获得者、斯坦福大学计算机科学系教授罗伯特·弗洛伊德(Robert W．Floyd）和威廉姆斯(J．Williams）在1964年共同发明了著名的堆排序算法。<br><a id="more"></a></p>
 <h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><p>堆排序的时间，主要由建立初始堆和反复重建堆这两部分的时间开销构成，它们均是通过调用Heapify实现的。<br>平均性能：<code>O(N*logN)</code></p>
 <p>其他性能:由于建初始堆所需的比较次数较多，所以堆排序不适宜于记录数较少的文件。<br>堆排序是就地排序，辅助空间为O(1)。<br>堆排序是不稳定的排序方法（当数组中有相等元素时，堆排序算法对这些元素的处理方法不止一种）。（排序的稳定性是指如果在排序的序列中，存在前后相同的两个元素的话，排序前 和排序后他们的相对位置不发生变化）。</p>
 <h3 id="一般步骤"><a href="#一般步骤" class="headerlink" title="一般步骤"></a>一般步骤</h3><p>1.将无序序列构建成一个堆，根据升序降序需求选择大顶堆（升序）或小顶堆（降序）。<br>2.将堆顶元素与末尾元素交换，将最大元素”沉”到数组末端。<br>3.重新调整结构，使其满足堆定义，然后继续交换堆顶元素与当前末尾元素，反复执行调整+交换步骤，直到整个序列有序。</p>

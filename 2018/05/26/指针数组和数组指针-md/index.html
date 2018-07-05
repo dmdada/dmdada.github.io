@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="邓铭的博客">
 <meta property="og:description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=! 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。1234567#include&amp;lt;stdio.h&amp;gt;void main()">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T03:00:09.918Z">
+<meta property="og:updated_time" content="2018-07-05T14:38:35.508Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="指针数组和数组指针的区别">
 <meta name="twitter:description" content="昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=! 数组指针含义：指向数组的的指针(1)数组在内存中的表示创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。1234567#include&amp;lt;stdio.h&amp;gt;void main()">
@@ -169,10 +169,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=!</p>
+        <p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=!</p>
 <h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>含义：指向数组的的指针<br>(1)数组在内存中的表示<br>创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">2</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;<span class="comment">//这是一个2*2的二维数组  </span></span><br><span class="line">    <span class="keyword">int</span> (*p)[<span class="number">2</span>];<span class="comment">//数组指针  </span></span><br><span class="line">    p=a;<span class="comment">//令p指向数组a  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这里p是一个指向数组的指针。</p>
+<p>这里p是一个指向数组的指针。<br><a id="more"></a></p>
 <h4 id="让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？"><a href="#让我们理解数组名和数组指针变量：a-a-0-a-1-p-a-1-a-0-1-p-1这些分别代表什么意思呢？" class="headerlink" title="让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？"></a>让我们理解数组名和数组指针变量：a,a[0],a[1],p,a+1,a[0]+1,p+1这些分别代表什么意思呢？</h4><p>答案：<br>a是一个数组名，类型是指向一维数组的指针，不是变量，a的值是指针常量，即不能有a++或者a=p这些操作。a指向这块连续空间的首地址，值是&amp;a[0][0]。</p>
 <p>a[0]是一维数组名，类型是指向整型的指针，值是&amp;a[0][0]，这个值是一个常量。</p>
 <p>a[1]是一维数组名，类型是指向整型的指针，值是&amp;a[1][0]，这个值是一个常量。</p>

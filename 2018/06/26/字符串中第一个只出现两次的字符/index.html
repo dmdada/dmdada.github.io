@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://dmdada.top">
   <title>字符串中第一个只出现两次的字符 | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目找到字符串中第一个只出现两次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历 实现123456789101112131415161718192021222324252627282930313233343536void findstr(char* str) &amp;#12">
+  <meta name="description" content="题目找到字符串中第一个只出现两次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历">
 <meta name="keywords" content="面试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="字符串中第一个只出现两次的字符">
 <meta property="og:url" content="http://dmdada.top/2018/06/26/字符串中第一个只出现两次的字符/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="题目找到字符串中第一个只出现两次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历 实现123456789101112131415161718192021222324252627282930313233343536void findstr(char* str) &amp;#12">
+<meta property="og:description" content="题目找到字符串中第一个只出现两次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%AD%97%E7%AC%A6.jpg">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%AD%97%E7%AC%A62.jpg">
-<meta property="og:updated_time" content="2018-06-30T13:33:52.020Z">
+<meta property="og:updated_time" content="2018-07-05T14:38:47.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串中第一个只出现两次的字符">
-<meta name="twitter:description" content="题目找到字符串中第一个只出现两次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历 实现123456789101112131415161718192021222324252627282930313233343536void findstr(char* str) &amp;#12">
+<meta name="twitter:description" content="题目找到字符串中第一个只出现两次的字符例 字符串”abbcdefacdefba”第一个只出现一次的字符是c 分析设置两个指针分别遍历数组若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历">
 <meta name="twitter:image" content="http://pajznqooi.bkt.clouddn.com/%E5%AD%97%E7%AC%A6.jpg">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
@@ -172,9 +172,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>找到字符串中第一个只出现两次的字符<br>例 字符串”abbcdefacdefba”<br>第一个只出现一次的字符是c</p>
+        <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>找到字符串中第一个只出现两次的字符<br>例 字符串”abbcdefacdefba”<br>第一个只出现一次的字符是c</p>
 <h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>设置两个指针分别遍历数组<br>若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历</p>
+<a id="more"></a>
 <h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findstr</span><span class="params">(<span class="keyword">char</span>* str)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line">	 <span class="keyword">char</span> tmp = <span class="string">'a'</span>;</span><br><span class="line">	 <span class="keyword">char</span>*src = str+<span class="number">1</span>;</span><br><span class="line">	 <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">	 <span class="keyword">while</span> (*str != <span class="string">'\0'</span>)</span><br><span class="line">	 &#123;</span><br><span class="line">		 count = <span class="number">0</span>;</span><br><span class="line">		 src = str+<span class="number">1</span>;</span><br><span class="line">		  <span class="keyword">while</span> (*src != <span class="string">'\0'</span>)</span><br><span class="line">			 &#123;</span><br><span class="line">			 <span class="keyword">if</span> (*str == *src)</span><br><span class="line">				 &#123;</span><br><span class="line">				   count++;</span><br><span class="line">				   tmp = *src;</span><br><span class="line">			      &#125;</span><br><span class="line"></span><br><span class="line">			 src++;</span><br><span class="line">			 &#125;</span><br><span class="line">		  <span class="keyword">if</span> (count == <span class="number">1</span>)</span><br><span class="line">		  &#123;</span><br><span class="line">			  <span class="built_in">printf</span>(<span class="string">"找到字符是：%c\n"</span>,tmp);</span><br><span class="line">			  <span class="keyword">return</span>;</span><br><span class="line">		  &#125;</span><br><span class="line">		 str++;</span><br><span class="line">		 &#125;</span><br><span class="line">	 <span class="built_in">printf</span>(<span class="string">"没找到"</span>);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span>* str = <span class="string">"abacdebaf"</span>;</span><br><span class="line">	findstr(str);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="http://pajznqooi.bkt.clouddn.com/%E5%AD%97%E7%AC%A6.jpg" alt="这里写图片描述"><br><img src="http://pajznqooi.bkt.clouddn.com/%E5%AD%97%E7%AC%A62.jpg" alt="这里写图片描述"></p>
 

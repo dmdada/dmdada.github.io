@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="http://dmdada.top">
   <title>希尔排序 | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="希尔排序（Shell’s Sort)名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终">
+  <meta name="description" content="希尔排序（Shell’s Sort)名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="希尔排序">
 <meta property="og:url" content="http://dmdada.top/2018/06/20/希尔排序/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="希尔排序（Shell’s Sort)名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终">
+<meta property="og:description" content="希尔排序（Shell’s Sort)名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F3.png">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F4.png">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F2.jpg">
-<meta property="og:updated_time" content="2018-06-20T14:26:43.248Z">
+<meta property="og:updated_time" content="2018-07-05T14:38:35.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="希尔排序">
-<meta name="twitter:description" content="希尔排序（Shell’s Sort)名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终">
+<meta name="twitter:description" content="希尔排序（Shell’s Sort)名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止">
 <meta name="twitter:image" content="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
@@ -174,10 +174,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h3 id="希尔排序（Shell’s-Sort"><a href="#希尔排序（Shell’s-Sort" class="headerlink" title="希尔排序（Shell’s Sort)"></a>希尔排序（Shell’s Sort)</h3><p>名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p>
+        <h3 id="希尔排序（Shell’s-Sort"><a href="#希尔排序（Shell’s-Sort" class="headerlink" title="希尔排序（Shell’s Sort)"></a>希尔排序（Shell’s Sort)</h3><p>名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p>
 <p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：<br>1.插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率。<br>2.但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位。</p>
-<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>教科书表达：先取一个小于n的整数d1作为第一个增量，把文件的全部记录分组。所有距离为d1的倍数的记录放在同一个组中。先在各组内进行直接插入排序；然后，取第二个增量d2(小于d1）重复上述的分组和排序，直至所取的增量 =1(  &lt;  …&lt; &lt; d2 &lt; d1)，即所有记录放在同一组中进行直接插入排序为止。<br>简单来说：一个书架放着一排书，现在从第一本书起每数X本书，就在那本书上贴红色贴纸，贴完红色贴纸后，再次从第二本书起每数X本书就贴上蓝色贴纸（跟之前颜色不同即可），重复贴纸过程，直到所有书都贴满贴纸。接着对有相同颜色贴纸的书做插入排序。然后撕掉所有贴纸后重新对书进行贴纸，这次则每数Y本书就贴纸（Y &lt; X）,所有书贴满后再进行插入排序。重复贴纸排序、贴纸排序这个过程，直到最后每数1本书就贴纸（也就是每本书都贴同样颜色贴纸），再插入排序为止。<br>话不多说，看图<br><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png" alt="这里写图片描述"></p>
+<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>教科书表达：先取一个小于n的整数d1作为第一个增量，把文件的全部记录分组。所有距离为d1的倍数的记录放在同一个组中。先在各组内进行直接插入排序；然后，取第二个增量d2(小于d1）重复上述的分组和排序，直至所取的增量 =1(  &lt;  …&lt; &lt; d2 &lt; d1)，即所有记录放在同一组中进行直接插入排序为止。<br>简单来说：一个书架放着一排书，现在从第一本书起每数X本书，就在那本书上贴红色贴纸，贴完红色贴纸后，再次从第二本书起每数X本书就贴上蓝色贴纸（跟之前颜色不同即可），重复贴纸过程，直到所有书都贴满贴纸。接着对有相同颜色贴纸的书做插入排序。然后撕掉所有贴纸后重新对书进行贴纸，这次则每数Y本书就贴纸（Y &lt; X）,所有书贴满后再进行插入排序。重复贴纸排序、贴纸排序这个过程，直到最后每数1本书就贴纸（也就是每本书都贴同样颜色贴纸），再插入排序为止。<br>话不多说，看图<br><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png" alt="这里写图片描述"><br><a id="more"></a></p>
 <h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><p>稳定性：由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。<br>时间复杂度：<code>O(n^2)</code><br>空间复杂度：<code>O(1)</code></p>
 <p>常见排序算法一般按平均时间复杂度分为两类：<br><code>O(n^2)</code>：冒泡排序、选择排序、插入排序<br><code>O(nlogn)</code>：归并排序、快速排序、堆排序<br>1w和10w数据效率如下：</p>
 <p><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F3.png" alt="这里写代码片"></p>

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://dmdada.top">
   <title>Vector | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函">
+  <meta name="description" content="Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vector">
 <meta property="og:url" content="http://dmdada.top/2018/06/29/Vector/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函">
+<meta property="og:description" content="Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-02T15:00:17.365Z">
+<meta property="og:updated_time" content="2018-07-05T14:38:35.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vector">
-<meta name="twitter:description" content="Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函">
+<meta name="twitter:description" content="Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
   
@@ -169,8 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h1 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h1><p>名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。<br>和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。<br>vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数定义,而用于多个不同的数据类型。因此,我们可以定义保存 string 对象的 vector,或保存 int 值的 vector,又或是保存自定义的类类型对象(如Sales_items 对象)的 vector。vector 不是一种数据类型,而只是一个类模板,可用来定义任意多种数据类型。vector 类型的每一种都指定了其保存元素的类型。</p>
+        <h1 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h1><p>名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。<br>和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。<br>vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数定义,而用于多个不同的数据类型。因此,我们可以定义保存 string 对象的 vector,或保存 int 值的 vector,又或是保存自定义的类类型对象(如Sales_items 对象)的 vector。vector 不是一种数据类型,而只是一个类模板,可用来定义任意多种数据类型。vector 类型的每一种都指定了其保存元素的类型。<br><a id="more"></a></p>
 
       
 
