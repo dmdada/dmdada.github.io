@@ -149,19 +149,19 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-测试博客-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/23/测试博客-md/">函数源码</a>
+      <a class="article-title" href="/2018/05/23/hello-world/">第一篇博客</a>
     </h1>
   
 
         
-        <a href="/2018/05/23/测试博客-md/" class="archive-article-date">
+        <a href="/2018/05/23/hello-world/" class="archive-article-date">
   	<time datetime="2018-05-23T01:19:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
 </a>
         
@@ -170,15 +170,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
-<h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">char</span> *<span class="title">strcpy</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line">        assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">        <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">        <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line">        <span class="keyword">return</span> address;   </span><br><span class="line"></span><br><span class="line">注意：<span class="built_in">strcpy</span>只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</span><br></pre></td></tr></table></figure>
-<h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">const</span> <span class="keyword">char</span> *t)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(s != <span class="literal">NULL</span> &amp;&amp; t != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">while</span> (*s &amp;&amp; *t &amp;&amp; *s == *t)   </span><br><span class="line">    &#123;   </span><br><span class="line">        ++ s;   </span><br><span class="line">        ++ t;   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> (*s - *t);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strcat</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line"></span><br><span class="line"> assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">    <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">    <span class="keyword">while</span> (*strDes != <span class="string">'\0'</span>)   </span><br><span class="line">        ++ strDes;   </span><br><span class="line">    <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">        <span class="literal">NULL</span>;   </span><br><span class="line">    <span class="keyword">return</span> address;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改  2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p>
-<h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strlen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(str != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;   </span><br><span class="line">    <span class="keyword">while</span> (*str ++ != <span class="string">'\0'</span>)   </span><br><span class="line">        ++ len;   </span><br><span class="line">    <span class="keyword">return</span> len;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strstr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *strSrc, <span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(strSrc != <span class="literal">NULL</span> &amp;&amp; str != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *s = strSrc;   </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *t = str;   </span><br><span class="line">    <span class="keyword">for</span> (; *t != <span class="string">'\0'</span>; ++ strSrc)   </span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="keyword">for</span> (s = strSrc, t = str; *t != <span class="string">'\0'</span> &amp;&amp; *s == *t; ++s, ++t)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (*t == <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">char</span> *) strSrc;   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> * __<span class="function">cdecl <span class="title">strchr</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">                      constchar * <span class="built_in">string</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">int</span> ch</span></span></span><br><span class="line"><span class="function"><span class="params">                       )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">while</span> (*<span class="built_in">string</span> &amp;&amp; *<span class="built_in">string</span> != (<span class="keyword">char</span>)ch)</span><br><span class="line">        <span class="built_in">string</span>++;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (*<span class="built_in">string</span> == (<span class="keyword">char</span>)ch)</span><br><span class="line">       <span class="keyword">return</span>((<span class="keyword">char</span> *)<span class="built_in">string</span>);</span><br><span class="line">    <span class="keyword">return</span>(<span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>
-
+<h2 id="测试博客"><a href="#测试博客" class="headerlink" title="测试博客"></a>测试博客</h2><h3 id="这是一篇测试博客"><a href="#这是一篇测试博客" class="headerlink" title="这是一篇测试博客"></a>这是一篇测试博客</h3><p>第一次使用github+hexo搭建属于自己的博客.<br>日经过不懈的努力终于搭建好了，我非常开心！！</p>
+<pre><code>2018.5.23
+   邓铭
+</code></pre>
       
 
       
@@ -193,14 +188,6 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C/C++</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">程序源码</a>
-        		</li>
       		
 		</ul>
 	</div>
@@ -209,7 +196,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/23/测试博客-md/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/05/23/hello-world/">展开全文 >></a>
         </p>
       
 
