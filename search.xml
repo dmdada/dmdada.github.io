@@ -11,7 +11,7 @@
   <entry>
     <title><![CDATA[Vector]]></title>
     <url>%2F2018%2F06%2F29%2FVector%2F</url>
-    <content type="text"><![CDATA[Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数定义,而用于多个不同的数据类型。因此,我们可以定义保存 string 对象的 vector,或保存 int 值的 vector,又或是保存自定义的类类型对象(如Sales_items 对象)的 vector。vector 不是一种数据类型,而只是一个类模板,可用来定义任意多种数据类型。vector 类型的每一种都指定了其保存元素的类型。]]></content>
+    <content type="text"><![CDATA[Vector名词解释：vector 是同一种类型的对象的集合,每个对象都有一个对应的整数索引值 。和 string 对象一样,标准库将负责管理与存储元素相关的内存。我们把 vector称为容器,是因为它可以包含其他对象，能够存放任意类型的动态数组，增加和压缩数据。一个容器中的所有对象都必须是同一种类型的 。vector 是一个类模板(class template)。使用模板可以编写一个类定义或函数定义,而用于多个不同的数据类型。因此,我们可以定义保存 string 对象的 vector,或保存 int 值的 vector,又或是保存自定义的类类型对象(如Sales_items 对象)的 vector。vector 不是一种数据类型,而只是一个类模板,可用来定义任意多种数据类型。vector 类型的每一种都指定了其保存元素的类型。 vectors运用实例1234567891011121314151617181920212223242526272829#include&lt;iostream&gt; #include&lt;vector&gt; #include&lt;string&gt; #include&lt;algorithm&gt; using namespace std;int main()&#123; vector&lt;string&gt; sentence; sentence.reserve(5); sentence.push_back("hello,"); sentence.push_back("how"); sentence.push_back("are"); sentence.push_back("you"); sentence.push_back("？"); copy(sentence.begin(), sentence.end(), ostream_iterator&lt;string&gt;(cout, " ")); cout &lt;&lt; endl; cout &lt;&lt; "max_size():" &lt;&lt; sentence.max_size() &lt;&lt; endl; cout &lt;&lt; "size():" &lt;&lt; sentence.size() &lt;&lt; endl; cout &lt;&lt; "capacity():" &lt;&lt; sentence.capacity() &lt;&lt; endl; swap(sentence[1], sentence[3]); sentence.insert(find(sentence.begin(), sentence.end(), "？"), "always"); sentence.back() = "!"; copy(sentence.begin(), sentence.end(), ostream_iterator&lt;string&gt;(cout, " ")); cout &lt;&lt; endl; cout &lt;&lt; "max():" &lt;&lt; sentence.max_size() &lt;&lt; endl; cout &lt;&lt; "size();" &lt;&lt; sentence.size() &lt;&lt; endl; cout &lt;&lt; "capacity()" &lt;&lt; sentence.capacity() &lt;&lt; endl;&#125; 结果 实验结果可能如此，注意我说的是“可能”，是的当max_size()和capacity（）的结果由实作版本决定，从这个例子中你可以看到，当容量不足时，此一实作版本将容量扩充1。所以你可以试着运行一下看看有没有和我不同。]]></content>
       <tags>
         <tag>数据结构</tag>
       </tags>
@@ -235,6 +235,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[测试博客这是一篇测试博客 第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[函数源码]]></title>
     <url>%2F2018%2F05%2F23%2F%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md%2F</url>
     <content type="text"><![CDATA[strcpy源码：12345678910 char *strcpy(char *strDes, const char *strSrc) &#123; assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while ((*strDes ++ = *strSrc ++) != '\0') NULL; return address; 注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存&lt;!-- more --&gt; strcmp源码：123456789101112int strcmp(const char *s, const char *t) &#123; assert(s != NULL &amp;&amp; t != NULL); while (*s &amp;&amp; *t &amp;&amp; *s == *t) &#123; ++ s; ++ t; &#125; return (*s - *t); &#125; strcat源码：12345678910111213char *strcat(char *strDes, const char *strSrc) &#123; assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while (*strDes != '\0') ++ strDes; while ((*strDes ++ = *strSrc ++) != '\0') NULL; return address; &#125; 注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改 2.传递的字符数组前一个实参的所分配的内存空间必须足够大 strlen源码：12345678910int strlen(const char *str) &#123; assert(str != NULL); int len = 0; while (*str ++ != '\0') ++ len; return len; &#125; strstr源码：1234567891011121314151617char *strstr(const char *strSrc, const char *str) &#123; assert(strSrc != NULL &amp;&amp; str != NULL); const char *s = strSrc; const char *t = str; for (; *t != '\0'; ++ strSrc) &#123; for (s = strSrc, t = str; *t != '\0' &amp;&amp; *s == *t; ++s, ++t) NULL; if (*t == '\0') return (char *) strSrc; &#125; return NULL; &#125; strchr源码：1234567891011121314char * __cdecl strchr ( constchar * string, int ch )&#123; while (*string &amp;&amp; *string != (char)ch) string++; if (*string == (char)ch) return((char *)string); return(NULL);&#125; 断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。]]></content>
@@ -242,14 +250,6 @@
         <tag>C/C++</tag>
         <tag>数据结构</tag>
         <tag>程序源码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[第一篇博客]]></title>
-    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[测试博客这是一篇测试博客 第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
-      <tags>
-        <tag>C/C++</tag>
       </tags>
   </entry>
 </search>
