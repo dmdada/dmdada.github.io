@@ -159,6 +159,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-希尔排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/20/希尔排序/">希尔排序</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/20/希尔排序/" class="archive-article-date">
+  	<time datetime="2018-06-20T11:23:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="希尔排序（Shell’s-Sort"><a href="#希尔排序（Shell’s-Sort" class="headerlink" title="希尔排序（Shell’s Sort)"></a>希尔排序（Shell’s Sort)</h3><p>名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p>
+<p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：<br>1.插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率。<br>2.但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位。</p>
+<h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>教科书表达：先取一个小于n的整数d1作为第一个增量，把文件的全部记录分组。所有距离为d1的倍数的记录放在同一个组中。先在各组内进行直接插入排序；然后，取第二个增量d2(小于d1）重复上述的分组和排序，直至所取的增量 =1(  &lt;  …&lt; &lt; d2 &lt; d1)，即所有记录放在同一组中进行直接插入排序为止。<br>简单来说：一个书架放着一排书，现在从第一本书起每数X本书，就在那本书上贴红色贴纸，贴完红色贴纸后，再次从第二本书起每数X本书就贴上蓝色贴纸（跟之前颜色不同即可），重复贴纸过程，直到所有书都贴满贴纸。接着对有相同颜色贴纸的书做插入排序。然后撕掉所有贴纸后重新对书进行贴纸，这次则每数Y本书就贴纸（Y &lt; X）,所有书贴满后再进行插入排序。重复贴纸排序、贴纸排序这个过程，直到最后每数1本书就贴纸（也就是每本书都贴同样颜色贴纸），再插入排序为止。<br>话不多说，看图<br><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png" alt="这里写图片描述"><br>
+        
+          <a class="article-more-a" href="/2018/06/20/希尔排序/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/20/希尔排序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-堆排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -857,86 +935,6 @@
 
 
   
-    <article id="post-链表倒数第K个节点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/03/链表倒数第K个节点/">“链表倒数第K个节点”</a>
-    </h1>
-  
-
-        
-        <a href="/2018/06/03/链表倒数第K个节点/" class="archive-article-date">
-  	<time datetime="2018-06-03T14:44:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>输入一个链表，输出该链表中倒数第k个结点。<br>思路：设置两个指针指向头节点分别为p，和ptr；<br>让p指针先走k-1次，然后让ptr跟着p指针一直遍历下去直到遍历完整个链表，这时ptr指针就指向倒数第k个节点了。<br>有些兴趣的同学可以仔细琢磨。很有意思。<br>附上我的代码：<br>
-        
-          <a class="article-more-a" href="/2018/06/03/链表倒数第K个节点/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C/C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/03/链表倒数第K个节点/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1061,11 +1059,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1086,6 +1084,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">面试题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
