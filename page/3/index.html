@@ -159,6 +159,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C语言注释转C++注释" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/04/C语言注释转C++注释/">C语言注释转C++注释</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/04/C语言注释转C++注释/" class="archive-article-date">
+  	<time datetime="2018-06-04T14:06:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="题目要求"><a href="#题目要求" class="headerlink" title="题目要求"></a>题目要求</h2><p>int a = 10;<br>// 1.一般情况<br>int num = 0;<br>/_ int i = 0; _/</p>
+<p>// 2.换行问题<br>/_ int i = 0; <em>/int j = 0;<br>/</em> int i = 0; _/<br>int j = 0;</p>
+<p>// 3.匹配问题<br>/_int i = 0;/_xxxxx*/</p>
+<p>// 4.多行注释问题<br>/_<br>int i=0;<br>int j = 0;<br>int k = 0;<br>_/int k = 0;</p>
+<p>// 5.连续注释问题<br>/<em>int a=0;</em>//<em>int b=0;</em>/</p>
+<p>// 6.连续的<strong>/问题<br>/*</strong>/</p>
+<p>// 7.C++注释问题<br>// /<em>xxxxxxxxxxxx</em>/<br>
+        
+          <a class="article-more-a" href="/2018/06/04/C语言注释转C++注释/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C/C++</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/04/C语言注释转C++注释/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-链表倒数第K个节点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -865,87 +947,6 @@
 
 
   
-    <article id="post-常量指针和指针常量的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/24/常量指针和指针常量的区别/">指针常量和常量指针的区别</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/24/常量指针和指针常量的区别/" class="archive-article-date">
-  	<time datetime="2018-05-24T15:09:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。<br>下面开始正题。。。。</p>
-<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2><p>指针常量：顾名思义它就是一个常量，但是是指针修饰的。<br>格式为：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p <span class="comment">//指针常量</span></span><br></pre></td></tr></table></figure>
-<p>在这个例子下定义以下代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a，b；</span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p=&amp;a <span class="comment">//指针常量</span></span><br><span class="line"><span class="comment">//那么分为一下两种操作</span></span><br><span class="line">*p=<span class="number">9</span>;<span class="comment">//操作成功</span></span><br><span class="line">p=&amp;b;<span class="comment">//操作错误</span></span><br></pre></td></tr></table></figure>
-<p>因为声明了指针常量，说明指针变量不允许修改。如同次指针指向一个地址该地址不能被修改，但是该地址里的内容可以被修改<br>
-        
-          <a class="article-more-a" href="/2018/05/24/常量指针和指针常量的区别/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/24/常量指针和指针常量的区别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1070,11 +1071,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
