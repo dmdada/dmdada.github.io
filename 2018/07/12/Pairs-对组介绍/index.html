@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="http://dmdada.top">
   <title>Pairs-对组介绍 | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="奋斗的程序猿">
+  <meta name="description" content="队组class Pair 可以将两个值视作一个单元。C++标准库库内多处使用了这个Class，尤其是容器map和multimap，就是使用了Pairs来管理键值对，任何函数返回两个值也需要pair.123456789101112131415namespace std&amp;#123;  template&amp;lt;class  T1,class T2&amp;gt;  struct Pair&amp;#123;    ty">
+<meta name="keywords" content="C++标准程序库">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pairs-对组介绍">
 <meta property="og:url" content="http://dmdada.top/2018/07/12/Pairs-对组介绍/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="奋斗的程序猿">
+<meta property="og:description" content="队组class Pair 可以将两个值视作一个单元。C++标准库库内多处使用了这个Class，尤其是容器map和multimap，就是使用了Pairs来管理键值对，任何函数返回两个值也需要pair.123456789101112131415namespace std&amp;#123;  template&amp;lt;class  T1,class T2&amp;gt;  struct Pair&amp;#123;    ty">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-12T14:44:00.676Z">
+<meta property="og:updated_time" content="2018-07-12T15:10:35.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pairs-对组介绍">
-<meta name="twitter:description" content="奋斗的程序猿">
+<meta name="twitter:description" content="队组class Pair 可以将两个值视作一个单元。C++标准库库内多处使用了这个Class，尤其是容器map和multimap，就是使用了Pairs来管理键值对，任何函数返回两个值也需要pair.123456789101112131415namespace std&amp;#123;  template&amp;lt;class  T1,class T2&amp;gt;  struct Pair&amp;#123;    ty">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
   
@@ -178,7 +179,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="队组"><a href="#队组" class="headerlink" title="队组"></a>队组</h2><p>class Pair 可以将两个值视作一个单元。C++标准库库内多处使用了这个Class，尤其是容器map和multimap，就是使用了Pairs来管理键值对，任何函数返回两个值也需要pair.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="built_in">std</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span>  <span class="title">T1</span>,<span class="title">class</span> <span class="title">T2</span>&gt;</span></span><br><span class="line"><span class="class">  <span class="title">struct</span> <span class="title">Pair</span>&#123;</span></span><br><span class="line">    <span class="keyword">typedef</span> T1 first_type;</span><br><span class="line">    <span class="keyword">typedef</span> T2 second_type;</span><br><span class="line">    pair()</span><br><span class="line">    :first(T1(),second(T2))</span><br><span class="line">    &#123;&#125;</span><br><span class="line">      pair(<span class="keyword">const</span> pair&lt;U,V&gt;&amp;p)</span><br><span class="line">      :first (p.first),second(p.second)&#123;&#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>注意，pair被定义为struct，而不是class，这样所有成员都是public,因此可以直接存储pair的个别值。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>:pair&lt;<span class="keyword">int</span>,<span class="keyword">float</span>&gt;p;</span><br></pre></td></tr></table></figure></p>
+<p>上述defalut构造函数生成一个pair时，以int（）和float（）来初始化p,这两个构造函数为0值；<br>如果pair对象被复制，调用的是由系统隐式生成的的哪个copy构造函数，例如：<br><code>`</code>c++<br>void f(std:：pair&lt;int,const char<em>&gt;);<br>void f(std::pair<const int,std::string="">);<br>void foo{<br>  std::pair&lt;int,const char</const></em>&gt;p(42,”hello”);<br>  f(p);<br>  g(p);<br>}</p>
+
       
 
       
@@ -222,6 +226,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++标准程序库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -470,6 +485,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++标准程序库</a>
               </li>
             
             <div class="clearfix"></div>
