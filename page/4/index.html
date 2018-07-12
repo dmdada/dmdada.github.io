@@ -159,6 +159,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/25/快速排序/">快速排序</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/25/快速排序/" class="archive-article-date">
+  	<time datetime="2018-05-25T01:19:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="快速排序（Quicksort）"><a href="#快速排序（Quicksort）" class="headerlink" title="快速排序（Quicksort）"></a>快速排序（Quicksort）</h3><p>是对冒泡排序的一种改进。快速排序由C. A. R. Hoare在1962年提出。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>官方解释：设要排序的数组是A[0]……A[N-1]，首先任意选取一个数据（通常选用数组的第一个数）作为关键数据，然后将所有比它小的数都放到它前面，所有比它大的数都放到它后面，这个过程称为一趟快速排序。值得注意的是，快速排序不是一种稳定的排序算法，也就是说，多个相同的值的相对位置也许会在算法结束时产生变动。<br>一趟快速排序的算法是：<br>1）设置两个变量i、j，排序开始的时候：i=0，j=N-1；<br>2）以第一个数组元素作为关键数据，赋值给key，即key=A[0]；<br>3）从j开始向前搜索，即由后开始向前搜索(j–)，找到第一个小于key的值A[j]，将A[j]和A[i]互换；<br>4）从i开始向后搜索，即由前开始向后搜索(i++)，找到第一个大于key的A[i]，将A[i]和A[j]互换；<br>5）重复第3、4步，直到i=j； (3,4步中，没找到符合条件的值，即3中A[j]不小于key,4中A[i]不大于key的时候改变j、i的值，使得j=j-1，i=i+1，直至找到为止。找到符合条件的值，进行交换的时候i， j指针位置不变。另外，i==j这一过程一定正好是i+或j-完成的时候，此时令循环结束）。<br>尼玛，这都是啥，想必没有见过这个算法的小可爱，对这个官方解释可能是一脸懵逼。所以我就把这个算法通俗的讲一讲。<br>首先要对一堆数字排序我们必须找到一个基准数。而这个基准数可以是这一堆数字中的任意一个，我们定义两个移动的变量从数组的两头向中间检索。从右往左走的变量找到一个小于基准数后停止，从左往右的的变量找到一个大余基准数后停止然后这两个数就交换一下，直到两个变量相遇后就遍历了整个数组，这时候数字的左边都小于基准数，右边大于基准数。然后把数组分成两部分在执行遍历交换后，就完成排序了。<br>
+        
+          <a class="article-more-a" href="/2018/05/25/快速排序/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/25/快速排序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-常量指针和指针常量的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -240,95 +317,6 @@
 
 
   
-    <article id="post-测试博客-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/23/测试博客-md/">函数源码</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/23/测试博客-md/" class="archive-article-date">
-  	<time datetime="2018-05-23T01:19:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">char</span> *<span class="title">strcpy</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line">        assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">        <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">        <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line">        <span class="keyword">return</span> address;   </span><br><span class="line"></span><br><span class="line">注意：<span class="built_in">strcpy</span>只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</span><br><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">const</span> <span class="keyword">char</span> *t)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(s != <span class="literal">NULL</span> &amp;&amp; t != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">while</span> (*s &amp;&amp; *t &amp;&amp; *s == *t)   </span><br><span class="line">    &#123;   </span><br><span class="line">        ++ s;   </span><br><span class="line">        ++ t;   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> (*s - *t);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strcat</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line"></span><br><span class="line"> assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">    <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">    <span class="keyword">while</span> (*strDes != <span class="string">'\0'</span>)   </span><br><span class="line">        ++ strDes;   </span><br><span class="line">    <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">        <span class="literal">NULL</span>;   </span><br><span class="line">    <span class="keyword">return</span> address;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改  2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p>
-<h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strlen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(str != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;   </span><br><span class="line">    <span class="keyword">while</span> (*str ++ != <span class="string">'\0'</span>)   </span><br><span class="line">        ++ len;   </span><br><span class="line">    <span class="keyword">return</span> len;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strstr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *strSrc, <span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(strSrc != <span class="literal">NULL</span> &amp;&amp; str != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *s = strSrc;   </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *t = str;   </span><br><span class="line">    <span class="keyword">for</span> (; *t != <span class="string">'\0'</span>; ++ strSrc)   </span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="keyword">for</span> (s = strSrc, t = str; *t != <span class="string">'\0'</span> &amp;&amp; *s == *t; ++s, ++t)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (*t == <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">char</span> *) strSrc;   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> * __<span class="function">cdecl <span class="title">strchr</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">                      constchar * <span class="built_in">string</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">int</span> ch</span></span></span><br><span class="line"><span class="function"><span class="params">                       )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">while</span> (*<span class="built_in">string</span> &amp;&amp; *<span class="built_in">string</span> != (<span class="keyword">char</span>)ch)</span><br><span class="line">        <span class="built_in">string</span>++;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (*<span class="built_in">string</span> == (<span class="keyword">char</span>)ch)</span><br><span class="line">       <span class="keyword">return</span>((<span class="keyword">char</span> *)<span class="built_in">string</span>);</span><br><span class="line">    <span class="keyword">return</span>(<span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C/C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">程序源码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/23/测试博客-md/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -378,6 +366,95 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/05/23/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-测试博客-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/23/测试博客-md/">函数源码</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/23/测试博客-md/" class="archive-article-date">
+  	<time datetime="2018-05-23T01:19:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="strcpy源码："><a href="#strcpy源码：" class="headerlink" title="strcpy源码："></a>strcpy源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">char</span> *<span class="title">strcpy</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function">    </span>&#123;   </span><br><span class="line">        assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">        <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">        <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line">        <span class="keyword">return</span> address;   </span><br><span class="line"></span><br><span class="line">注意：<span class="built_in">strcpy</span>只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存</span><br><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="strcmp源码："><a href="#strcmp源码：" class="headerlink" title="strcmp源码："></a>strcmp源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *s, <span class="keyword">const</span> <span class="keyword">char</span> *t)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(s != <span class="literal">NULL</span> &amp;&amp; t != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">while</span> (*s &amp;&amp; *t &amp;&amp; *s == *t)   </span><br><span class="line">    &#123;   </span><br><span class="line">        ++ s;   </span><br><span class="line">        ++ t;   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> (*s - *t);   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="strcat源码："><a href="#strcat源码：" class="headerlink" title="strcat源码："></a>strcat源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strcat</span><span class="params">(<span class="keyword">char</span> *strDes, <span class="keyword">const</span> <span class="keyword">char</span> *strSrc)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line"></span><br><span class="line"> assert((strDes != <span class="literal">NULL</span>) &amp;&amp; (strSrc != <span class="literal">NULL</span>));   </span><br><span class="line">    <span class="keyword">char</span> *address = strDes;   </span><br><span class="line">    <span class="keyword">while</span> (*strDes != <span class="string">'\0'</span>)   </span><br><span class="line">        ++ strDes;   </span><br><span class="line">    <span class="keyword">while</span> ((*strDes ++ = *strSrc ++) != <span class="string">'\0'</span>)   </span><br><span class="line">        <span class="literal">NULL</span>;   </span><br><span class="line">    <span class="keyword">return</span> address;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改  2.传递的字符数组前一个实参的所分配的内存空间必须足够大</p>
+<h3 id="strlen源码："><a href="#strlen源码：" class="headerlink" title="strlen源码："></a>strlen源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">strlen</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(str != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;   </span><br><span class="line">    <span class="keyword">while</span> (*str ++ != <span class="string">'\0'</span>)   </span><br><span class="line">        ++ len;   </span><br><span class="line">    <span class="keyword">return</span> len;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="strstr源码："><a href="#strstr源码：" class="headerlink" title="strstr源码："></a>strstr源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> *<span class="title">strstr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> *strSrc, <span class="keyword">const</span> <span class="keyword">char</span> *str)</span>   </span></span><br><span class="line"><span class="function"></span>&#123;   </span><br><span class="line">    assert(strSrc != <span class="literal">NULL</span> &amp;&amp; str != <span class="literal">NULL</span>);   </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *s = strSrc;   </span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span> *t = str;   </span><br><span class="line">    <span class="keyword">for</span> (; *t != <span class="string">'\0'</span>; ++ strSrc)   </span><br><span class="line">    &#123;   </span><br><span class="line">        <span class="keyword">for</span> (s = strSrc, t = str; *t != <span class="string">'\0'</span> &amp;&amp; *s == *t; ++s, ++t)   </span><br><span class="line">            <span class="literal">NULL</span>;   </span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (*t == <span class="string">'\0'</span>)   </span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">char</span> *) strSrc;   </span><br><span class="line">    &#125;   </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="strchr源码："><a href="#strchr源码：" class="headerlink" title="strchr源码："></a>strchr源码：</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> * __<span class="function">cdecl <span class="title">strchr</span> <span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">                      constchar * <span class="built_in">string</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">                      <span class="keyword">int</span> ch</span></span></span><br><span class="line"><span class="function"><span class="params">                       )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">while</span> (*<span class="built_in">string</span> &amp;&amp; *<span class="built_in">string</span> != (<span class="keyword">char</span>)ch)</span><br><span class="line">        <span class="built_in">string</span>++;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">if</span> (*<span class="built_in">string</span> == (<span class="keyword">char</span>)ch)</span><br><span class="line">       <span class="keyword">return</span>((<span class="keyword">char</span> *)<span class="built_in">string</span>);</span><br><span class="line">    <span class="keyword">return</span>(<span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h<br>结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">C/C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">程序源码</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/23/测试博客-md/">展开全文 >></a>
         </p>
       
 
@@ -527,7 +604,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,11 +612,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color1">C/C++</a>
               </li>
              
               <li class="article-tag-list-item">

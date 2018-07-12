@@ -6,23 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dmdada.top">
-  <title>二维数组的查找 | 邓铭的博客</title>
+  <title>Pairs-对组介绍 | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 题目分析矩阵是有序的，从左下角来看，向上数字递减，向右数字递增，因此从左下角开始查找，当要查找数字比左下角数字大时。右移要查找数字比左下角数字小时，上移。例矩阵：              1   2   3">
-<meta name="keywords" content="面试">
+  <meta name="description" content="奋斗的程序猿">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二维数组的查找">
-<meta property="og:url" content="http://dmdada.top/2018/06/01/二维数组的查找/index.html">
+<meta property="og:title" content="Pairs-对组介绍">
+<meta property="og:url" content="http://dmdada.top/2018/07/12/Pairs-对组介绍/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 题目分析矩阵是有序的，从左下角来看，向上数字递减，向右数字递增，因此从左下角开始查找，当要查找数字比左下角数字大时。右移要查找数字比左下角数字小时，上移。例矩阵：              1   2   3">
+<meta property="og:description" content="奋斗的程序猿">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/2018060122062050?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180601220700185?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-05T14:38:35.452Z">
+<meta property="og:updated_time" content="2018-07-12T14:44:00.676Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二维数组的查找">
-<meta name="twitter:description" content="题目描述在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。 题目分析矩阵是有序的，从左下角来看，向上数字递减，向右数字递增，因此从左下角开始查找，当要查找数字比左下角数字大时。右移要查找数字比左下角数字小时，上移。例矩阵：              1   2   3">
-<meta name="twitter:image" content="https://img-blog.csdn.net/2018060122062050?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="Pairs-对组介绍">
+<meta name="twitter:description" content="奋斗的程序猿">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
   
@@ -162,32 +158,27 @@
         
 		  </div>
           <div id="js-content" class="content-ll">
-            <article id="post-二维数组的查找" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Pairs-对组介绍" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      二维数组的查找
+      Pairs-对组介绍
     </h1>
   
 
         
-        <a href="/2018/06/01/二维数组的查找/" class="archive-article-date">
-  	<time datetime="2018-06-01T14:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
+        <a href="/2018/07/12/Pairs-对组介绍/" class="archive-article-date">
+  	<time datetime="2018-07-12T14:44:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
-<h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><p>矩阵是有序的，从左下角来看，向上数字递减，向右数字递增，因此从左下角开始查找，当要查找数字比左下角数字大时。右移要查找数字比左下角数字小时，上移。<br>例矩阵：<br>              1   2   3<br>              4   5   6<br>              7   8   9</p>
-<p>具体算法如下：<br><a id="more"></a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line">  <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">	  <span class="keyword">int</span> i, j;</span><br><span class="line">	  <span class="keyword">int</span> key = <span class="number">0</span>;</span><br><span class="line">	  <span class="keyword">int</span> <span class="keyword">const</span> row = <span class="number">3</span>;</span><br><span class="line">	  <span class="keyword">int</span> <span class="keyword">const</span> col = <span class="number">3</span>;</span><br><span class="line">	  <span class="keyword">int</span> arr[row][col] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125;;</span><br><span class="line">	  <span class="built_in">cout</span> &lt;&lt; <span class="string">"输入要查找的值"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	  <span class="built_in">cin</span> &gt;&gt; key;</span><br><span class="line">	 <span class="comment">/* for (i = 0; i &lt; row; i++)</span></span><br><span class="line"><span class="comment">	  &#123;</span></span><br><span class="line"><span class="comment">		  for (j = 0; j &lt; col; j++)</span></span><br><span class="line"><span class="comment">		  &#123;</span></span><br><span class="line"><span class="comment">			  cin &gt;&gt; arr[row][col];</span></span><br><span class="line"><span class="comment">		  &#125;</span></span><br><span class="line"><span class="comment">	  &#125;*/</span></span><br><span class="line">	  <span class="keyword">for</span> (i = row - <span class="number">1</span>, j = <span class="number">0</span>;(i &gt;= <span class="number">0</span> )&amp;&amp; (j &lt; col);)</span><br><span class="line">	  &#123;</span><br><span class="line">		  <span class="keyword">if</span> (arr[i][j] == key)</span><br><span class="line">		  &#123;</span><br><span class="line">			  <span class="built_in">cout</span> &lt;&lt; <span class="string">"该数存在!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		  &#125;</span><br><span class="line">		  <span class="keyword">if</span> (arr[i][j]&gt;key)</span><br><span class="line">		  &#123;</span><br><span class="line">			  i--;</span><br><span class="line">			  <span class="keyword">continue</span>;</span><br><span class="line">		  &#125;</span><br><span class="line">		  <span class="keyword">if</span> (arr[i][j] &lt; key)</span><br><span class="line">		  &#123;</span><br><span class="line">			  j++;</span><br><span class="line">		  &#125;</span><br><span class="line">	  &#125;</span><br><span class="line">	  <span class="built_in">cout</span> &lt;&lt; <span class="string">"该数不存在"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h3><p><img src="https://img-blog.csdn.net/2018060122062050?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="404"><br><img src="https://img-blog.csdn.net/20180601220700185?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="404"></p>
-
+        
       
 
       
@@ -231,17 +222,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -292,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://dmdada.top/2018/06/01/二维数组的查找/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://dmdada.top/2018/07/12/Pairs-对组介绍/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -306,18 +286,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/03/链表倒数第K个节点/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          “链表倒数第K个节点”
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/31/求二进制1的个数/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">求二进制中1的个数</div>
+    <a href="/2018/07/09/二叉树/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">二叉树</div>
       <i class="icon-circle-right"></i>
     </a>
   
