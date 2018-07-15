@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-07-15T07:05:36.839Z</updated>
+  <updated>2018-07-15T15:21:30.233Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -17,16 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>二叉树的顺序存储实现</title>
+    <title>二叉树的链式存储实现</title>
     <link href="http://dmdada.top/2018/07/15/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84l%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0/"/>
     <id>http://dmdada.top/2018/07/15/二叉树的l链式存储实现/</id>
     <published>2018-07-15T07:05:36.000Z</published>
-    <updated>2018-07-15T07:05:36.839Z</updated>
+    <updated>2018-07-15T15:21:30.233Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="数据结构" scheme="http://dmdada.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[二叉树的顺序存储实现]]></title>
+    <title><![CDATA[二叉树的链式存储实现]]></title>
     <url>%2F2018%2F07%2F15%2F%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84l%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0%2F</url>
     <content type="text"></content>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[Pairs-对组介绍]]></title>
