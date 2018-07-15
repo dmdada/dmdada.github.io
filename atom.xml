@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-07-12T15:42:57.771Z</updated>
+  <updated>2018-07-15T07:05:36.839Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树的顺序存储实现</title>
+    <link href="http://dmdada.top/2018/07/15/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://dmdada.top/2018/07/15/二叉树的顺序存储实现/</id>
+    <published>2018-07-15T07:05:36.000Z</published>
+    <updated>2018-07-15T07:05:36.839Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Pairs-对组介绍</title>
@@ -41,9 +55,9 @@
     <link href="http://dmdada.top/2018/07/09/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     <id>http://dmdada.top/2018/07/09/二叉树/</id>
     <published>2018-07-09T14:38:40.000Z</published>
-    <updated>2018-07-11T15:42:46.662Z</updated>
+    <updated>2018-07-15T07:04:57.238Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>在计算机科学中，二叉树是每个结点最多有两个子树的树结构。通常子树被称作“左子树”（left subtree）和“右子树”（right subtree）。二叉树常被用于实现二叉查找树和二叉堆。<br>二叉树的每个结点至多只有二棵子树(不存在度大于2的结点)，二叉树的子树有左右之分，次序不能颠倒。二叉树的第i层至多有2^{i-1}个结点；深度为k的二叉树至多有2^k-1个结点；对任何一棵二叉树T，如果其终端结点数为n_0，度为2的结点数为n_2，则n_0=n_2+1。<br>一棵深度为k，且有2^k-1个节点的二叉树，称为满二叉树。这种树的特点是每一层上的节点数都是最大节点数。而在一棵二叉树中，除最后一层外，若其余层都是满的，并且最后一层或者是满的，或者是在右边缺少连续若干节点，则此二叉树为完全二叉树。具有n个节点的完全二叉树的深度为log2(n+1)。深度为k的完全二叉树，至少有2^(k-1)个节点，至多有2^k-1个节点。<br><a id="more"></a></p><h3 id="二叉树相关知识"><a href="#二叉树相关知识" class="headerlink" title="二叉树相关知识"></a>二叉树相关知识</h3><p>满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层，则这样的二叉树称作满二叉树。<br>完全二叉树：如果一颗具有n个节点的二叉树的结构与满二叉树的前n个节点的结构相同，这样的二叉树称为完全二叉树。</p><h3 id="二叉树性质"><a href="#二叉树性质" class="headerlink" title="二叉树性质"></a>二叉树性质</h3><p>1:若规定根节点的层数为0，则一棵非空二叉树的第i层上最多有2^i(i&gt;=0)个节点。<br>2: 若规定只有根节点的二叉树的深度为0，则深度为k的二叉树的最大节点数是2^(k+1)-1(k&gt;=-1)。<br>3:对于一棵非空的二叉树，如果叶节点个数为n0，度为2的节点个数为n2，则有n0=n2+1。<br>4:具有n个节点的完全二叉树的深度k为大于或等于ln(n+1)-1的最小整数。<br>5:对于具有n个节点的完全二叉树，如果按照从上至下和从左至右的顺序对所有节点序号从0开始顺序编号，则对于序号为i(0&lt;=i&lt;n)的节点有：<br> 1)如果i〉0，则序号为i节点的双亲节点的序号为(i-1)/2(/为整除)；如果i=0，则序号为i节点为根节点，无双亲节点。<br> 2)如果2i+1&lt;n,则序号为i节点的左孩子节点的序号为2i+1；如果2i+1&gt;=n,则序号为i节点无左孩子。<br> 3)如果2i+2&lt;n,则序号为i节点的右孩子节点的序号为2i+2;如果2i+2&gt;=n，则序号为i节点无右孩子。</p><h3 id="二叉树的存储方式"><a href="#二叉树的存储方式" class="headerlink" title="二叉树的存储方式"></a>二叉树的存储方式</h3><p>1.二叉树的顺序存储结构<br> 利用性质5，对于完全二叉树可以利用一维数组存储，如果不是完全二叉树，则可以补空节点，使成为完全二叉树在进行存储，<br> 但是对于非完全二叉树，可能要浪费很多的空间。所以并不是很理想。<br>2.二叉树的链式存储结构<br>  二叉树的链式存储结构就是用指针建立二叉树中节点之间的关系，二叉树最常用的链式存储结构是二叉链表。二叉树的二叉链表存储结构是一种常用的二叉树存储结构。二叉链表存储结构的优点是结构简单，可以方便的构造任何形状的二叉树，并可以方便的实现二叉树的大多数操作。<br>  二叉链表存储结构的缺点是，查找当前节点的双亲节点操作实现比较麻烦。</p><h3 id="二叉链表顺序存储的实现"><a href="#二叉链表顺序存储的实现" class="headerlink" title="二叉链表顺序存储的实现"></a>二叉链表顺序存储的实现</h3>]]></content>
+    <content type="html"><![CDATA[<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>在计算机科学中，二叉树是每个结点最多有两个子树的树结构。通常子树被称作“左子树”（left subtree）和“右子树”（right subtree）。二叉树常被用于实现二叉查找树和二叉堆。<br>二叉树的每个结点至多只有二棵子树(不存在度大于2的结点)，二叉树的子树有左右之分，次序不能颠倒。二叉树的第i层至多有2^{i-1}个结点；深度为k的二叉树至多有2^k-1个结点；对任何一棵二叉树T，如果其终端结点数为n_0，度为2的结点数为n_2，则n_0=n_2+1。<br>一棵深度为k，且有2^k-1个节点的二叉树，称为满二叉树。这种树的特点是每一层上的节点数都是最大节点数。而在一棵二叉树中，除最后一层外，若其余层都是满的，并且最后一层或者是满的，或者是在右边缺少连续若干节点，则此二叉树为完全二叉树。具有n个节点的完全二叉树的深度为log2(n+1)。深度为k的完全二叉树，至少有2^(k-1)个节点，至多有2^k-1个节点。<br><a id="more"></a></p><h3 id="二叉树相关知识"><a href="#二叉树相关知识" class="headerlink" title="二叉树相关知识"></a>二叉树相关知识</h3><p>满二叉树：在一棵二叉树中，如果所有分支节点都存在左子树和右子树，并且所有叶子节点都在同一层，则这样的二叉树称作满二叉树。<br>完全二叉树：如果一颗具有n个节点的二叉树的结构与满二叉树的前n个节点的结构相同，这样的二叉树称为完全二叉树。</p><h3 id="二叉树性质"><a href="#二叉树性质" class="headerlink" title="二叉树性质"></a>二叉树性质</h3><p>1:若规定根节点的层数为0，则一棵非空二叉树的第i层上最多有2^i(i&gt;=0)个节点。<br>2: 若规定只有根节点的二叉树的深度为0，则深度为k的二叉树的最大节点数是2^(k+1)-1(k&gt;=-1)。<br>3:对于一棵非空的二叉树，如果叶节点个数为n0，度为2的节点个数为n2，则有n0=n2+1。<br>4:具有n个节点的完全二叉树的深度k为大于或等于ln(n+1)-1的最小整数。<br>5:对于具有n个节点的完全二叉树，如果按照从上至下和从左至右的顺序对所有节点序号从0开始顺序编号，则对于序号为i(0&lt;=i&lt;n)的节点有：<br> 1)如果i〉0，则序号为i节点的双亲节点的序号为(i-1)/2(/为整除)；如果i=0，则序号为i节点为根节点，无双亲节点。<br> 2)如果2i+1&lt;n,则序号为i节点的左孩子节点的序号为2i+1；如果2i+1&gt;=n,则序号为i节点无左孩子。<br> 3)如果2i+2&lt;n,则序号为i节点的右孩子节点的序号为2i+2;如果2i+2&gt;=n，则序号为i节点无右孩子。</p><h3 id="二叉树的存储方式"><a href="#二叉树的存储方式" class="headerlink" title="二叉树的存储方式"></a>二叉树的存储方式</h3><p>1.二叉树的顺序存储结构<br> 利用性质5，对于完全二叉树可以利用一维数组存储，如果不是完全二叉树，则可以补空节点，使成为完全二叉树在进行存储，<br> 但是对于非完全二叉树，可能要浪费很多的空间。所以并不是很理想。<br>2.二叉树的链式存储结构<br>  二叉树的链式存储结构就是用指针建立二叉树中节点之间的关系，二叉树最常用的链式存储结构是二叉链表。二叉树的二叉链表存储结构是一种常用的二叉树存储结构。二叉链表存储结构的优点是结构简单，可以方便的构造任何形状的二叉树，并可以方便的实现二叉树的大多数操作。<br>  二叉链表存储结构的缺点是，查找当前节点的双亲节点操作实现比较麻烦。</p>]]></content>
     
     <summary type="html">
     
@@ -425,24 +439,6 @@
       <category term="C/C++" scheme="http://dmdada.top/tags/C-C/"/>
     
       <category term="面试" scheme="http://dmdada.top/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>找到数组第一个相同的数</title>
-    <link href="http://dmdada.top/2018/06/06/%E6%89%BE%E5%88%B0%E6%95%B0%E7%BB%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%9B%B8%E5%90%8C%E7%9A%84%E6%95%B0/"/>
-    <id>http://dmdada.top/2018/06/06/找到数组第一个相同的数/</id>
-    <published>2018-06-06T15:04:17.000Z</published>
-    <updated>2018-07-05T14:38:35.505Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>给定一个数组，然找到数组里第一个重复的数字。<br>例：<br>   arr[]={1,2,4,3,6,5,6,5,8,9}<br>找到5。</p><a id="more"></a><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">checknum</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> key = arr[<span class="number">0</span>];</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; num; j++)</span><br><span class="line">  &#123;</span><br><span class="line">  key = arr[j];</span><br><span class="line">  <span class="keyword">for</span> (i = j + <span class="number">1</span>; i &lt; num; i++)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="keyword">if</span> (arr[i] == key)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"该数组有重复数字,数字是："</span> &lt;&lt; key &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"没有重复的数字"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> arr[] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span> &#125;;</span><br><span class="line">  checknum(arr, <span class="number">9</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="https://img-blog.csdn.net/20180608171059770?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;给定一个数组，然找到数组里第一个重复的数字。&lt;br&gt;例：&lt;br&gt;   arr[]={1,2,4,3,6,5,6,5,8,9}&lt;br&gt;找到5。&lt;/p&gt;
-    
-    </summary>
-    
     
   </entry>
   

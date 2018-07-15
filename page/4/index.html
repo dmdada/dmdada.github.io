@@ -159,6 +159,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-指针数组和数组指针-md" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/26/指针数组和数组指针-md/">指针数组和数组指针的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/26/指针数组和数组指针-md/" class="archive-article-date">
+  	<time datetime="2018-05-26T15:36:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天聊了常量指针和指针常量的区别，今天继续一个比较容易混淆的话题，指针数组和数组指针=.=!</p>
+<h3 id="数组指针"><a href="#数组指针" class="headerlink" title="数组指针"></a>数组指针</h3><p>含义：指向数组的的指针<br>(1)数组在内存中的表示<br>创建一个数组就是在内存里面开辟一块连续的空间，比如int a[4];就是在内存里面开辟了一个大小为4*sizeof(int)字节的内存空间。而二维数组是特殊的一维数组。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">2</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;<span class="comment">//这是一个2*2的二维数组  </span></span><br><span class="line">    <span class="keyword">int</span> (*p)[<span class="number">2</span>];<span class="comment">//数组指针  </span></span><br><span class="line">    p=a;<span class="comment">//令p指向数组a  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里p是一个指向数组的指针。<br>
+        
+          <a class="article-more-a" href="/2018/05/26/指针数组和数组指针-md/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/26/指针数组和数组指针-md/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-快速排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -608,19 +686,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++标准程序库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">实用知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++标准程序库</a>
               </li>
              
               <li class="article-tag-list-item">
