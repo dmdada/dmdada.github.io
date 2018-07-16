@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-07-16T15:31:17.292Z</updated>
+  <updated>2018-07-16T15:32:56.829Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>二二叉的树层序遍历</title>
-    <link href="http://dmdada.top/2018/07/16/%E4%BA%8C%E4%BA%8C%E5%8F%89%E7%9A%84%E6%A0%91%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
-    <id>http://dmdada.top/2018/07/16/二二叉的树层序遍历/</id>
+    <title>二叉树的层序遍历</title>
+    <link href="http://dmdada.top/2018/07/16/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
+    <id>http://dmdada.top/2018/07/16/二叉树的层序遍历/</id>
     <published>2018-07-16T15:31:17.000Z</published>
-    <updated>2018-07-16T15:31:17.292Z</updated>
+    <updated>2018-07-16T15:32:56.829Z</updated>
     
     <summary type="html">
     
