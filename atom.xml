@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-07-17T14:55:31.449Z</updated>
+  <updated>2018-07-18T14:53:32.352Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="http://dmdada.top/2018/07/16/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86/"/>
     <id>http://dmdada.top/2018/07/16/二叉树的层序遍历/</id>
     <published>2018-07-16T15:31:17.000Z</published>
-    <updated>2018-07-17T14:55:31.449Z</updated>
+    <updated>2018-07-18T14:53:32.352Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="层序遍历算法"><a href="#层序遍历算法" class="headerlink" title="层序遍历算法"></a>层序遍历算法</h3><p>二叉树的层序遍历：从根开始，依次向下，对于每一层从左向右遍历。<br>同二叉树的前中后序遍历不同的是，前中后序采用的是堆，而二叉树层序遍历采用的是队列。<br>因此前中后序遍历可以采用递归算法，而层序遍历却不行！</p><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h3 id="层序遍历算法"><a href="#层序遍历算法" class="headerlink" title="层序遍历算法"></a>层序遍历算法</h3><p>二叉树的层序遍历：从根开始，依次向下，对于每一层从左向右遍历。<br>同二叉树的前中后序遍历不同的是，前中后序采用的是堆，而二叉树层序遍历采用的是队列。<br>因此前中后序遍历可以采用递归算法，而层序遍历却不行！</p><p>###层序遍历的模拟实现</p><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;h3 id=&quot;层序遍历算法&quot;&gt;&lt;a href=&quot;#层序遍历算法&quot; class=&quot;headerlink&quot; title=&quot;层序遍历算法&quot;&gt;&lt;/a&gt;层序遍历算法&lt;/h3&gt;&lt;p&gt;二叉树的层序遍历：从根开始，依次向下，对于每一层从左向右遍历。&lt;br&gt;同二叉树的前中后序遍历不同的是，前中后序采用的是堆，而二叉树层序遍历采用的是队列。&lt;br&gt;因此前中后序遍历可以采用递归算法，而层序遍历却不行！&lt;/p&gt;
+&lt;p&gt;###层序遍历的模拟实现&lt;/p&gt;
     
     </summary>
     
