@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[类的继承]]></title>
+    <url>%2F2018%2F07%2F29%2F%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF-1%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[类的继承]]></title>
+    <url>%2F2018%2F07%2F29%2F%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[类的成员函数]]></title>
     <url>%2F2018%2F07%2F18%2F%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%2F</url>
     <content type="text"><![CDATA[六大成员函数一、构造函数特点：与类名相同、没有返回值、可以重载、在有效的生命周期只会调用一次、缺省的构造函数不能用Virtual/const修饰，构造函数有自己的初始化列表。初始化列表完成类中非静态成员变量的初始化，尽量避免用成员初始化成员。初始化中，用const类型成员必须初始化。 二、拷贝构造函数特点：用对象创建对象 参数为类类型的引用，这里必须用引用传递，不然会无限循环递归。而用引用的另一个原因是效率很高。 三、析构函数特点：形式为~类名，没有参数和返回值，不能重载，在实现多态时最好在基类将构造函数声明为虚函数。四、赋值运算符重载常见可重载的运算符：++、– 、 、-&gt;、=不可重载的运算符： 、::、？：、sizeof 五、取地址运算符重载 1234Test * operator&amp;()&#123; return this;&#125; 六、const修饰的取地址操作符的重载12345const Test * operator&amp;() const&#123; return this;&#125;]]></content>
@@ -284,6 +294,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[第一篇博客]]></title>
+    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[测试博客这是一篇测试博客 第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
+      <tags>
+        <tag>C/C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[函数源码]]></title>
     <url>%2F2018%2F05%2F23%2F%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2-md%2F</url>
     <content type="text"><![CDATA[strcpy源码：12345678910 char *strcpy(char *strDes, const char *strSrc) &#123; assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while ((*strDes ++ = *strSrc ++) != '\0') NULL; return address; 注意：strcpy只是复制字符串，但不限制复制的数量。很容易造成缓冲溢出，也就是说，不过dest有没有足够的空间来容纳src的字符串，它都会把src指向的字符串全部复制到从dest开始的内存&lt;!-- more --&gt; strcmp源码：123456789101112int strcmp(const char *s, const char *t) &#123; assert(s != NULL &amp;&amp; t != NULL); while (*s &amp;&amp; *t &amp;&amp; *s == *t) &#123; ++ s; ++ t; &#125; return (*s - *t); &#125; strcat源码：12345678910111213char *strcat(char *strDes, const char *strSrc) &#123; assert((strDes != NULL) &amp;&amp; (strSrc != NULL)); char *address = strDes; while (*strDes != '\0') ++ strDes; while ((*strDes ++ = *strSrc ++) != '\0') NULL; return address; &#125; 注意：1.不能向形参传递指向字符串常量的指针（本题中dst和src都是指向串常量的指针，字符串常量存储在常量区不能被修改 2.传递的字符数组前一个实参的所分配的内存空间必须足够大 strlen源码：12345678910int strlen(const char *str) &#123; assert(str != NULL); int len = 0; while (*str ++ != '\0') ++ len; return len; &#125; strstr源码：1234567891011121314151617char *strstr(const char *strSrc, const char *str) &#123; assert(strSrc != NULL &amp;&amp; str != NULL); const char *s = strSrc; const char *t = str; for (; *t != '\0'; ++ strSrc) &#123; for (s = strSrc, t = str; *t != '\0' &amp;&amp; *s == *t; ++s, ++t) NULL; if (*t == '\0') return (char *) strSrc; &#125; return NULL; &#125; strchr源码：1234567891011121314char * __cdecl strchr ( constchar * string, int ch )&#123; while (*string &amp;&amp; *string != (char)ch) string++; if (*string == (char)ch) return((char *)string); return(NULL);&#125; 断言：assert（表达式）如果表达式的值为假，整个程序将退出，并输出一条错误信息。如果表达式的值为真则继续执行后面的语句，使用这个宏前需要包含头文件assert.h结语：函数就向一个黑盒一样，调用它的人给他输入（调用它本身就是一种输入），然后等待一个理想中的输出或者是相应的操作。调用者是希望我们的这个函数能够非常健壮的让他们利用，那么为了使我们的函数拥有一定的鲁棒性。]]></content>
@@ -291,14 +309,6 @@
         <tag>C/C++</tag>
         <tag>数据结构</tag>
         <tag>程序源码</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[第一篇博客]]></title>
-    <url>%2F2018%2F05%2F23%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[测试博客这是一篇测试博客 第一次使用github+hexo搭建属于自己的博客.日经过不懈的努力终于搭建好了，我非常开心！！ 2018.5.23 邓铭]]></content>
-      <tags>
-        <tag>C/C++</tag>
       </tags>
   </entry>
 </search>

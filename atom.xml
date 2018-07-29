@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-07-29T10:32:35.533Z</updated>
+  <updated>2018-07-29T15:57:22.450Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>类的继承</title>
+    <link href="http://dmdada.top/2018/07/29/%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF-1/"/>
+    <id>http://dmdada.top/2018/07/29/类的继承-1/</id>
+    <published>2018-07-29T15:57:22.000Z</published>
+    <updated>2018-07-29T15:57:22.450Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>类的继承</title>
+    <link href="http://dmdada.top/2018/07/29/%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF/"/>
+    <id>http://dmdada.top/2018/07/29/类的继承/</id>
+    <published>2018-07-29T15:57:18.000Z</published>
+    <updated>2018-07-29T15:57:18.270Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>类的成员函数</title>
@@ -398,51 +426,6 @@
     
     
       <category term="数据结构" scheme="http://dmdada.top/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>空间复杂度</title>
-    <link href="http://dmdada.top/2018/06/15/%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
-    <id>http://dmdada.top/2018/06/15/空间复杂度/</id>
-    <published>2018-06-15T15:20:35.000Z</published>
-    <updated>2018-07-05T14:38:35.466Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>  前面刚讲了时间复杂度，有兴趣的去看看<a href="https://blog.csdn.net/weibo_dm/article/details/80710491" target="_blank" rel="noopener">什么是时间复杂度？</a><br>名词解释：空间复杂度(Space Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度，记做S(n)=O(f(n))。比如直接插入排序的时间复杂度是O(n^2),空间复杂度是O(1) 。而一般的递归算法就要有O(n)的空间复杂度了，因为每次递归都要存储返回信息。一个算法的优劣主要从算法的执行时间和所需要占用的存储空间两个方面衡量。</p><h3 id="度量方法"><a href="#度量方法" class="headerlink" title="度量方法"></a>度量方法</h3><p> 类似于 时间复杂度的讨论，一个算法的空间复杂度S(n)定义为该算法所耗费的存储空间，它也是问题规模n的函数。渐近空间复杂度也常常简称为空间复杂度。空间复杂度(SpaceComplexity)是对一个算法在运行过程中临时占用存储空间大小的量度。一个算法在计算机存储器上所占用的存储空间，包括存储算法本身所占用的存储空间，算法的输入输出数据所占用的存储空间和算法在运行过程中临时占用的存储空间这三个方面。算法的输入输出数据所占用的存储空间是由要解决的问题决定的，是通过参数表由调用函数传递而来的，它不随本算法的不同而改变。存储算法本身所占用的存储空间与算法书写的长短成正比，要压缩这方面的存储空间，就必须编写出较短的算法。算法在运行过程中临时占用的存储空间随算法的不同而异，有的算法只需要占用少量的临时工作单元，而且不随问题规模的大小而改变，我们称这种算法是“就地\”进行的，是节省存储的算法，有的算法需要占用的临时工作单元数与解决问题的规模n有关，它随着n的增大而增大，当n较大时，将占用较多的存储单元，例如快速排序和归并排序算法就属于这种情况。<br><a id="more"></a></p><h3 id="分析方法"><a href="#分析方法" class="headerlink" title="分析方法"></a>分析方法</h3><p>分析一个算法所占用的存储空间要从各方面综合考虑。如对于递归算法来说，一般都比较简短，算法本身所占用的存储空间较少，但运行时需要一个附加堆栈，从而占用较多的临时工作单元；若写成非递归算法，一般可能比较长，算法本身占用的存储空间较多，但运行时将可能需要较少的存储单元。<br>一个算法的空间复杂度只考虑在运行过程中为局部变量分配的存储空间的大小，它包括为参数表中形参变量分配的存储空间和为在函数体中定义的局部变量分配的存储空间两个部分。若一个算法为 [2]  递归算法，其空间复杂度为递归所使用的堆栈空间的大小，它等于一次调用所分配的临时存储空间的大小乘以被调用的次数(即为递归调用的次数加1，这个1表示开始进行的一次非递归调用)。算法的空间复杂度一般也以数量级的形式给出。如当一个算法的空间复杂度为一个常量，即不随被处理数据量n的大小而改变时，可表示为O(1)；当一个算法的空间复杂度与以2为底的n的对数成正比时，可表示为O(log2n)；当一个算法的空间复杂度与n成线性比例关系时，可表示为O(n).若形参为数组，则只需要为它分配一个存储由实参传送来的一个地址指针的空间，即一个机器字长空间；若形参为引用方式，则也只需要为其分配存储一个地址的空间，用它来存储对应实参变量的地址，以便由系统自动引用实参变量。<br>故一个算的空间复杂度是对一个算法在运行过程中临时占用存储空间大小的量度。所以它强调的是使用的辅助空间的的大小，而不是指所有的数据所占用的空间。<br>以斐波那契算法为例子：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span>* <span class="title">fib</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    assert(n&gt;=<span class="number">0</span>);  </span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span>* ptr=<span class="keyword">new</span> <span class="keyword">long</span> <span class="keyword">long</span>[n+<span class="number">1</span>];  </span><br><span class="line">    ptr[<span class="number">0</span>]=<span class="number">0</span>;  </span><br><span class="line">    ptr[<span class="number">1</span>]=<span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;++i)  </span><br><span class="line">    &#123;  </span><br><span class="line">        ptr[i]=ptr[i<span class="number">-1</span>]+ptr[i<span class="number">-2</span>];  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> ptr;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">/*对于这种算法，函数真正执行次数为n-1,所以忽略常数后，时间复杂度为O(n);</span></span><br><span class="line"><span class="comment">因为开辟了n+1个空间，有n+1个辅助空间，所以空间复杂度为O(n).*/</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">fib</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    assert(n&gt;=<span class="number">0</span>);  </span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> first=<span class="number">0</span>;  </span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> second=<span class="number">1</span>;  </span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ret=<span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        ret=first+second;  </span><br><span class="line">        first=second;  </span><br><span class="line">        second=ret;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> ret;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">/*这是非递归的另一种算法，函数真正执行次数依然为n-1,所以忽略常数后，时间复杂度还是O(n);</span></span><br><span class="line"><span class="comment">由于采用变量交换的方式，所以在这里辅助空间个数为一个常数，空间复杂度为O(1).*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//递归写法</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;assert.h&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">fib</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n)</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    assert(n&gt;=<span class="number">0</span>);  </span><br><span class="line">    <span class="keyword">return</span> (n&lt;<span class="number">2</span>)?(n):(fib(n<span class="number">-1</span>)+fib(n<span class="number">-2</span>));  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="comment">/*递归算法的时间复杂度计算方法是:递归总次数*每次递归次数；</span></span><br><span class="line"><span class="comment">递归算法的时间复杂度计算方法是：递归深度*每次递归所需的辅助空间个数.</span></span><br><span class="line"><span class="comment">可以得出斐波那契递归算法时间复杂度：O（2^N），空间复杂度为:O(N)*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> value=fib(<span class="number">15</span>);  </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; value &lt;&lt;<span class="built_in">endl</span>;  </span><br><span class="line">    system(<span class="string">"pause"</span>);  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="时间复杂度与空间复杂度的联系"><a href="#时间复杂度与空间复杂度的联系" class="headerlink" title="时间复杂度与空间复杂度的联系"></a>时间复杂度与空间复杂度的联系</h3><p>对于一个算法，其时间复杂度和空间复杂度往往是相互影响的。当追求一个较好的时间复杂度时，可能会使空间复杂度的性能变差，即可能导致占用较多的存储空间；反之，当追求一个较好的空间复杂度时，可能会使时间复杂度的性能变差，即可能导致占用较长的运行时间。另外，算法的所有性能之间都存在着或多或少的相互影响。因此，当设计一个算法(特别是大型算法)时，要综合考虑算法的各项性能，算法的使用频率，算法处理的数据量的大小，算法描述语言的特性，算法运行的机器系统环境等各方面因素，才能够设计出比较好的算法。算法的时间复杂度和空间复杂度合称为算法的复杂度。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;空间复杂度&quot;&gt;&lt;a href=&quot;#空间复杂度&quot; class=&quot;headerlink&quot; title=&quot;空间复杂度&quot;&gt;&lt;/a&gt;空间复杂度&lt;/h3&gt;&lt;p&gt;  前面刚讲了时间复杂度，有兴趣的去看看&lt;a href=&quot;https://blog.csdn.net/weibo_dm/article/details/80710491&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;什么是时间复杂度？
-&lt;/a&gt;&lt;br&gt;名词解释：空间复杂度(Space Complexity)是对一个算法在运行过程中临时占用存储空间大小的量度，记做S(n)=O(f(n))。比如直接插入排序的时间复杂度是O(n^2),空间复杂度是O(1) 。而一般的递归算法就要有O(n)的空间复杂度了，因为每次递归都要存储返回信息。一个算法的优劣主要从算法的执行时间和所需要占用的存储空间两个方面衡量。&lt;/p&gt;
-&lt;h3 id=&quot;度量方法&quot;&gt;&lt;a href=&quot;#度量方法&quot; class=&quot;headerlink&quot; title=&quot;度量方法&quot;&gt;&lt;/a&gt;度量方法&lt;/h3&gt;&lt;p&gt; 类似于 时间复杂度的讨论，一个算法的空间复杂度S(n)定义为该算法所耗费的存储空间，它也是问题规模n的函数。渐近空间复杂度也常常简称为空间复杂度。空间复杂度(SpaceComplexity)是对一个算法在运行过程中临时占用存储空间大小的量度。一个算法在计算机存储器上所占用的存储空间，包括存储算法本身所占用的存储空间，算法的输入输出数据所占用的存储空间和算法在运行过程中临时占用的存储空间这三个方面。算法的输入输出数据所占用的存储空间是由要解决的问题决定的，是通过参数表由调用函数传递而来的，它不随本算法的不同而改变。存储算法本身所占用的存储空间与算法书写的长短成正比，要压缩这方面的存储空间，就必须编写出较短的算法。算法在运行过程中临时占用的存储空间随算法的不同而异，有的算法只需要占用少量的临时工作单元，而且不随问题规模的大小而改变，我们称这种算法是“就地\”进行的，是节省存储的算法，有的算法需要占用的临时工作单元数与解决问题的规模n有关，它随着n的增大而增大，当n较大时，将占用较多的存储单元，例如快速排序和归并排序算法就属于这种情况。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://dmdada.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时间复杂度</title>
-    <link href="http://dmdada.top/2018/06/15/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/"/>
-    <id>http://dmdada.top/2018/06/15/时间复杂度/</id>
-    <published>2018-06-15T15:19:39.000Z</published>
-    <updated>2018-07-05T14:38:35.486Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="算法复杂度"><a href="#算法复杂度" class="headerlink" title="算法复杂度"></a>算法复杂度</h3><p>算法复杂度分为时间复杂度和空间复杂度。其作用： 时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。（算法的复杂性体现在运行该算法时的计算机所需资源的多少上，计算机资源最重要的是时间和空间（即寄存器）资源，因此复杂度分为时间和空间复杂度）。</p><h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>时间复杂度是同一问题可用不同算法解决，而一个算法的质量优劣将影响到算法乃至程序的效率。算法分析的目的在于选择合适算法和改进算法。计算机科学中，算法的时间复杂度是一个函数，它定性描述了该算法的运行时间。这是一个关于代表算法输入值的字符串的长度的函数。时间复杂度常用大O符号表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，它考察当输入值大小趋近无穷时的情况。</p><h3 id="时间复杂度计算方法"><a href="#时间复杂度计算方法" class="headerlink" title="时间复杂度计算方法"></a>时间复杂度计算方法</h3><p>1.一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n),使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(n)),称O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。<br>分析：随着模块n的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，所以 f(n) 越小，算法的时间复杂度越低，算法的效率越高。<br>2.在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出 T(n) 的同数量级（它的同数量级有以下：1，log2n，n，n log2n ，n的平方，n的三次方，2的n次方，n!），找出后，f(n) = 该数量级，若 T(n)/f(n) 求极限可得到一常数c，则时间复杂度T(n) = O(f(n))。</p><h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><p>循环如下：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">for(i=1; i&lt;=n; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    for(j=1; j&lt;=n; ++j)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i][j] = 0;//该步骤属于基本操作执行次数：n的平方次</span><br><span class="line">        for(k=1; k&lt;=n; ++k)</span><br><span class="line">        c[i][j] += a[i][k] * b[k][j];//该步骤属于基本操作执行次数：n的三次方次</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//则有，根据上面括号里的同数量级，我们可以确定n的三次方为T（n）的同数量级。</span><br><span class="line">//则有，然后根据 T(n)/f(n) 求极限可得到常数c。</span><br><span class="line">//则该算法的时间复杂度：T(n) = O(n^3) 注：n^3即是n的3次方。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">例2</span><br><span class="line">//如果算法中包含嵌套的循环，则基本语句通常是最内层的循环体，如果算法中包含并列的循环，</span><br><span class="line">//则将并列循环的时间复杂度相加。</span><br><span class="line"></span><br><span class="line">　　for (i=1; i&lt;=n; i++)</span><br><span class="line">　　&#123;</span><br><span class="line">　　x++;</span><br><span class="line">　　&#125;</span><br><span class="line">　　for (i=1; i&lt;=n; i++)</span><br><span class="line">　　&#123;</span><br><span class="line">　　for (j=1; j&lt;=n; j++)</span><br><span class="line">　　&#123;</span><br><span class="line">　　x++;</span><br><span class="line">　　&#125;</span><br><span class="line">　　&#125;</span><br><span class="line">　　//第一个for循环的时间复杂度为Ο(n)，第二个for循环的时间复杂度为Ο(n2)，</span><br><span class="line">　　//则整个算法的时间复杂度为Ο(n+n2)=Ο(n2)。</span><br></pre></td></tr></table></figure></p><p>常见的算法时间复杂度由小到大依次为：<br>Ο(1)＜Ο(log2n)＜Ο(n)＜Ο(nlog2n)＜Ο(n2)＜Ο(n3)＜…＜Ο(2n)＜Ο(n!)</p><h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>Ο(1)表示基本语句的执行次数是一个常数，一般来说，只要算法中不存在循环语句，其时间复杂度就是Ο(1)。Ο(log2n)、Ο(n)、Ο(nlog2n)、Ο(n2)和Ο(n3)称为多项式时间，而Ο(2n)和Ο(n!)称为指数时间。计算机科学家普遍认为前者是有效算法，把这类问题称为P类问题，而把后者称为NP问题。但这也只能计算基本的计算时间复杂度，具体的运行还会与硬件有关。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;算法复杂度&quot;&gt;&lt;a href=&quot;#算法复杂度&quot; class=&quot;headerlink&quot; title=&quot;算法复杂度&quot;&gt;&lt;/a&gt;算法复杂度&lt;/h3&gt;&lt;p&gt;算法复杂度分为时间复杂度和空间复杂度。其作用： 时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。（算法的复杂性体现在运行该算法时的计算机所需资源的多少上，计算机资源最重要的是时间和空间（即寄存器）资源，因此复杂度分为时间和空间复杂度）。&lt;/p&gt;
-&lt;h3 id=&quot;时间复杂度&quot;&gt;&lt;a href=&quot;#时间复杂度&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度&quot;&gt;&lt;/a&gt;时间复杂度&lt;/h3&gt;&lt;p&gt;时间复杂度是同一问题可用不同算法解决，而一个算法的质量优劣将影响到算法乃至程序的效率。算法分析的目的在于选择合适算法和改进算法。计算机科学中，算法的时间复杂度是一个函数，它定性描述了该算法的运行时间。这是一个关于代表算法输入值的字符串的长度的函数。时间复杂度常用大O符号表述，不包括这个函数的低阶项和首项系数。使用这种方式时，时间复杂度可被称为是渐近的，它考察当输入值大小趋近无穷时的情况。&lt;/p&gt;
-&lt;h3 id=&quot;时间复杂度计算方法&quot;&gt;&lt;a href=&quot;#时间复杂度计算方法&quot; class=&quot;headerlink&quot; title=&quot;时间复杂度计算方法&quot;&gt;&lt;/a&gt;时间复杂度计算方法&lt;/h3&gt;&lt;p&gt;1.一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数，用T(n)表示，若有某个辅助函数f(n),使得当n趋近于无穷大时，T(n)/f(n)的极限值为不等于零的常数，则称f(n)是T(n)的同数量级函数。记作T(n)=O(f(n)),称O(f(n)) 为算法的渐进时间复杂度，简称时间复杂度。&lt;br&gt;分析：随着模块n的增大，算法执行的时间的增长率和 f(n) 的增长率成正比，所以 f(n) 越小，算法的时间复杂度越低，算法的效率越高。&lt;br&gt;2.在计算时间复杂度的时候，先找出算法的基本操作，然后根据相应的各语句确定它的执行次数，再找出 T(n) 的同数量级（它的同数量级有以下：1，log2n，n，n log2n ，n的平方，n的三次方，2的n次方，n!），找出后，f(n) = 该数量级，若 T(n)/f(n) 求极限可得到一常数c，则时间复杂度T(n) = O(f(n))。&lt;/p&gt;
-&lt;h4 id=&quot;举例&quot;&gt;&lt;a href=&quot;#举例&quot; class=&quot;headerlink&quot; title=&quot;举例&quot;&gt;&lt;/a&gt;举例&lt;/h4&gt;&lt;p&gt;循环如下：&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="http://dmdada.top/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
