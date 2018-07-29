@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-07-28T15:04:56.694Z</updated>
+  <updated>2018-07-29T10:32:35.533Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -21,14 +21,15 @@
     <link href="http://dmdada.top/2018/07/18/%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0/"/>
     <id>http://dmdada.top/2018/07/18/类的成员函数/</id>
     <published>2018-07-18T15:20:22.000Z</published>
-    <updated>2018-07-28T15:04:56.694Z</updated>
+    <updated>2018-07-29T10:32:35.533Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="六大成员函数"><a href="#六大成员函数" class="headerlink" title="六大成员函数"></a>六大成员函数</h2><p>一、构造函数<br>特点：与类名相同、没有返回值、可以重载、在有效的生命周期只会调用一次、缺省的构造函数不能用Virtual/const修饰，构造函数有自己的初始化列表。初始化列表完成类中非静态成员变量的初始化，尽量避免用成员初始化成员。<br>初始化中，用const类型成员必须初始化。</p><p>二、拷贝构造函数<br>特点：用对象创建对象 参数为类类型的引用，这里必须用引用传递，不然会无限循环递归。而用引用的另一个原因是效率很高。<br>三、析构函数<br>特点：形式为~类名，没有参数和返回值，不能重载，在实现多态时最好在基类将构造函数声明为虚函数。<br><a id="more"></a><br>四、赋值运算符重载<br>常见可重载的运算符：++、– 、<em> 、-&gt;、=<br>不可重载的运算符：</em> 、::、？：、sizeof</p><p>五、取地址运算符重载</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Test * <span class="keyword">operator</span>&amp;()</span><br><span class="line">&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>六、const修饰的取地址操作符的重载<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> Test * <span class="keyword">operator</span>&amp;()  <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="六大成员函数"><a href="#六大成员函数" class="headerlink" title="六大成员函数"></a>六大成员函数</h2><p>一、构造函数<br>特点：与类名相同、没有返回值、可以重载、在有效的生命周期只会调用一次、缺省的构造函数不能用Virtual/const修饰，构造函数有自己的初始化列表。初始化列表完成类中非静态成员变量的初始化，尽量避免用成员初始化成员。<br>初始化中，用const类型成员必须初始化。</p><p>二、拷贝构造函数<br>特点：用对象创建对象 参数为类类型的引用，这里必须用引用传递，不然会无限循环递归。而用引用的另一个原因是效率很高。</p><p>三、析构函数<br>特点：形式为~类名，没有参数和返回值，不能重载，在实现多态时最好在基类将构造函数声明为虚函数。<br><a id="more"></a><br>四、赋值运算符重载<br>常见可重载的运算符：++、– 、<em> 、-&gt;、=<br>不可重载的运算符：</em> 、::、？：、sizeof</p><p>五、取地址运算符重载</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Test * <span class="keyword">operator</span>&amp;()</span><br><span class="line">&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>六、const修饰的取地址操作符的重载<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> Test * <span class="keyword">operator</span>&amp;()  <span class="keyword">const</span></span><br><span class="line">&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;六大成员函数&quot;&gt;&lt;a href=&quot;#六大成员函数&quot; class=&quot;headerlink&quot; title=&quot;六大成员函数&quot;&gt;&lt;/a&gt;六大成员函数&lt;/h2&gt;&lt;p&gt;一、构造函数&lt;br&gt;特点：与类名相同、没有返回值、可以重载、在有效的生命周期只会调用一次、缺省的构造函数不能用Virtual/const修饰，构造函数有自己的初始化列表。初始化列表完成类中非静态成员变量的初始化，尽量避免用成员初始化成员。&lt;br&gt;初始化中，用const类型成员必须初始化。&lt;/p&gt;
-&lt;p&gt;二、拷贝构造函数&lt;br&gt;特点：用对象创建对象 参数为类类型的引用，这里必须用引用传递，不然会无限循环递归。而用引用的另一个原因是效率很高。&lt;br&gt;三、析构函数&lt;br&gt;特点：形式为~类名，没有参数和返回值，不能重载，在实现多态时最好在基类将构造函数声明为虚函数。&lt;br&gt;
+&lt;p&gt;二、拷贝构造函数&lt;br&gt;特点：用对象创建对象 参数为类类型的引用，这里必须用引用传递，不然会无限循环递归。而用引用的另一个原因是效率很高。&lt;/p&gt;
+&lt;p&gt;三、析构函数&lt;br&gt;特点：形式为~类名，没有参数和返回值，不能重载，在实现多态时最好在基类将构造函数声明为虚函数。&lt;br&gt;
     
     </summary>
     
