@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dmdada.top">
-  <title>类的的三大特性 | 邓铭的博客</title>
+  <title>类的的三大特性的总结 | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="继承继承是一指一个对象从另一个对象获得功能的过程，它提供了一种明确表述共性的方法。是一个不断向上抽取的过程。一个类只能继承一个类，但一个类可以被多个类所继承。一共有3种不同权限的继承，分别是public、protect、private继承。继承优点：1.提高了代码的复用性。2.让类与类之间产生了关系。有了这个关系，才有了多态的特性。 封装什么是封装？封装指隐藏对象的属性和实现细节，仅仅对外提供接口">
 <meta name="keywords" content="C&#x2F;C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类的的三大特性">
+<meta property="og:title" content="类的的三大特性的总结">
 <meta property="og:url" content="http://dmdada.top/2018/07/29/类的继承/index.html">
 <meta property="og:site_name" content="邓铭的博客">
 <meta property="og:description" content="继承继承是一指一个对象从另一个对象获得功能的过程，它提供了一种明确表述共性的方法。是一个不断向上抽取的过程。一个类只能继承一个类，但一个类可以被多个类所继承。一共有3种不同权限的继承，分别是public、protect、private继承。继承优点：1.提高了代码的复用性。2.让类与类之间产生了关系。有了这个关系，才有了多态的特性。 封装什么是封装？封装指隐藏对象的属性和实现细节，仅仅对外提供接口">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-30T15:43:25.429Z">
+<meta property="og:updated_time" content="2018-07-30T15:44:16.845Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="类的的三大特性">
+<meta name="twitter:title" content="类的的三大特性的总结">
 <meta name="twitter:description" content="继承继承是一指一个对象从另一个对象获得功能的过程，它提供了一种明确表述共性的方法。是一个不断向上抽取的过程。一个类只能继承一个类，但一个类可以被多个类所继承。一共有3种不同权限的继承，分别是public、protect、private继承。继承优点：1.提高了代码的复用性。2.让类与类之间产生了关系。有了这个关系，才有了多态的特性。 封装什么是封装？封装指隐藏对象的属性和实现细节，仅仅对外提供接口">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
@@ -166,7 +166,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      类的的三大特性
+      类的的三大特性的总结
     </h1>
   
 
@@ -180,7 +180,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承是一指一个对象从另一个对象获得功能的过程，它提供了一种明确表述共性的方法。是一个不断向上抽取的过程。一个类只能继承一个类，但一个类可以被多个类所继承。一共有3种不同权限的继承，分别是public、protect、private继承。<br>继承优点：<br>1.提高了代码的复用性。<br>2.让类与类之间产生了关系。有了这个关系，才有了多态的特性。</p>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>什么是封装？<br>封装指隐藏对象的属性和实现细节，仅仅对外提供接口和方法。<br>举一个生动的例子：电视遥控器，就是对电视机操作方法的一种封装，遥控器上的各种按键就是给出的接口，我们用户通过这些接口来控制电视机，但是我们对遥控器实际控制并不清楚，它的原理，或者具体细节，都对我们用户隐藏，这就是一种封装。而在C++中将一个类具体封装起来，只暴露接口函数。能够提高代码重用性，便于使用，当然也更安全。<br>但这样做同时也暴露了缺点，那就是代码不能轻易地去维护，而且封装了过多层会影响效率。<br><a id="more"></a></p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>什么是封装？<br>封装指隐藏对象的属性和实现细节，仅仅对外提供接口和方法。<br>举一个生动的例子：电视遥控器，就是对电视机操作方法的一种封装，遥控器上的各种按键就是给出的接口，我们用户通过这些接口来控制电视机，但是我们对遥控器实际控制并不清楚，它的原理，或者具体细节，都对我们用户隐藏，这就是一种封装。而在C++中将一个类具体封装起来，只暴露接口函数。能够提高代码重用性，便于使用，当然也更安全。但这样做同时也暴露了缺点，那就是代码不能轻易地去维护，而且封装了过多层会影响效率。<br><a id="more"></a></p>
 <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>c++中一共有两种多态，一种是静态的多态，一种是动态的多态。动多态称为运行时多态，而静多态称为编译时多态。静多态大多由模板实现或者是宏，而动多态大多由虚函数来实现，动多态的函数调用机制是执行期才能进行确定，所以它是动态的。总之多态的意义在于让基类的指针指向派生类，从而实现派生类的不同功能。如果你还是不太明白多态的意义，我可以举一个简单的例子。龙生九子，子子不同，龙的九个儿子就是龙的不同表现，同一个模板下，实现不同的形态或者功能就称之为多态。</p>
 <p>多态的实现：<br>函数重载：必须在同一个类中进行 子类无法重载父类的函数，父类同名函数将被名称覆盖，重载是在编译期间根据参数类型和个数决定函数调用<br>函数重写：必须发生于父类与子类之间 并且父类与子类中的函数必须有完全相同的原型 ，使用virtual关键字声明之后能够产生多态(如果不使用virtual，那叫重定义) 多态是在运行期间根据具体对象的类型决定函数调用（注意：基类的析构函数通常建议声明为虚函数，不然容易内存泄漏。</p>
 <p>多态的优势和弊端：<br>优点：多态的出现大大的提高程序的扩展性，以及代码的复用性，减少了编程中编码量，提高了代码的可维护性。<br>缺点：在大工程里如果多态使用大量，编译时过程会极其缓慢。同时多态使得代码的可读性并不那么良好，同时调式起来也比较困难。</p>
