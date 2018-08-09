@@ -255,7 +255,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>###　TCP的三次握手<br>TCP的连接的建立采用客户服务器方式。主动发起连接建立的应用进程称为客户端，被动的等待连接建立的应用进程叫做服务器。<br>先假定主机A运行的是客户端程序，而B运行的是服务器程序。最初两端的TCP进程都处于CLISED状态。建立三次握手过程如下图：</p>
+<p>A主动打开连接，B被动打开连接<br><img src="http://pajznqooi.bkt.clouddn.com/TCP%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.jpg" alt="404"></p>
+<h3 id="连接过程"><a href="#连接过程" class="headerlink" title="连接过程"></a>连接过程</h3><p>1.首先两端都处于CLOSED状态，B的TCP服务器首先创建传输控制块TCB准备接受客户端的连接请求，然后服务器进程就处于LISTEN状态，等待客户的连接请求，如果有就及时做出反应。<br>2.A的TCP进程也是首先创建传输控制模块TCB，然后向B发送连接请求，同时初始化序号seq=x，并将SYN标志位置为1，此阶段为SYN报文段规定并不能携带数据，但也会消耗一个序号，此时TCP客户进程进入SYN-SENT（同步已发送）状态。<br>3.B如果接受连接请求就将确认报文中的ACK，SYN置为1，同时初始化自己的序号seq=y，确认号为ack=x+1.同样的这个报文也不能携带数据，并且也要消耗一个序号，然后B进入SYN-RCVD状态（同步收到）。<br>4.A收到B的确认后还需要再次向B给出确认，确认ACK置1，确认号ack=y+1,而自己的序号为seq=x+1,TCP规定ACK报文可以携带信息，但是如果不携带则不用消耗一个序号，这种情况下下次发送的序号仍然为seq=x+1。这时连接已经建立，A进入ESTAB-LISHED(已建立连接)状态。<br>当B收到A的确认后也进入ESTAB-LISHED状态。</p>
+<p>至此三次握手到此结束</p>
+<p>小思考，为什么要A还要给B发一次确认呢？或者说两次握手不就建立好了吗？</p>
+<p>答：这样是为了防止已经失效的的连接请求再次传送到B,从而产生错误</p>
+
       
 
       
@@ -263,6 +269,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
