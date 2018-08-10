@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://dmdada.top">
-  <title>指针常量和常量指针的区别 | 邓铭的博客</title>
+  <title>TCP的拥塞控制和流量控制 | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为： 1int * const p //指针常量 在这个例子下定义以下代码： 12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两种">
-<meta name="keywords" content="面试">
+  <meta name="description" content="奋斗的程序猿">
 <meta property="og:type" content="article">
-<meta property="og:title" content="指针常量和常量指针的区别">
-<meta property="og:url" content="http://dmdada.top/2018/05/24/常量指针和指针常量的区别/index.html">
+<meta property="og:title" content="TCP的拥塞控制和流量控制">
+<meta property="og:url" content="http://dmdada.top/2018/08/10/TCP的拥塞控制和流量控制/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为： 1int * const p //指针常量 在这个例子下定义以下代码： 12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两种">
+<meta property="og:description" content="奋斗的程序猿">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-05T14:38:35.446Z">
+<meta property="og:updated_time" content="2018-08-10T10:29:42.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="指针常量和常量指针的区别">
-<meta name="twitter:description" content="在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。下面开始正题。。。。 指针常量指针常量：顾名思义它就是一个常量，但是是指针修饰的。格式为： 1int * const p //指针常量 在这个例子下定义以下代码： 12345int a，b；int * const p=&amp;amp;a //指针常量//那么分为一下两种">
+<meta name="twitter:title" content="TCP的拥塞控制和流量控制">
+<meta name="twitter:description" content="奋斗的程序猿">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
   
@@ -159,40 +158,27 @@
         
 		  </div>
           <div id="js-content" class="content-ll">
-            <article id="post-常量指针和指针常量的区别" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-TCP的拥塞控制和流量控制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      指针常量和常量指针的区别
+      TCP的拥塞控制和流量控制
     </h1>
   
 
         
-        <a href="/2018/05/24/常量指针和指针常量的区别/" class="archive-article-date">
-  	<time datetime="2018-05-24T15:09:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-24</time>
+        <a href="/2018/08/10/TCP的拥塞控制和流量控制/" class="archive-article-date">
+  	<time datetime="2018-08-10T10:29:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在面试中我们经常会被面试官问到什么是常量指针，什么又是指针常量。可能第一次被问到都会有些懵逼（大神略过）。我今天就来讲一讲这二者的区别。<br>下面开始正题。。。。</p>
-<h2 id="指针常量"><a href="#指针常量" class="headerlink" title="指针常量"></a>指针常量</h2><p>指针常量：顾名思义它就是一个常量，但是是指针修饰的。<br>格式为：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p <span class="comment">//指针常量</span></span><br></pre></td></tr></table></figure>
-<p>在这个例子下定义以下代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a，b；</span><br><span class="line"><span class="keyword">int</span> * <span class="keyword">const</span> p=&amp;a <span class="comment">//指针常量</span></span><br><span class="line"><span class="comment">//那么分为一下两种操作</span></span><br><span class="line">*p=<span class="number">9</span>;<span class="comment">//操作成功</span></span><br><span class="line">p=&amp;b;<span class="comment">//操作错误</span></span><br></pre></td></tr></table></figure>
-<p>因为声明了指针常量，说明指针变量不允许修改。如同次指针指向一个地址该地址不能被修改，但是该地址里的内容可以被修改<br><a id="more"></a></p>
-<h2 id="常量指针"><a href="#常量指针" class="headerlink" title="常量指针"></a>常量指针</h2><p>常量指针：如果在定义指针变量的时候，数据类型前用const修饰，被定义的指针变量就是指向常量的指针变量，指向常量的指针变量称为常量指针，格式如下</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> *p = &amp;a; <span class="comment">//常量指针</span></span><br></pre></td></tr></table></figure>
-<p>在这个例子下定义以下代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a，b；</span><br><span class="line"> <span class="keyword">const</span> <span class="keyword">int</span> *p=&amp;a <span class="comment">//常量指针</span></span><br><span class="line"><span class="comment">//那么分为一下两种操作</span></span><br><span class="line">*p=<span class="number">9</span>;<span class="comment">//操作错误</span></span><br><span class="line">p=&amp;b;<span class="comment">//操作成功</span></span><br></pre></td></tr></table></figure>
-<p>因为常量指针本质是指针，并且这个指针是一个指向常量的指针，指针指向的变量的值不可通过该指针修改，但是指针指向的值可以改变。</p>
-<h2 id="附加题"><a href="#附加题" class="headerlink" title="附加题"></a>附加题</h2><p>指向常量的指针常量该怎么写？<br>答案：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> * <span class="keyword">const</span> b = &amp;a;<span class="comment">//指向常量的指针常量</span></span><br></pre></td></tr></table></figure>
-
+        
       
 
       
@@ -236,17 +222,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -297,7 +272,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://dmdada.top/2018/05/24/常量指针和指针常量的区别/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://dmdada.top/2018/08/10/TCP的拥塞控制和流量控制/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,18 +286,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/25/快速排序/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          快速排序
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/23/测试博客-md/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">函数源码</div>
+    <a href="/2018/08/09/TCP可靠传输的实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TCP可靠传输的实现</div>
       <i class="icon-circle-right"></i>
     </a>
   
