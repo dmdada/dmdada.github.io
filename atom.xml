@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-08-09T03:59:17.484Z</updated>
+  <updated>2018-08-10T09:15:21.785Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TCP可靠传输的实现</title>
+    <link href="http://dmdada.top/2018/08/09/TCP%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93%E7%9A%84%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://dmdada.top/2018/08/09/TCP可靠传输的实现/</id>
+    <published>2018-08-09T14:38:32.000Z</published>
+    <updated>2018-08-10T09:15:21.785Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="TCP可靠传输的原理"><a href="#TCP可靠传输的原理" class="headerlink" title="TCP可靠传输的原理"></a>TCP可靠传输的原理</h3><p> 我们都知道，TCP发送的报文段是交付给IP层传送的。但IP层只提供尽最大努力传输，因此是不可靠的，因此TCP必须采用适当的措施才能使两个运输层之间通信变得可靠。<br> 理想的传输条件有以下两个特点：<br> 1.传输信道无差错<br> 2.不管发送方以什么样的发送速率，接收方都能来得及处理发送方发送的消息。<br>然而实际上并不存在这样理想的传输条件，因此我们必须采用一些必要的措施保证实现可靠传输。</p><h3 id="停止等待协议"><a href="#停止等待协议" class="headerlink" title="停止等待协议"></a>停止等待协议</h3><p>这里我们讨论单方向的发送和接受，设A为发送方B为接收方。A每发完一个分组就等待B收到分组的确认，然后才发送下一个分组。<br><a id="more"></a><br><img src="http://pajznqooi.bkt.clouddn.com/TCP%E7%9A%84%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93.jpg" alt="404"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;TCP可靠传输的原理&quot;&gt;&lt;a href=&quot;#TCP可靠传输的原理&quot; class=&quot;headerlink&quot; title=&quot;TCP可靠传输的原理&quot;&gt;&lt;/a&gt;TCP可靠传输的原理&lt;/h3&gt;&lt;p&gt; 我们都知道，TCP发送的报文段是交付给IP层传送的。但IP层只提供尽最大努力传输，因此是不可靠的，因此TCP必须采用适当的措施才能使两个运输层之间通信变得可靠。&lt;br&gt; 理想的传输条件有以下两个特点：&lt;br&gt; 1.传输信道无差错&lt;br&gt; 2.不管发送方以什么样的发送速率，接收方都能来得及处理发送方发送的消息。&lt;br&gt;然而实际上并不存在这样理想的传输条件，因此我们必须采用一些必要的措施保证实现可靠传输。&lt;/p&gt;
+&lt;h3 id=&quot;停止等待协议&quot;&gt;&lt;a href=&quot;#停止等待协议&quot; class=&quot;headerlink&quot; title=&quot;停止等待协议&quot;&gt;&lt;/a&gt;停止等待协议&lt;/h3&gt;&lt;p&gt;这里我们讨论单方向的发送和接受，设A为发送方B为接收方。A每发完一个分组就等待B收到分组的确认，然后才发送下一个分组。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="http://dmdada.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>TCP报文段的首部格式</title>
@@ -411,28 +432,6 @@
     
       &lt;h3 id=&quot;排序算法的稳定性&quot;&gt;&lt;a href=&quot;#排序算法的稳定性&quot; class=&quot;headerlink&quot; title=&quot;排序算法的稳定性&quot;&gt;&lt;/a&gt;排序算法的稳定性&lt;/h3&gt;&lt;p&gt;名词解释：假定在待排序的记录序列中，存在多个具有相同的关键字的记录，若经过排序，这些记录的相对次序保持不变，即在原序列中，A1=A2，且A1在A2之前，而在排序后的序列中A1仍在A2之前，则称这种排序算法是稳定的；否则称为不稳定的。&lt;/p&gt;
 &lt;h3 id=&quot;判断方法&quot;&gt;&lt;a href=&quot;#判断方法&quot; class=&quot;headerlink&quot; title=&quot;判断方法&quot;&gt;&lt;/a&gt;判断方法&lt;/h3&gt;&lt;p&gt;对于不稳定的排序算法，只要举出一个实例，即可说明它的不稳定性；而对于稳定的排序算法，必须对算法进行分析从而得到稳定的特性。需要注意的是，排序算法是否为稳定的是由具体算法决定的，不稳定的算法在某种条件下可以变为稳定的算法，而稳定的算法在某种条件下也可以变为不稳定的算法。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="http://dmdada.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>希尔排序</title>
-    <link href="http://dmdada.top/2018/06/20/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F/"/>
-    <id>http://dmdada.top/2018/06/20/希尔排序/</id>
-    <published>2018-06-20T11:23:08.000Z</published>
-    <updated>2018-07-05T14:38:35.495Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="希尔排序（Shell’s-Sort"><a href="#希尔排序（Shell’s-Sort" class="headerlink" title="希尔排序（Shell’s Sort)"></a>希尔排序（Shell’s Sort)</h3><p>名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。</p><p>希尔排序是基于插入排序的以下两点性质而提出改进方法的：<br>1.插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率。<br>2.但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位。</p><h3 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h3><p>教科书表达：先取一个小于n的整数d1作为第一个增量，把文件的全部记录分组。所有距离为d1的倍数的记录放在同一个组中。先在各组内进行直接插入排序；然后，取第二个增量d2(小于d1）重复上述的分组和排序，直至所取的增量 =1(  &lt;  …&lt; &lt; d2 &lt; d1)，即所有记录放在同一组中进行直接插入排序为止。<br>简单来说：一个书架放着一排书，现在从第一本书起每数X本书，就在那本书上贴红色贴纸，贴完红色贴纸后，再次从第二本书起每数X本书就贴上蓝色贴纸（跟之前颜色不同即可），重复贴纸过程，直到所有书都贴满贴纸。接着对有相同颜色贴纸的书做插入排序。然后撕掉所有贴纸后重新对书进行贴纸，这次则每数Y本书就贴纸（Y &lt; X）,所有书贴满后再进行插入排序。重复贴纸排序、贴纸排序这个过程，直到最后每数1本书就贴纸（也就是每本书都贴同样颜色贴纸），再插入排序为止。<br>话不多说，看图<br><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png" alt="这里写图片描述"><br><a id="more"></a></p><h3 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h3><p>稳定性：由于多次插入排序，我们知道一次插入排序是稳定的，不会改变相同元素的相对顺序，但在不同的插入排序过程中，相同的元素可能在各自的插入排序中移动，最后其稳定性就会被打乱，所以shell排序是不稳定的。<br>时间复杂度：<code>O(n^2)</code><br>空间复杂度：<code>O(1)</code></p><p>常见排序算法一般按平均时间复杂度分为两类：<br><code>O(n^2)</code>：冒泡排序、选择排序、插入排序<br><code>O(nlogn)</code>：归并排序、快速排序、堆排序<br>1w和10w数据效率如下：</p><p><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F3.png" alt="这里写代码片"></p><h3 id="算法效率"><a href="#算法效率" class="headerlink" title="算法效率"></a>算法效率</h3><p>正如我们所知道的希尔排序的增量序列是影响希尔排序效率的最关键因素，至今为止还没有一个最完美的增量序列公式。可究竟应该选取什么样的增量才是最好，目前还是一个数学难题。<br>看如下两个增量序列：<br>n/2、n/4、n/8…1<br>1、3、7…2^k-1<br>第一个序列称为希尔增量序列，使用希尔增量时，希尔排序在最坏情况下的时间复杂度为O(n*n)。<br>第二个序列称为Hibbard增量序列，使用Hibbard增量时，希尔排序在最坏情况下的时间复杂度为O(n^3/2)。　<br>10w数据对比如下图：<br><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F4.png" alt="这里写图片描述"></p><h3 id="算法实现"><a href="#算法实现" class="headerlink" title="算法实现"></a>算法实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shellsort</span><span class="params">(<span class="keyword">int</span>* arr, <span class="keyword">int</span> size)</span><span class="comment">//希尔排序</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(size&lt;=<span class="number">0</span>||arr==<span class="literal">NULL</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> div = <span class="number">0</span>; <span class="keyword">int</span> i, j, k = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (div = size / <span class="number">2</span>; div &gt;= <span class="number">1</span>; div /= <span class="number">2</span>)<span class="comment">//定义增量</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; div; i++)<span class="comment">//分成div组</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span> (j = i; j &lt; size; j += div)<span class="comment">//对数据插入排序</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (k = i; k &lt; size - div; k += div)&#123;</span><br><span class="line"><span class="keyword">if</span> (arr[j] &lt; arr[k])</span><br><span class="line">&#123;</span><br><span class="line">swap(arr[j], arr[k]);<span class="comment">//交换数据的值</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">array</span>[] = &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">6</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">12</span>,<span class="number">16</span>,<span class="number">13</span>,<span class="number">25</span>,<span class="number">14</span>,<span class="number">26</span>,<span class="number">25</span>,<span class="number">28</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">22</span>&#125;;</span><br><span class="line">shellsort(<span class="built_in">array</span>, <span class="keyword">sizeof</span>(<span class="built_in">array</span>)/<span class="keyword">sizeof</span>(<span class="built_in">array</span>[<span class="number">0</span>]));</span><br><span class="line"><span class="comment">/*for (auto it: array)</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">cout &lt;&lt; it;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;<span class="keyword">sizeof</span>(<span class="built_in">array</span>) / <span class="keyword">sizeof</span>(<span class="built_in">array</span>[<span class="number">0</span>]); i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">array</span>[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="截图"><a href="#截图" class="headerlink" title="截图"></a>截图</h3><p><img src="http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F2.jpg" alt="这里写图片描述"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;希尔排序（Shell’s-Sort&quot;&gt;&lt;a href=&quot;#希尔排序（Shell’s-Sort&quot; class=&quot;headerlink&quot; title=&quot;希尔排序（Shell’s Sort)&quot;&gt;&lt;/a&gt;希尔排序（Shell’s Sort)&lt;/h3&gt;&lt;p&gt;名词解释：希尔排序(Shell’s Sort)是插入排序的一种又称“缩小增量排序”，是直接插入排序算法的一种更高效的改进版本。希尔排序是非稳定排序算法。该方法因D.L.Shell于1959年提出而得名。希尔排序是把记录按下标的一定增量分组，对每组使用直接插入排序算法排序；随着增量逐渐减少，每组包含的关键词越来越多，当增量减至1时，整个文件恰被分成一组，算法便终止。&lt;/p&gt;
-&lt;p&gt;希尔排序是基于插入排序的以下两点性质而提出改进方法的：&lt;br&gt;1.插入排序在对几乎已经排好序的数据操作时，效率高，即可以达到线性排序的效率。&lt;br&gt;2.但插入排序一般来说是低效的，因为插入排序每次只能将数据移动一位。&lt;/p&gt;
-&lt;h3 id=&quot;算法思想&quot;&gt;&lt;a href=&quot;#算法思想&quot; class=&quot;headerlink&quot; title=&quot;算法思想&quot;&gt;&lt;/a&gt;算法思想&lt;/h3&gt;&lt;p&gt;教科书表达：先取一个小于n的整数d1作为第一个增量，把文件的全部记录分组。所有距离为d1的倍数的记录放在同一个组中。先在各组内进行直接插入排序；然后，取第二个增量d2(小于d1）重复上述的分组和排序，直至所取的增量 =1(  &amp;lt;  …&amp;lt; &amp;lt; d2 &amp;lt; d1)，即所有记录放在同一组中进行直接插入排序为止。&lt;br&gt;简单来说：一个书架放着一排书，现在从第一本书起每数X本书，就在那本书上贴红色贴纸，贴完红色贴纸后，再次从第二本书起每数X本书就贴上蓝色贴纸（跟之前颜色不同即可），重复贴纸过程，直到所有书都贴满贴纸。接着对有相同颜色贴纸的书做插入排序。然后撕掉所有贴纸后重新对书进行贴纸，这次则每数Y本书就贴纸（Y &amp;lt; X）,所有书贴满后再进行插入排序。重复贴纸排序、贴纸排序这个过程，直到最后每数1本书就贴纸（也就是每本书都贴同样颜色贴纸），再插入排序为止。&lt;br&gt;话不多说，看图&lt;br&gt;&lt;img src=&quot;http://pajznqooi.bkt.clouddn.com/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F.png&quot; alt=&quot;这里写图片描述&quot;&gt;&lt;br&gt;
     
     </summary>
     
