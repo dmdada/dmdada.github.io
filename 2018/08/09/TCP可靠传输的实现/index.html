@@ -17,7 +17,7 @@
 <meta property="og:description" content="TCP可靠传输的原理 我们都知道，TCP发送的报文段是交付给IP层传送的。但IP层只提供尽最大努力传输，因此是不可靠的，因此TCP必须采用适当的措施才能使两个运输层之间通信变得可靠。 理想的传输条件有以下两个特点： 1.传输信道无差错 2.不管发送方以什么样的发送速率，接收方都能来得及处理发送方发送的消息。然而实际上并不存在这样理想的传输条件，因此我们必须采用一些必要的措施保证实现可靠传输。 停止">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/TCP%E7%9A%84%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93.jpg">
-<meta property="og:updated_time" content="2018-08-10T09:15:21.785Z">
+<meta property="og:updated_time" content="2018-08-10T09:26:28.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TCP可靠传输的实现">
 <meta name="twitter:description" content="TCP可靠传输的原理 我们都知道，TCP发送的报文段是交付给IP层传送的。但IP层只提供尽最大努力传输，因此是不可靠的，因此TCP必须采用适当的措施才能使两个运输层之间通信变得可靠。 理想的传输条件有以下两个特点： 1.传输信道无差错 2.不管发送方以什么样的发送速率，接收方都能来得及处理发送方发送的消息。然而实际上并不存在这样理想的传输条件，因此我们必须采用一些必要的措施保证实现可靠传输。 停止">
@@ -182,7 +182,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="TCP可靠传输的原理"><a href="#TCP可靠传输的原理" class="headerlink" title="TCP可靠传输的原理"></a>TCP可靠传输的原理</h3><p> 我们都知道，TCP发送的报文段是交付给IP层传送的。但IP层只提供尽最大努力传输，因此是不可靠的，因此TCP必须采用适当的措施才能使两个运输层之间通信变得可靠。<br> 理想的传输条件有以下两个特点：<br> 1.传输信道无差错<br> 2.不管发送方以什么样的发送速率，接收方都能来得及处理发送方发送的消息。<br>然而实际上并不存在这样理想的传输条件，因此我们必须采用一些必要的措施保证实现可靠传输。</p>
-<h3 id="停止等待协议"><a href="#停止等待协议" class="headerlink" title="停止等待协议"></a>停止等待协议</h3><p>这里我们讨论单方向的发送和接受，设A为发送方B为接收方。A每发完一个分组就等待B收到分组的确认，然后才发送下一个分组。<br><a id="more"></a><br><img src="http://pajznqooi.bkt.clouddn.com/TCP%E7%9A%84%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93.jpg" alt="404"></p>
+<h3 id="停止等待协议"><a href="#停止等待协议" class="headerlink" title="停止等待协议"></a>停止等待协议</h3><p>这里我们讨论单方向的发送和接受，设A为发送方B为接收方。A每发完一个分组就等待B收到分组的确认，然后才发送下一个分组。<br><a id="more"></a><br><img src="http://pajznqooi.bkt.clouddn.com/TCP%E7%9A%84%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93.jpg" alt="404"><br>上图a介绍了无差错的情况，b图展示若出现差错的应对机制，若B发给A的确认报文在途中丢失，B对于自己的报文丢没有并不清楚，它只等待A传入下个数据包，而A也在等B的确认报文，发现这种情况怎么办呢。超时重传了解一下，超时重传就是为了解决这个问题，当A在一定时间内没有收到B的确认，就认为自己发送的数据报文B没有收到，并且重发这段数据，如果这计时器规定时间内收到了A的确认就撤销计时器。<br>应当注意以下三点：<br>1.A没有收到B的确认报文时，必须暂时的保留已发送的分组副本，以便于超时重传。<br>2.分组和确认必须编码，这样才能知道哪些分组收到了确认，哪些没有收到。<br>3.超时计时器应当设计的比数据在分组传输的平均往返时间要长一些，如果重传时间过长会严重影响效率，但如果过短也会有不必要的重传，浪费资源。</p>
+<p>###　确认丢失和确认迟到</p>
 
       
 
