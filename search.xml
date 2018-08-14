@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[指针和引用的区别]]></title>
     <url>%2F2018%2F08%2F14%2F%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[指针和引用的定义指针：指针是一个变量，储存着指向变量的地址，通过对地址的解引用实现对变量的读取或者更改。引用：引用是一个变量的别名，本质上和变量是一个东西.12int *p=&amp;a;int &amp;b=a; 这里定义了一个指针p保存了a的地址，而定义了一个引用b，给a取了一个别名。a和b是一个东西在空间上占用同一个地址。 一些其他的不同１.引用不可以为空，当被创建的时候，必须初始化，而指针可以是空值，可以在任何时候被初始化。 ２.可以有const指针，但是没有const引用。 3.指针可以有多级，但是引用只能是一级（int **p；合法 而 int &amp;&amp;a是不合法的）。 4.指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候必须初始化。 5.指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就不会再改变了。 6.sizeof引用得到的是所指向的变量(对象)的大小，而”sizeof指针”得到的是指针本身的大小。 7.指针和引用的自增(++)运算意义不一样。 8.如果返回动态内存分配的对象或者内存，必须使用指针，引用可能引起内存泄漏。 指针值传递123456789101112131415void ptr(int *p)&#123; int a=1; p=&amp;a; cout&lt;&lt;p&lt;&lt;&quot; &quot;&lt;&lt;*p&lt;&lt;endl;&#125;int main(void)&#123; int *p=NULL; ptr(p); if(p!=NULL) cout&lt;&lt;&quot;指针p为NULL&quot;&lt;&lt;endl; system(&quot;pause&quot;);&#125; 输出：0x6fc12e 1 指针p为NULL 因为这里传递的指针也是对p的一份临时拷贝，你不能通过形参而改变实参。要解决这种问题你只能传二级指针或者传引用 1234567891011121314void ptr(int *&amp;a)&#123; int b=2; a=&amp;b; cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;*a&lt;&lt;endl;&#125;int main(void)&#123; int a=1; int*p=&amp;a; ptr(p); cout&lt;&lt;p&lt;&lt;&quot; &quot;&lt;&lt;*p&lt;&lt;endl; system(&quot;pause&quot;);&#125; 输出结果： 0x12ff44 2 0x12ff44 2]]></content>
       <tags>
         <tag>C/C++</tag>
       </tags>
