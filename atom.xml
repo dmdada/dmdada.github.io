@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-08-14T14:01:42.456Z</updated>
+  <updated>2018-08-14T14:06:14.578Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -21,12 +21,14 @@
     <link href="http://dmdada.top/2018/08/14/%E6%8C%87%E9%92%88%E5%92%8C%E5%BC%95%E7%94%A8%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>http://dmdada.top/2018/08/14/指针和引用的区别/</id>
     <published>2018-08-14T14:01:42.000Z</published>
-    <updated>2018-08-14T14:01:42.456Z</updated>
+    <updated>2018-08-14T14:06:14.578Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="C/C++" scheme="http://dmdada.top/tags/C-C/"/>
     
   </entry>
   
