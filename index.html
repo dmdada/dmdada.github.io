@@ -179,23 +179,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h3 id="指针和引用的定义"><a href="#指针和引用的定义" class="headerlink" title="指针和引用的定义"></a>指针和引用的定义</h3><p>指针：指针是一个变量，储存着指向变量的地址，通过对地址的解引用实现对变量的读取或者更改。<br>引用：引用是一个变量的别名，本质上和变量是一个东西.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br><span class="line"><span class="keyword">int</span> &amp;b=a;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="指针和引用的定义"><a href="#指针和引用的定义" class="headerlink" title="指针和引用的定义"></a>指针和引用的定义</h3><p>指针：指针是一个变量，储存着指向变量的地址，通过对地址的解引用实现对变量的读取或者更改。<br>引用：引用是一个变量的别名，本质上和变量是一个东西.<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br><span class="line"><span class="keyword">int</span> &amp;b=a;</span><br></pre></td></tr></table></figure></p>
 <p>这里定义了一个指针p保存了a的地址，而定义了一个引用b，给a取了一个别名。a和b是一个东西在空间上占用同一个地址。</p>
-<h3 id="一些其他的不同"><a href="#一些其他的不同" class="headerlink" title="一些其他的不同"></a>一些其他的不同</h3><p>１.引用不可以为空，当被创建的时候，必须初始化，而指针可以是空值，可以在任何时候被初始化。</p>
-<p>２.可以有const指针，但是没有const引用。</p>
-<p>3.指针可以有多级，但是引用只能是一级（int **p；合法 而 int &amp;&amp;a是不合法的）。</p>
-<p>4.指针的值可以为空，但是引用的值不能为NULL，并且引用在定义的时候必须初始化。</p>
-<p>5.指针的值在初始化后可以改变，即指向其它的存储单元，而引用在进行初始化后就不会再改变了。</p>
-<p>6.sizeof引用得到的是所指向的变量(对象)的大小，而”sizeof指针”得到的是指针本身的大小。</p>
-<p>7.指针和引用的自增(++)运算意义不一样。</p>
-<p>8.如果返回动态内存分配的对象或者内存，必须使用指针，引用可能引起内存泄漏。</p>
-<h3 id="指针值传递"><a href="#指针值传递" class="headerlink" title="指针值传递"></a>指针值传递</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void ptr(int *p)</span><br><span class="line">&#123;</span><br><span class="line">    int a=1;</span><br><span class="line">    p=&amp;a;</span><br><span class="line">    cout&lt;&lt;p&lt;&lt;&quot; &quot;&lt;&lt;*p&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int *p=NULL;</span><br><span class="line">    ptr(p);</span><br><span class="line">    if(p!=NULL)</span><br><span class="line">    cout&lt;&lt;&quot;指针p为NULL&quot;&lt;&lt;endl;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出：0x6fc12e  1<br>     指针p为NULL</p>
-<p>因为这里传递的指针也是对p的一份临时拷贝，你不能通过形参而改变实参。要解决这种问题你只能传二级指针或者传引用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void ptr(int *&amp;a)</span><br><span class="line">&#123;   int b=2;</span><br><span class="line">    a=&amp;b;</span><br><span class="line">    cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;*a&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int a=1;</span><br><span class="line">    int*p=&amp;a;</span><br><span class="line">    ptr(p);</span><br><span class="line">    cout&lt;&lt;p&lt;&lt;&quot; &quot;&lt;&lt;*p&lt;&lt;endl;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果：<br>      0x12ff44 2<br>      0x12ff44 2</p>
-
+        
+          <a class="article-more-a" href="/2018/08/14/指针和引用的区别/#more">more >></a>
+        
       
 
       
