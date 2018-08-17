@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[selset、poll、epoll的优缺点]]></title>
     <url>%2F2018%2F08%2F16%2Fselset%E3%80%81poll%E3%80%81epoll%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[SelectSelect用来实现多路复用输入/输出模型&enbp;1.Select系统调用是用来让我们程序监视多个文件描述符的状态变化&enbp;2.程序会停在select这里等待，直到被监视文件描述符有了一个或者多个发生了状态改变； 函数原型：12345678910111213141516#include &lt;sys/select.h&gt;int select(int nfds, fd_set* readfds,fd_set *writefds,fd_set* exceptfds,struct timeval *timeout);``` 参数ndfs是需要监视的最大的文件描述符值+1rdset,wrset,exset分别对应需要检测的可读文件描述符的集合，可写文件描述符集合及异常文件描述符集合参数timeout为结构timeval, 用来设置Select的等待时间关于fd_set结构:其实这个结果是一个整形数组，更严格的说，它是一个位图，使用位图对应的位来表示需要监视的文件描述符。系统提供了一组fd_set调用接口，用来操作位图。```c++void FD_CLR(int fd,fd_set * set);//用来清除描述词组set中的相关fd位int FD_ISSET(int fd,fd_set * set);//用来测试描述词组set相关fd位是否为真void FD_SET(int fd, fd_set * set);//用来设置描述词组set中相关fd的位void FD_ZERO(fd_set* set);//用来清除描述词组中set的全部位 函数返回值：1.执行成功返回文件描述符的改变个数。2。如果返回0代表timewait时间超时，没有返回。3.当返回-1，出现错误。 Select的特点：1.可监控文件描述符个数sizeof(fd_set)的值 ，每个比特位表示监控一个文件描述符。2.将fd加入select监控集的同时还要使用一个数据结构array保存放到select监控集中的fd.用于返回数据与源数据比较，二是select返回会将没事发生的文件描述符删除，但每次开始select需要重新设置，扫描array取得fd最大值maxfd，用于select的第一个参数。 Select的缺点：1.每次调用select都需要手动设置fd集合，从接口使用角度来说也非常不便。2.每次调用select，都需要从用户态拷贝到内核态，这个开销在fd很大时会很大。3.每次的调用传入的select都需要在内核遍历传进来的所有fd，这个开销在fd很大时会很大。 poll123456789int poll(struct poll* fds，nfds_t nfds，int timeout);//pollfd结构struct pollfd&#123;int fd;short events;short revents; &#125; 参数说明：fds是一个poll函数监听的结构列表，每一个元素中，包含了三部分内容：文件描述符，监听的事件、返回事件的集合。ndfs表示fds数组的长度。timeout表示poll函数的超时时间，单位是毫秒（ms). 返回值：小于0表示出错，等于0表示等待超时，大于0表示poll由于监听的文件描述符就绪而返回。 poll的优点：1.不同于]]></content>
   </entry>
   <entry>
     <title><![CDATA[指针和引用的区别]]></title>

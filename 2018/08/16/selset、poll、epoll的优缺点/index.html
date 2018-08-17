@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://dmdada.top">
   <title>selset、poll、epoll的优缺点 | 邓铭的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="奋斗的程序猿">
+  <meta name="description" content="SelectSelect用来实现多路复用输入/输出模型&amp;enbp;1.Select系统调用是用来让我们程序监视多个文件描述符的状态变化&amp;enbp;2.程序会停在select这里等待，直到被监视文件描述符有了一个或者多个发生了状态改变； 函数原型：12345678910111213141516#include &amp;lt;sys/select.h&amp;gt;int select(int nfds, fd_s">
 <meta property="og:type" content="article">
 <meta property="og:title" content="selset、poll、epoll的优缺点">
 <meta property="og:url" content="http://dmdada.top/2018/08/16/selset、poll、epoll的优缺点/index.html">
 <meta property="og:site_name" content="邓铭的博客">
-<meta property="og:description" content="奋斗的程序猿">
+<meta property="og:description" content="SelectSelect用来实现多路复用输入/输出模型&amp;enbp;1.Select系统调用是用来让我们程序监视多个文件描述符的状态变化&amp;enbp;2.程序会停在select这里等待，直到被监视文件描述符有了一个或者多个发生了状态改变； 函数原型：12345678910111213141516#include &amp;lt;sys/select.h&amp;gt;int select(int nfds, fd_s">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-16T15:13:17.667Z">
+<meta property="og:updated_time" content="2018-08-17T09:32:50.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="selset、poll、epoll的优缺点">
-<meta name="twitter:description" content="奋斗的程序猿">
+<meta name="twitter:description" content="SelectSelect用来实现多路复用输入/输出模型&amp;enbp;1.Select系统调用是用来让我们程序监视多个文件描述符的状态变化&amp;enbp;2.程序会停在select这里等待，直到被监视文件描述符有了一个或者多个发生了状态改变； 函数原型：12345678910111213141516#include &amp;lt;sys/select.h&amp;gt;int select(int nfds, fd_s">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
   
@@ -178,7 +178,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="Select"><a href="#Select" class="headerlink" title="Select"></a>Select</h3><p>Select用来实现多路复用输入/输出模型<br>&enbp;1.Select系统调用是用来让我们程序监视多个文件描述符的状态变化<br>&enbp;2.程序会停在select这里等待，直到被监视文件描述符有了一个或者多个发生了状态改变；</p>
+<p>函数原型：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/select.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> nfds, fd_set* readfds,fd_set *writefds,fd_set* exceptfds,struct timeval *timeout)</span></span>;</span><br><span class="line"></span><br><span class="line">```   </span><br><span class="line">参数ndfs是需要监视的最大的文件描述符值+<span class="number">1</span></span><br><span class="line">rdset,wrset,exset分别对应需要检测的可读文件描述符的集合，可写文件描述符集合及异常文件描述符集合</span><br><span class="line">参数timeout为结构timeval, 用来设置Select的等待时间</span><br><span class="line"></span><br><span class="line">关于fd_set结构:其实这个结果是一个整形数组，更严格的说，它是一个位图，使用位图对应的位来表示需要监视的文件描述符。</span><br><span class="line">系统提供了一组fd_set调用接口，用来操作位图。</span><br><span class="line"></span><br><span class="line">```c++</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_CLR</span><span class="params">(<span class="keyword">int</span> fd,fd_set * <span class="built_in">set</span>)</span></span>;<span class="comment">//用来清除描述词组set中的相关fd位</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FD_ISSET</span><span class="params">(<span class="keyword">int</span> fd,fd_set * <span class="built_in">set</span>)</span></span>;<span class="comment">//用来测试描述词组set相关fd位是否为真</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_SET</span><span class="params">(<span class="keyword">int</span> fd, fd_set * <span class="built_in">set</span>)</span></span>;<span class="comment">//用来设置描述词组set中相关fd的位</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FD_ZERO</span><span class="params">(fd_set* <span class="built_in">set</span>)</span></span>;<span class="comment">//用来清除描述词组中set的全部位</span></span><br></pre></td></tr></table></figure></p>
+<p>函数返回值：<br>1.执行成功返回文件描述符的改变个数。<br>2。如果返回0代表timewait时间超时，没有返回。<br>3.当返回-1，出现错误。</p>
+<p>Select的特点：<br>1.可监控文件描述符个数sizeof(fd_set)的值 ，每个比特位表示监控一个文件描述符。<br>2.将fd加入select监控集的同时还要使用一个数据结构array保存放到select监控集中的fd.用于返回数据与源数据比较，二是select返回会将没事发生的文件描述符删除，但每次开始select需要重新设置，扫描array取得fd最大值maxfd，用于select的第一个参数。</p>
+<p>Select的缺点：<br>1.每次调用select都需要手动设置fd集合，从接口使用角度来说也非常不便。<br>2.每次调用select，都需要从用户态拷贝到内核态，这个开销在fd很大时会很大。<br>3.每次的调用传入的select都需要在内核遍历传进来的所有fd，这个开销在fd很大时会很大。</p>
+<h3 id="poll"><a href="#poll" class="headerlink" title="poll"></a>poll</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">poll</span><span class="params">(struct poll* fds，<span class="keyword">nfds_t</span> nfds，<span class="keyword">int</span> timeout)</span></span>;</span><br><span class="line"><span class="comment">//pollfd结构</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">pollfd</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">int</span> fd;</span><br><span class="line"><span class="keyword">short</span> events;</span><br><span class="line"><span class="keyword">short</span> revents;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参数说明：fds是一个poll函数监听的结构列表，每一个元素中，包含了三部分内容：文件描述符，监听的事件、返回事件的集合。<br>ndfs表示fds数组的长度。<br>timeout表示poll函数的超时时间，单位是毫秒（ms).</p>
+<p>返回值：小于0表示出错，等于0表示等待超时，大于0表示poll由于监听的文件描述符就绪而返回。</p>
+<p>poll的优点：<br>1.不同于</p>
+
       
 
       
