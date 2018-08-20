@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-08-20T14:41:37.727Z</updated>
+  <updated>2018-08-20T15:00:31.191Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -21,12 +21,14 @@
     <link href="http://dmdada.top/2018/08/20/TCP-IP%E5%8D%8F%E8%AE%AE%E6%97%8F/"/>
     <id>http://dmdada.top/2018/08/20/TCP-IP协议族/</id>
     <published>2018-08-20T14:41:37.000Z</published>
-    <updated>2018-08-20T14:41:37.727Z</updated>
+    <updated>2018-08-20T15:00:31.191Z</updated>
     
     <summary type="html">
     
     </summary>
     
+    
+      <category term="计算机网络" scheme="http://dmdada.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
