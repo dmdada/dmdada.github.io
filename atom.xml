@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-08-21T07:57:32.599Z</updated>
+  <updated>2018-08-21T07:59:19.593Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://dmdada.top/2018/08/20/TCP-IP%E5%8D%8F%E8%AE%AE%E6%97%8F/"/>
     <id>http://dmdada.top/2018/08/20/TCP-IP协议族/</id>
     <published>2018-08-20T14:41:37.000Z</published>
-    <updated>2018-08-21T07:57:32.599Z</updated>
+    <updated>2018-08-21T07:59:19.593Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>IP数据报的格式能够说明IP协议都具有什么功能，IP数据报分为首部和数据两个部分，首部格式为固定长度的20字节，是所有IP数据报所都具有的。在首部的国定部分后面是一些可选部分。其长度是可变的，下图展示了IP数据报的格式，我们着重并解释其各首部字段意义。</p><p><img src="http://pajznqooi.bkt.clouddn.com/IP%E6%95%B0%E6%8D%AE%E6%8A%A5.jpg" alt="404"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="IP数据报"><a href="#IP数据报" class="headerlink" title="IP数据报"></a>IP数据报</h3><p>IP数据报的格式能够说明IP协议都具有什么功能，IP数据报分为首部和数据两个部分，首部格式为固定长度的20字节，是所有IP数据报所都具有的。在首部的国定部分后面是一些可选部分。其长度是可变的，下图展示了IP数据报的格式，我们着重并解释其各首部字段意义。</p><p><img src="http://pajznqooi.bkt.clouddn.com/IP%E6%95%B0%E6%8D%AE%E6%8A%A5.jpg" alt="404"></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;IP&quot;&gt;&lt;a href=&quot;#IP&quot; class=&quot;headerlink&quot; title=&quot;IP&quot;&gt;&lt;/a&gt;IP&lt;/h3&gt;&lt;p&gt;IP数据报的格式能够说明IP协议都具有什么功能，IP数据报分为首部和数据两个部分，首部格式为固定长度的20字节，是所有IP数据报所都具有的。
+        &lt;h3 id=&quot;IP数据报&quot;&gt;&lt;a href=&quot;#IP数据报&quot; class=&quot;headerlink&quot; title=&quot;IP数据报&quot;&gt;&lt;/a&gt;IP数据报&lt;/h3&gt;&lt;p&gt;IP数据报的格式能够说明IP协议都具有什么功能，IP数据报分为首部和数据两个部分，首部格式为固定长度的20字节，是所
       
     
     </summary>
