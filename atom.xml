@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-08-21T09:30:26.943Z</updated>
+  <updated>2018-08-25T15:06:13.465Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -15,6 +15,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux环境下gdb的使用</title>
+    <link href="http://dmdada.top/2018/08/25/Linux%E7%8E%AF%E5%A2%83%E4%B8%8Bgdb%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://dmdada.top/2018/08/25/Linux环境下gdb的使用/</id>
+    <published>2018-08-25T15:06:13.000Z</published>
+    <updated>2018-08-25T15:06:13.465Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>IP数据报格式</title>
@@ -418,27 +432,6 @@
     
     
       <category term="算法" scheme="http://dmdada.top/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字符串中第一个只出现两次的字符</title>
-    <link href="http://dmdada.top/2018/06/26/%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%A4%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/"/>
-    <id>http://dmdada.top/2018/06/26/字符串中第一个只出现两次的字符/</id>
-    <published>2018-06-26T14:15:46.000Z</published>
-    <updated>2018-07-05T14:38:47.799Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>找到字符串中第一个只出现两次的字符<br>例 字符串”abbcdefacdefba”<br>第一个只出现一次的字符是c</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>设置两个指针分别遍历数组<br>若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历</p><a id="more"></a><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findstr</span><span class="params">(<span class="keyword">char</span>* str)</span></span></span><br><span class="line"><span class="function"> </span>&#123;</span><br><span class="line"> <span class="keyword">char</span> tmp = <span class="string">'a'</span>;</span><br><span class="line"> <span class="keyword">char</span>*src = str+<span class="number">1</span>;</span><br><span class="line"> <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"> <span class="keyword">while</span> (*str != <span class="string">'\0'</span>)</span><br><span class="line"> &#123;</span><br><span class="line"> count = <span class="number">0</span>;</span><br><span class="line"> src = str+<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (*src != <span class="string">'\0'</span>)</span><br><span class="line"> &#123;</span><br><span class="line"> <span class="keyword">if</span> (*str == *src)</span><br><span class="line"> &#123;</span><br><span class="line">   count++;</span><br><span class="line">   tmp = *src;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"> src++;</span><br><span class="line"> &#125;</span><br><span class="line">  <span class="keyword">if</span> (count == <span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"找到字符是：%c\n"</span>,tmp);</span><br><span class="line">  <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> str++;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">printf</span>(<span class="string">"没找到"</span>);</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">char</span>* str = <span class="string">"abacdebaf"</span>;</span><br><span class="line">findstr(str);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="http://pajznqooi.bkt.clouddn.com/%E5%AD%97%E7%AC%A6.jpg" alt="这里写图片描述"><br><img src="http://pajznqooi.bkt.clouddn.com/%E5%AD%97%E7%AC%A62.jpg" alt="这里写图片描述"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h3&gt;&lt;p&gt;找到字符串中第一个只出现两次的字符&lt;br&gt;例 字符串”abbcdefacdefba”&lt;br&gt;第一个只出现一次的字符是c&lt;/p&gt;
-&lt;h3 id=&quot;分析&quot;&gt;&lt;a href=&quot;#分析&quot; class=&quot;headerlink&quot; title=&quot;分析&quot;&gt;&lt;/a&gt;分析&lt;/h3&gt;&lt;p&gt;设置两个指针分别遍历数组&lt;br&gt;若指针1等于指针2则计数器加1，遍历完后若计数器为1则输出字符，并结束遍历&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="面试" scheme="http://dmdada.top/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
