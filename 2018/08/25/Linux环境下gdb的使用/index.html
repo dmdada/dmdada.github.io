@@ -17,7 +17,7 @@
 <meta property="og:description" content="##gdb环境搭建1.查看是否安装gdb1rpm -qa | grep gdb 如果有的话请用以下命令删除1rpm -e --nodeps+安装包名称 2.安装Texinfo文档系统1yum install ncurses-devel 3.下载gdb的安装包12wget http://ftp.gnu.org/gnu/gdb/gdb-7.6.1.tar.gz//这里建议将安装包重新放到一个新文件夹，">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pajznqooi.bkt.clouddn.com/gdb%E8%B0%83%E8%AF%95.jpg">
-<meta property="og:updated_time" content="2018-08-26T04:49:57.704Z">
+<meta property="og:updated_time" content="2018-08-26T05:12:44.425Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux环境下gdb的使用">
 <meta name="twitter:description" content="##gdb环境搭建1.查看是否安装gdb1rpm -qa | grep gdb 如果有的话请用以下命令删除1rpm -e --nodeps+安装包名称 2.安装Texinfo文档系统1yum install ncurses-devel 3.下载gdb的安装包12wget http://ftp.gnu.org/gnu/gdb/gdb-7.6.1.tar.gz//这里建议将安装包重新放到一个新文件夹，">
@@ -191,7 +191,7 @@
 <p>6.安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make</span><br><span class="line">sudo  make install</span><br></pre></td></tr></table></figure></p>
 <p>7.检查<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb -v</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://pajznqooi.bkt.clouddn.com/gdb%E8%B0%83%E8%AF%95.jpg" alt=""><br>结果如图即成功</p>
-<h3 id="gdb调试常用命令"><a href="#gdb调试常用命令" class="headerlink" title="gdb调试常用命令"></a>gdb调试常用命令</h3><p>启动gdb后，进入到交互模式，通过以下命令完成对程序的调试；注意高频使用的命令一般都会有缩写，熟练使用这些缩写命令能提高调试的效率；</p>
+<h3 id="gdb调试常用命令"><a href="#gdb调试常用命令" class="headerlink" title="gdb调试常用命令"></a>gdb调试常用命令</h3><p>启动gdb后，进入到交互模式，通过以下命令完成对程序的调试；注意高频使用的命令一般都会有缩写，熟练使用这些缩写命令能提高调试的效率;</p>
 <h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>run：简记为 r ，其作用是运行程序，当遇到断点后，程序会在断点处停止运行，等待用户输入下一步的命令。<br>continue （简写c ）：继续执行，到下一个断点处（或运行结束）<br>next：（简写 n），单步跟踪程序，当遇到函数调用时，也不进入此函数体；此命令同 step 的主要区别是，step 遇到用户自定义的函数，将步进到函数中去运行，而 next 则直接调用函数，不会进入到函数体内。<br>step （简写s）：单步调试如果有函数调用，则进入函数；与命令n不同，n是不进入调用的函数的<br>until：当你厌倦了在一个循环体内单步跟踪时，这个命令可以运行程序直到退出循环体。<br>until+行号： 运行至某行，不仅仅用来跳出循环<br>finish： 运行程序，直到当前函数完成返回，并打印函数返回时的堆栈地址和返回值及参数值等信息。<br>call 函数(参数)：调用程序中可见的函数，并传递“参数”，如：call gdb_test(55)<br>quit：简记为 q ，退出gdb</p>
 <h3 id="设置断点"><a href="#设置断点" class="headerlink" title="设置断点"></a>设置断点</h3><p>break n （简写b n）:在第n行处设置断点<br>（可以带上代码路径和代码名称： b OAGUPDATE.cpp:578）<br>b fn1 if a＞b：条件断点设置<br>break func（break缩写为b）：在函数func()的入口处设置断点，如：break cb_button<br>delete 断点号n：删除第n个断点<br>disable 断点号n：暂停第n个断点<br>enable 断点号n：开启第n个断点<br>clear 行号n：清除第n行的断点<br>info b （info breakpoints） ：显示当前程序的断点设置情况<br>delete breakpoints：清除所有断点：</p>
 <h3 id="查看源代码"><a href="#查看源代码" class="headerlink" title="查看源代码"></a>查看源代码</h3><p>list ：简记为 l ，其作用就是列出程序的源代码，默认每次显示10行。<br>list 行号：将显示当前文件以“行号”为中心的前后10行代码，如：list 12<br>list 函数名：将显示“函数名”所在函数的源代码，如：list main<br>list ：不带参数，将接着上一次 list 命令的，输出下边的内容。</p>
