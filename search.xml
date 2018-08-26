@@ -3,7 +3,10 @@
   <entry>
     <title><![CDATA[Linux环境下gdb的使用]]></title>
     <url>%2F2018%2F08%2F25%2FLinux%E7%8E%AF%E5%A2%83%E4%B8%8Bgdb%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[##gdb环境搭建1.查看是否安装gdb1rpm -qa | grep gdb 如果有的话请用以下命令删除1rpm -e --nodeps+安装包名称 2.安装Texinfo文档系统1yum install ncurses-devel 3.下载gdb的安装包12wget http://ftp.gnu.org/gnu/gdb/gdb-7.6.1.tar.gz//这里建议将安装包重新放到一个新文件夹，例如/home/download 4.解压文件夹12cd /home/downloads/tar -zxvf gdb-7.6.1.tar.gz 5.生成makefile12cd /home/downloads/gdb-7.6.1./configure]]></content>
+      <tags>
+        <tag>Linux</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[IP数据报格式]]></title>
