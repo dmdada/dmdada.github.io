@@ -52,13 +52,6 @@
 
     <url>
         <loc>http://dmdada.top/tags/C-C/</loc>
-        <lastmod>2018-08-14T14:53:18.847Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://dmdada.top/tags/C-C/</loc>
         <lastmod>2018-08-18T15:04:20.136Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -79,8 +72,15 @@
     </url>
 
     <url>
+        <loc>http://dmdada.top/tags/C-C/</loc>
+        <lastmod>2018-09-04T11:26:05.092Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://dmdada.top/tags/%E9%9D%A2%E8%AF%95/</loc>
-        <lastmod>2018-09-04T11:25:38.304Z</lastmod>
+        <lastmod>2018-09-04T11:26:05.092Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
