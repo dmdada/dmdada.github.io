@@ -30,13 +30,6 @@
     </url>
 
     <url>
-        <loc>http://dmdada.top/tags/%E9%9D%A2%E8%AF%95/</loc>
-        <lastmod>2018-07-05T14:38:47.799Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://dmdada.top/tags/C-%E6%A0%87%E5%87%86%E7%A8%8B%E5%BA%8F%E5%BA%93/</loc>
         <lastmod>2018-07-12T15:42:57.771Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -81,6 +74,13 @@
     <url>
         <loc>http://dmdada.top/tags/Linux/</loc>
         <lastmod>2018-08-26T05:14:38.006Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://dmdada.top/tags/%E9%9D%A2%E8%AF%95/</loc>
+        <lastmod>2018-09-04T11:25:38.304Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
