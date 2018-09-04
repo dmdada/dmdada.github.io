@@ -16,14 +16,12 @@
 <meta property="og:site_name" content="邓铭的博客">
 <meta property="og:description" content="文件操作C++ 通过以下几个类支持文件的输入输出：ofstream: 写操作（输出）的文件类 (由ostream引申而来)ifstream: 读操作（输入）的文件类(由istream引申而来)fstream: 可同时读写操作的文件类 (由iostream引申而来)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180529223841401?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180529223857452?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180529224253735?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-05T14:38:35.492Z">
+<meta property="og:updated_time" content="2018-09-04T11:26:36.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="文件操作">
 <meta name="twitter:description" content="文件操作C++ 通过以下几个类支持文件的输入输出：ofstream: 写操作（输出）的文件类 (由ostream引申而来)ifstream: 读操作（输入）的文件类(由istream引申而来)fstream: 可同时读写操作的文件类 (由iostream引申而来)">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180529223841401?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180529224253735?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
   
     <link rel="alternative" href="/atom.xml" title="邓铭的博客" type="application/atom+xml">
   
@@ -192,9 +190,7 @@
 <p>ps:为防止流对象被销毁时还联系着打开的文件，析构函数一般将会自动调用关闭函数close</p>
 <p>代码示例</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//建立一个文件并写入内容  </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span>  </span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="function">ofstream <span class="title">examplefile</span><span class="params">(<span class="string">"example.txt"</span>)</span></span>;  </span><br><span class="line">    <span class="keyword">if</span> (examplefile.is_open())  </span><br><span class="line">    &#123;  </span><br><span class="line">        examplefile &lt;&lt; <span class="string">"This is a line.\n"</span>;  </span><br><span class="line">        examplefile &lt;&lt; <span class="string">"This is another line.\n"</span>;  </span><br><span class="line">        examplefile.close();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果：</p>
-<p><img src="https://img-blog.csdn.net/20180529223841401?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"><br><img src="https://img-blog.csdn.net/20180529223857452?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaWJvX2Rt/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="这里写图片描述"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">examplefile.eof();//eof ，它是ifstream 从类 ios 中继承过来的，当到达文件末尾时返回true</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">examplefile.eof();<span class="comment">//eof ，它是ifstream 从类 ios 中继承过来的，当到达文件末尾时返回true</span></span><br></pre></td></tr></table></figure>
 <p>文件读取：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">examplefile.getline(buffer,100);</span><br><span class="line">//getline，读取一行字符，直到遇见换行符。getline具有返回值：成功：返回读取的字节数  失败：返回-1。</span><br></pre></td></tr></table></figure>
 <p>代码示例：</p>
