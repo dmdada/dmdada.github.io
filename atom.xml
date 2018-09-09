@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://dmdada.top/"/>
-  <updated>2018-09-09T10:46:44.036Z</updated>
+  <updated>2018-09-09T10:48:20.283Z</updated>
   <id>http://dmdada.top/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://dmdada.top/2018/09/07/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>http://dmdada.top/2018/09/07/软件测试的方法/</id>
     <published>2018-09-07T14:25:54.000Z</published>
-    <updated>2018-09-09T10:46:44.036Z</updated>
+    <updated>2018-09-09T10:48:20.283Z</updated>
     
-    <content type="html"><![CDATA[<p>###　白盒测试<br>语句覆盖：</p><h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h3><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<p>###　白盒测试<br>语句覆盖：<br>判断覆盖：</p><h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h3><a id="more"></a>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;###　白盒测试&lt;br&gt;语句覆盖：&lt;/p&gt;
+      &lt;p&gt;###　白盒测试&lt;br&gt;语句覆盖：&lt;br&gt;判断覆盖：&lt;/p&gt;
 &lt;h3 id=&quot;黑盒测试&quot;&gt;&lt;a href=&quot;#黑盒测试&quot; class=&quot;headerlink&quot; title=&quot;黑盒测试&quot;&gt;&lt;/a&gt;黑盒测试&lt;/h3&gt;
     
     </summary>
